@@ -1,0 +1,21 @@
+.smallCol{
+  font-size: 12px;
+  color: white;
+}
+
+.mediumCol{
+  font-size: 10px;
+}
+
+.largeCol{
+  font-size: 10px;
+}
+
+.xLargeCol{
+  font-size: 10px;
+}
+
+th.mat-header-cell, td.mat-cell {
+  text-align: center;
+  color: yellow;
+}

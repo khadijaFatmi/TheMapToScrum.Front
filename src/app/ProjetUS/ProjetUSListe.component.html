@@ -1,0 +1,56 @@
+<div>
+
+      <h1 align="center" ><font color="grey">User Story Projects</font></h1>
+
+</div>
+
+
+
+
+
+<!-- <div>
+ projets= variable de type ProjetUserStory[], p: iterateur, libelle= attribut de mon entité projet
+  <li *ngFor="let p of projets">{{p.libelle}}</li>
+
+</div> -->
+
+
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="libelle">
+    <th mat-header-cell *matHeaderCellDef width ="15%"> Projet </th>
+    <mat-cell *matCellDef="let element"> {{element.libelle}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="auteur">
+    <th mat-header-cell *matHeaderCellDef width ="15%"> Auteur </th>
+    <mat-cell *matCellDef="let element"> {{element.auteur}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="equipe">
+    <th mat-header-cell *matHeaderCellDef width ="15%"> Equipe </th>
+    <mat-cell *matCellDef="let element"> {{element.equipe}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="pole">
+    <th mat-header-cell *matHeaderCellDef width ="15%"> Pole </th>
+    <mat-cell *matCellDef="let element"> {{element.pole}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="datecreation">
+    <mat-header-cell *matHeaderCellDef > Creation </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.datecreation | date: 'yyyy-MM-dd'}} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+
+<div class="multi-inputs" >
+
+</div>
+
+<div class="multi-inputs" >
+  une flexbox vide
+</div>
