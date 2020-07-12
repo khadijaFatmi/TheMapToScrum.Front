@@ -19,6 +19,9 @@ import { HomeComponent } from './home/home/home.component';
 import { AboutComponent } from './about/about/about.component';
 import { ManifestoComponent } from './manifesto/manifesto/manifesto.component';
 
+import {MatMenuModule} from '@angular/material/menu';
+import { ContactComponent } from './contact/contact.component';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -28,7 +31,8 @@ import { ManifestoComponent } from './manifesto/manifesto/manifesto.component';
       OuinonPipe,
       HomeComponent,
       AboutComponent,
-      ManifestoComponent
+      ManifestoComponent,
+      ContactComponent
   ],
   imports: [
     BrowserModule,
