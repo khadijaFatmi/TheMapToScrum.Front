@@ -4,8 +4,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { ProjetUSListeComponent } from './ProjetUS/ProjetUSListe.component';
 import { UserStoryComponent } from './UserStory/UserStoryListe/UserStory.component';
 import { UserStoryDetailComponent } from './UserStory/UserStoryDetail/UserStorydetail.component';
+import { HomeComponent } from './home/home/home.component';
+import { ManifestoComponent } from './manifesto/manifesto/manifesto.component';
+import { AboutComponent } from './about/about/about.component';
 
 const routes: Routes = [
+  {path: '', redirectTo : '/home' , pathMatch : 'full'},
+  {path: 'home', component : HomeComponent},
+  {path: 'manifesto', component : ManifestoComponent},
+  {path: 'about', component : AboutComponent},
   {path: 'projet', component : ProjetUSListeComponent},
   {path: 'userstory', component : UserStoryComponent },
   {path: 'userstorydetail/:id', component : UserStoryDetailComponent}

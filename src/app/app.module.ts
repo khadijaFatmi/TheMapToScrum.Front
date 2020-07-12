@@ -15,6 +15,9 @@ import { ProjetService } from './ProjetUS/ProjetUSListe.service';
 import { MaterialModule } from './material/material.module';
 import { UserStoryDetailComponent } from './UserStory/UserStoryDetail/UserStorydetail.component';
 import { OuinonPipe } from './pipes/ouinon.pipe';
+import { HomeComponent } from './home/home/home.component';
+import { AboutComponent } from './about/about/about.component';
+import { ManifestoComponent } from './manifesto/manifesto/manifesto.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { OuinonPipe } from './pipes/ouinon.pipe';
     , ProjetUSListeComponent
     , UserStoryComponent
     , UserStoryDetailComponent,
-      OuinonPipe
+      OuinonPipe,
+      HomeComponent,
+      AboutComponent,
+      ManifestoComponent
   ],
   imports: [
     BrowserModule,

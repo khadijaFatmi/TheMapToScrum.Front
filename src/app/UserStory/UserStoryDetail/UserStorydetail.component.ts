@@ -36,6 +36,6 @@ export class UserStoryDetailComponent implements OnInit {
    );
 }
 updateform(): void {
-  this.titre.setValue(this.userstory.projectName);
+  this.titre.setValue(this.userstory.name);
 }
 }
