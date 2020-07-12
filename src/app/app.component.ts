@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProjetUserStory } from './models/projetUserStory.model';
 
 import { Observable } from 'rxjs';
+import '../assets/js/mySketch.js';
 
 @Component({
   selector: 'app-root',
