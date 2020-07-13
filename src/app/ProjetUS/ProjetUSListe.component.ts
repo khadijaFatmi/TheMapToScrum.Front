@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjetService } from './ProjetUSListe.service';
-import { ProjetUserStory } from '../models/projetUserStory.model';
+import { Projet } from '../models/projets.model';
 
 @Component({
   selector: 'app-projetusliste',
@@ -8,7 +8,7 @@ import { ProjetUserStory } from '../models/projetUserStory.model';
   styleUrls: ['./ProjetUSListe.component.css']
 })
 export class ProjetUSListeComponent implements OnInit {
-  public projets: ProjetUserStory[];
+  public projets: Projet[];
   displayedColumns: string[] = ['libelle', 'auteur', 'equipe', 'pole', 'datecreation'];
   public dataSource: any;
 

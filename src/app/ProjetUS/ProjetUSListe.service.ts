@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams, HttpErrorResponse} from '@angular/common/http';
 import { Observable, throwError} from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { ProjetUserStory } from '../models/projetUserStory.model';
+import { Projet } from '../models/projets.model';
 import { Injectable } from '@angular/core';
 
 //@Injectable({
@@ -13,7 +13,7 @@ export class ProjetService {
 
   constructor(private http: HttpClient) {}
 
-  liste(): Observable<ProjetUserStory[]> {
-    return this.http.get<ProjetUserStory[]>(this.url);
+  liste(): Observable<Projet[]> {
+    return this.http.get<Projet[]>(this.url);
   }
 }

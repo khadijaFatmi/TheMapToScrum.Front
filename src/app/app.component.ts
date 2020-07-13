@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProjetUserStory } from './models/projetUserStory.model';
+import { Projet } from './models/projets.model';
 
 import { Observable } from 'rxjs';
 import '../assets/js/mySketch.js';
@@ -15,7 +15,7 @@ import '../assets/js/mySketch.js';
 })
 export class AppComponent {
   title = 'The Map To Scrum';
-  liste: Observable<ProjetUserStory[]>;
+  liste: Observable<Projet[]>;
 
 
 }

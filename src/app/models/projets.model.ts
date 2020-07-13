@@ -1,7 +1,7 @@
 import { BaseEntity } from './baseEntity.model';
 
-export class ProjetUserStory extends BaseEntity {
-  libelle: string;
+export class Projet extends BaseEntity {
+  name: string;
   auteur: string;
   equipe: string;
   pole: string;
