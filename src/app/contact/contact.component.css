@@ -1,6 +1,7 @@
 
 .kDisplayContact{
-  text-align: left;
+  text-align: center;
+  font-display: auto;
   background-color:  #424343;
   color: white;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -10,4 +11,8 @@
 
 .largeFontContact{
   font-size: 20px;
+ }
+
+ .colorMail{
+   color: cadetblue;
  }

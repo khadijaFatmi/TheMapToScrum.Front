@@ -1,6 +1,49 @@
-<!--<app-navbar></app-navbar>
-<button routerlink="userstory" routerLinkActive="active">user story</button>
--->
+
+
+<nav id="header" class="app-component navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+  <a ngPreserveWhitespaces class="app-component navbar-brand" routerLink="/">
+   <img src="./../assets/img/logo.png">
+    <span class="app-component appTitle">{{appTitle}}</span>
+  </a>
+
+
+
+  <button mat-button [matMenuTriggerFor]="home">Home</button>
+  <mat-menu #home="matMenu" >
+    <button mat-menu-item class="option-menu" routerLink="home" routerLinkActive="active">Home</button>
+  </mat-menu>
+
+
+  <button mat-button [matMenuTriggerFor]="about">About</button>
+  <mat-menu #about="matMenu" >
+    <button mat-menu-item class="option-menu" routerLink="about" routerLinkActive="active">About</button>
+  </mat-menu>
+
+
+
+  <button mat-button [matMenuTriggerFor]="manifesto">Manifesto</button>
+  <mat-menu #manifesto="matMenu" >
+    <button mat-menu-item class="option-menu" routerLink="manifesto" routerLinkActive="active">Agile Manifesto</button>
+  </mat-menu>
+
+
+
+  <button mat-button [matMenuTriggerFor]="projet">Projects</button>
+  <mat-menu #projet="matMenu" >
+    <button mat-menu-item class="option-menu" routerLink="projet" routerLinkActive="active">Projetcs</button>
+  </mat-menu>
+
+  <button mat-button [matMenuTriggerFor]="userstories">UserStories</button>
+  <mat-menu #userstories="matMenu" >
+    <button mat-menu-item class="option-menu" routerLink="userstory" routerLinkActive="active">User stories list</button>
+  </mat-menu>
+
+
+
+
+
+</nav>
+
 
 
 <router-outlet></router-outlet>
