@@ -19,3 +19,12 @@ th.mat-header-cell, td.mat-cell {
   text-align: center;
   color: white;
 }
+
+
+
+.kTitles{
+  text-align: center;
+  background-color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #424343;
+}

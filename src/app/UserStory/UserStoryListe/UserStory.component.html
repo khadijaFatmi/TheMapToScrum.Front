@@ -1,6 +1,6 @@
 <div>
 
-  <h1 align="center" ><font color="grey">User Stories</font></h1>
+  <h1 class="kTitles">User Stories</h1>
 
 </div>
 
@@ -78,6 +78,11 @@ projets= variable de type ProjetUserStory[], p: iterateur, libelle= attribut de 
 <ng-container matColumnDef="epicStory">
   <th mat-header-cell *matHeaderCellDef width ="15%"> Epic </th>
   <mat-cell class="smallCol" *matCellDef="let element"> {{element.epicStory | Ouinon }} </mat-cell>
+</ng-container>
+
+<ng-container matColumnDef="action">
+  <th mat-header-cell *matHeaderCellDef width ="15%"> Action </th>
+  <mat-cell class="smallCol"  *matCellDef="let element"> <button class="btn btn-success" (click)="edit(element)" style="margin-left: 20px;"> Edit</button> </mat-cell>
 </ng-container>
 
 

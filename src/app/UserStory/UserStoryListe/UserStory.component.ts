@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserStoryService } from '../UserStory.service';
 import { UserStory } from '../../models/UserStory.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-userstory',
@@ -10,10 +11,10 @@ import { UserStory } from '../../models/UserStory.model';
 export class UserStoryComponent implements OnInit {
   public userstory: UserStory[];
   displayedColumns: string[] = ['version', 'projet', 'name', 'role', 'function1',
-  'function2', 'notes', 'priority', 'storyPoints', 'epicStory'];
+  'function2', 'notes', 'priority', 'storyPoints', 'epicStory', 'action'];
   public dataSource: any;
 
-  constructor(private service: UserStoryService) {
+  constructor(private service: UserStoryService, private router: Router) {
   }
 
   ngOnInit() {
@@ -27,5 +28,12 @@ export class UserStoryComponent implements OnInit {
     console.log('erreur lecture :-/');
   }
    );
-}
+  }
+
+  edit(objet: UserStory): void {
+    console.log('objet ', objet);
+    window.localStorage.removeItem('userstoryid');
+    window.localStorage.setItem('userstoryid', objet.id.toString());
+    this.router.navigate(['userstorydetail']);
+  }
 }

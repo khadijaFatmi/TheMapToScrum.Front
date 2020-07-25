@@ -2,8 +2,12 @@
 
 <nav id="header" class="app-component navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
   <a ngPreserveWhitespaces class="app-component navbar-brand" routerLink="/">
-   <img src="./../assets/img/logo.png">
-    <span class="app-component appTitle">{{title}}</span>
+   <!--
+    <img src="./../assets/img/logo.png">
+
+   <span class="app-component appTitle">{{title}}</span>
+   -->
+   <span class="kTitles">{{title}}</span>
   </a>
 
   <button mat-button [matMenuTriggerFor]="home">Home</button>
@@ -23,12 +27,12 @@
 
   <button mat-button [matMenuTriggerFor]="projet">Projects</button>
   <mat-menu #projet="matMenu" >
-    <button mat-menu-item class="option-menu" routerLink="projet" routerLinkActive="active">Projects</button>
+    <button mat-menu-item class="option-menu" routerLink="projet" routerLinkActive="active">All Projects</button>
   </mat-menu>
 
   <button mat-button [matMenuTriggerFor]="userstories">UserStories</button>
   <mat-menu #userstories="matMenu" >
-    <button mat-menu-item class="option-menu" routerLink="userstory" routerLinkActive="active">User stories list</button>
+    <button mat-menu-item class="option-menu" routerLink="userstory" routerLinkActive="active">User Stories List</button>
   </mat-menu>
 </nav>
 

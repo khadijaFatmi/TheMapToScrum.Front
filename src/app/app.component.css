@@ -6,7 +6,11 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-
+.kTitles{
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: whitesmoke;
+}
 .mat-menu-item {
   height: 25px;
   line-height: 25px;;
@@ -14,7 +18,9 @@
 
 
 .app-container.app-component {
-    height: 100%;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 100%;
 }
 
 main.app-component {
