@@ -35,6 +35,23 @@ export class UserStoryService {
     );
   }
 
+  create(entite: UserStory): Observable<UserStory> {
+    return this.http
+    .post<UserStory>(this.url, entite)
+    .pipe(
+      retry(3),
+      catchError(this.handleError)
+    );
+  }
+  delete(id: number): Observable<{}> {
+    const url2 = `${this.url}/${id}`;
+    return this.http
+    .delete<boolean>(url2)
+    .pipe(
+      catchError(this.handleError)
+    );
+  }
+
   handleError(error: HttpErrorResponse) {
     console.log('error http', error);
     return throwError(error);

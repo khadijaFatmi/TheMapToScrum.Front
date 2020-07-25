@@ -22,7 +22,6 @@ export class UserStoryDetailComponent implements OnInit {
   private id: number;
   public entite: UserStory;
   public projets: Projet[];
-  public filter: boolean;
 
   constructor(private service: UserStoryService, private route: ActivatedRoute
     ,         private fb: FormBuilder, private ps: ProjetService) {
@@ -31,40 +30,36 @@ export class UserStoryDetailComponent implements OnInit {
 
   ngOnInit() {
    this.id = Number(window.localStorage.getItem('userstoryid'));
-   this.service.getById(this.id).
-   subscribe(data => {
-    this.entite = data;
-    this.form = this.fb.group({
-      id: [''],
-      projetId: ['', Validators.required],
-      titre: ['', Validators.required],
-      version: [''],
-      role: ['', Validators.required],
-      function1: ['', Validators.required],
-      function2: ['', Validators.required],
-      notes: ['', Validators.required],
-      priority: ['', Validators.required],
-      storyPoints: ['', Validators.required],
-      epicStory: ['', Validators.required],
-      dateCreation: [''],
-      dateModification: [''],
-      isDeleted: ['']
-
+   this.form = this.fb.group({
+    id: [''],
+    projetId: ['', Validators.required],
+    titre: ['', Validators.required],
+    version: [''],
+    role: ['', Validators.required],
+    function1: ['', Validators.required],
+    function2: ['', Validators.required],
+    notes: ['', Validators.required],
+    priority: ['', Validators.required],
+    storyPoints: ['', Validators.required],
+    epicStory: ['', Validators.required],
+    dateCreation: [''],
+    dateModification: [''],
+    isDeleted: ['']
+  });
+   if (this.id !== null) {
+    this.service.getById(this.id).
+    subscribe(data => {
+      this.entite = data;
+      this.updateform();
+    },
+    error => {
+      console.log('erreur lecture :-/');
     });
-
     this.ps.liste().
     subscribe(data => {
       this.projets = data;
-
-    });
-
-    this.updateform();
-    console.log('lecture USdetail ok kdij :-)', data);
-  },
-  error => {
-    console.log('erreur lecture :-/');
-  }
-   );
+      });
+    }
   }
 
   updateform(): void {
@@ -88,26 +83,25 @@ export class UserStoryDetailComponent implements OnInit {
   }
 
 
-  radioChangeHandler($event: any) {
-    this.entite.epicStory = $event.source.value;
-
-    //this.form.setValue(epicStory) = $event.source.value;
-    console.log($event.source.name, $event.value);
-  }
-
   onSubmit(): void {
     console.log('envoi ' + this.entite.epicStory);
-
-    const test = this.form.get('epicStory');
-    console.log('test ', test);
-    this.entite = Object.assign({}, this.form.value, test);
-    this.service.update(this.entite).subscribe(res => {
-      alert('update success + ' + this.entite);
-    },
-    err => {
-      console.log('error');
+    if (this.id !== null) {
+      this.entite = Object.assign({}, this.form.value, this.form.get('epicStory').value);
+      this.service.update(this.entite).subscribe(res => {
+        alert('update success');
+      },
+      err => {
+        console.log('error');
+      });
+    } else {
+      this.entite = Object.assign({}, this.form.value, this.form.get('epicStory').value);
+      this.service.create(this.entite).subscribe(res => {
+        alert('create success');
+      },
+      err => {
+        console.log('error');
+      });
     }
-    );
   }
 
 }

@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { ProjetUSListeComponent } from './ProjetUS/ProjetUSListe.component';
-import { UserStoryComponent} from './UserStory/UserStoryListe/UserStory.component';
+import { UserStoryListComponent} from './UserStory/UserStoryListe/UserStoryList.component';
 import { UserStoryService} from './UserStory/UserStory.service';
 
 import { ProjetService } from './ProjetUS/ProjetUSListe.service';
@@ -26,7 +26,7 @@ import { ContactComponent } from './contact/contact.component';
   declarations: [
     AppComponent
     , ProjetUSListeComponent
-    , UserStoryComponent
+    , UserStoryListComponent
     , UserStoryDetailComponent,
       OuinonPipe,
       HomeComponent,

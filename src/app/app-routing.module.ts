@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { ProjetUSListeComponent } from './ProjetUS/ProjetUSListe.component';
-import { UserStoryComponent } from './UserStory/UserStoryListe/UserStory.component';
+import { UserStoryListComponent } from './UserStory/UserStoryListe/UserStoryList.component';
 import { UserStoryDetailComponent } from './UserStory/UserStoryDetail/UserStorydetail.component';
 import { HomeComponent } from './home/home/home.component';
 import { ManifestoComponent } from './manifesto/manifesto/manifesto.component';
@@ -16,7 +16,7 @@ const routes: Routes = [
   {path: 'about', component : AboutComponent},
   {path: 'contact', component : ContactComponent},
   {path: 'projet', component : ProjetUSListeComponent},
-  {path: 'userstory', component : UserStoryComponent },
+  {path: 'userstory', component : UserStoryListComponent },
   {path: 'userstorydetail', component : UserStoryDetailComponent}
 ];
 

@@ -6,7 +6,8 @@
 
 
 
-
+<a class="btn btn-outline-success" (click) = "Add()">
+  <i class="fa fa-plus-square"></i> New </a>
 
 <!-- <div>
 projets= variable de type ProjetUserStory[], p: iterateur, libelle= attribut de mon entité projet
@@ -82,7 +83,10 @@ projets= variable de type ProjetUserStory[], p: iterateur, libelle= attribut de 
 
 <ng-container matColumnDef="action">
   <th mat-header-cell *matHeaderCellDef width ="15%"> Action </th>
-  <mat-cell class="smallCol"  *matCellDef="let element"> <button class="btn btn-success" (click)="edit(element)" style="margin-left: 20px;"> Edit</button> </mat-cell>
+  <mat-cell class="smallCol"  *matCellDef="let element">
+    <button class="btn btn-success" (click)="edit(element)" style="margin-left: 20px;"> Edit </button>
+    <button class="btn btn-success" (click)="delete(element)" style="margin-left: 20px;"> Delete </button>
+   </mat-cell>
 </ng-container>
 
 
