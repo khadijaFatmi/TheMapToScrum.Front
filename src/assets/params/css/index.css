@@ -1,7 +1,7 @@
 body {
   padding-top: 5rem;
   text-align: center;
-  background-color: #E6E6E6;
+  background-color: #ffffff;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: rgb(61, 60, 60);
   font-weight: 400;
@@ -11,5 +11,5 @@ body {
   -webkit-box-shadow: 0 8px 6px -6px #999;
   -moz-box-shadow: 0 8px 6px -6px #999;
   box-shadow: 0 8px 6px -6px #999;
-  background-color:  black !important;
+  background-color:   rgb(60, 60, 60) !important;
 }

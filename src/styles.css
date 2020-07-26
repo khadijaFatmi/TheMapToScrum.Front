@@ -1,15 +1,284 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { background-color: grey; height: 100%; }
-body { margin: 0; font-family: Roboto, "Verdana", sans-serif; }
+body { margin: 10px; font-family: Roboto, "Verdana", sans-serif; }
+
+table{
+  width: 70%;
+  padding: 40 40 40 40 !important;
+}
+
+.mat-table{
+  width: 100% !important;
+  box-sizing: border-box !important;
+  text-size-adjust: auto !important;
+  background-color: grey !important;
+
+}
+
+.mat-row{
+  align-self: justify !important;
+  text-align: justify !important;
+}
+
+.mat-header-row{
+  background: #424343 !important;
+  height: 40px !important;
+}
+
+.mat-header-cell{
+  align-self: center !important;
+  text-align: center !important;
+  font-size: 14px !important;
+  color: #ffffff !important;
+  font-weight: normal ;
+  background: #424343 !important;
+
+  height: auto !important;
+
+}
+.mat-column-version {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 12% !important;
+  width: 12% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  align-self: center !important;
+  text-align: justify !important;
+  font-size: auto !important;
 
 
-th.mat-header-cell, td.mat-cell {
-  text-align: center;
-  color: white;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-column-projet {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 20% !important;
+  width: 20% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  align-self: center !important;
+  text-align: left !important;
+
+  font-size: auto !important;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
 
+.mat-column-role {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 20% !important;
+  width: 20% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  align-self: left !important;
+  text-align: justify !important;
+  font-size: auto !important;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-column-function1 {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 15% !important;
+  width: 15% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  align-self: center !important;
+  text-align: justify !important;
+  font-size: 12px !important;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-column-function2 {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 15% !important;
+  width: 15% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  align-self: center !important;
+  text-align: justify !important;
+  font-size: 12px !important;
+
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-column-notes {
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 15% !important;
+    width: 15% !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    word-break: break-word;
+
+    align-self: center !important;
+    text-align: justify !important;
+    font-size: auto !important;
+
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+
+.mat-column-priority {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 10% !important;
+  width: 10% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  align-self: center !important;
+  text-align: justify !important;
+  font-size: auto !important;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-column-storyPoints {
+  word-wrap: break-word !important;
+  white-space: normal !important;
+  flex: 0 0 10% !important;
+  width: 10% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  align-self: center !important;
+  text-align: justify !important;
+  font-size: auto !important;
+
+
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-column-epicStory {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 8% !important;
+  width: 8% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+
+  align-self: center !important;
+  text-align: justify !important;
+  font-size: 12px !important;
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-column-action {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 20% !important;
+  width: 20% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  align-self: center !important;
+  text-align: center !important;
+  font-size: 12px !important;
+
+
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+
+
+.kEdit {
+  background-color: #0664fb !important;
+  border-color: #03cdff !important;
+  size: 10px !important;
+  text-align: center !important;
+  font-size: 8px !important;
+}
+
+
+.kDelete {
+  background-color: #d4000b !important;
+  border-color: #ff2727 !important;
+  size: 10px !important;
+  text-align: center !important;
+  font-size: 8px !important;
+}
+
+.kNew {
+  background-color: #002383 !important;
+  border-color: #047ef0 !important;
+  size: 10px !important;
+  text-align: center !important;
+  color: white !important;
+  font-size: 16px !important;
+  align-content: unset !important;
+  padding: 5 5 5 10 !important;
+  margin-bottom: 10px !important;
+
+
+
+}
 
 .kTitles{
   text-align: center;
@@ -26,6 +295,17 @@ th.mat-header-cell, td.mat-cell {
   max-width: 500px;
   width: 100%;
   padding-left: 20px;
+}
+.uri{
+  display: inline-flex !important;
+  align-items: center !important;
+  align-content: center !important;
+  padding:  10px !important;
+
+}
+
+.mat-elevation-z8{
+  padding-right: 5px !important;
 }
 
 
@@ -49,8 +329,3 @@ th.mat-header-cell, td.mat-cell {
 .example-full-width {
   width: 100%;
 }
-
-td {
-  padding-right: 8px;
-}
-
