@@ -185,8 +185,8 @@ table{
 .mat-column-storyPoints {
   word-wrap: break-word !important;
   white-space: normal !important;
-  flex: 0 0 10% !important;
-  width: 10% !important;
+  flex: 0 0 7% !important;
+  width: 7% !important;
   overflow-wrap: break-word;
   word-wrap: break-word;
 
@@ -254,6 +254,10 @@ table{
   size: 10px !important;
   text-align: center !important;
   font-size: 8px !important;
+
+}
+.kEdit:hover {
+  background-color: #06defb !important;
 }
 
 
@@ -265,6 +269,10 @@ table{
   font-size: 8px !important;
 }
 
+.kDelete:hover{
+  background-color: #fd2828 !important;
+}
+
 .kNew {
   background-color: #002383 !important;
   border-color: #047ef0 !important;
@@ -273,11 +281,15 @@ table{
   color: white !important;
   font-size: 16px !important;
   align-content: unset !important;
-  padding: 5 5 5 10 !important;
+  padding: 20 20 20 20 !important;
   margin-bottom: 10px !important;
+  width: 128px !important;
+  position: relative !important;
+  left: 20px !important;
+}
 
-
-
+.kNew:hover {
+  background-color: #0547ff !important;
 }
 
 .kTitles{
