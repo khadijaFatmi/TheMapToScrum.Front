@@ -10,7 +10,8 @@
 .kTitles{
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: whitesmoke;
+  color:white;
+  background-color: #424343;
 }
 .mat-menu-item {
   height: 25px;
@@ -81,17 +82,15 @@ main.app-component {
 :host{
   box-sizing: border-box;
   display: block;
-  height: 100%;
+
 }
 #wrapper{
   padding: 16px;
   min-height: 100%;
-  height: 100%;
+
   box-sizing: border-box;/*new*/
 }
-#tab-group{
-  height: 100%;
-}
+
 #tab-group mat-tab-body {
   flex-grow: 1;
 }
