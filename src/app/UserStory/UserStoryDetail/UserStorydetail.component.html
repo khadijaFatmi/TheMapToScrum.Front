@@ -1,28 +1,31 @@
 <div>
-  <h1 class="kTitles">User Story</h1>
+  <h1 class="kTitles">User Story Detail</h1>
 </div>
 
-<form   [formGroup]="form" (ngSubmit)="onSubmit()" class="kForm">
+
+<form  [formGroup]="form" (ngSubmit)="onSubmit()">
   <input type="hidden" formControlName="id">
   <input type="hidden" formControlName="dateCreation">
   <input type="hidden" formControlName="dateModification">
   <input type="hidden" formControlName="isDeleted">
 
-  <mat-form-field class="example-full-width">
-    <mat-label>titre</mat-label>
+
+
+  <mat-form-field class="usDetailForm">
+    <mat-label class="kLabelUSDetail">Title</mat-label>
     <input matInput formControlName="titre">
   </mat-form-field>
 
-  <mat-form-field class="example-full-width">
-    <mat-label>Version</mat-label>
+  <mat-form-field class="usDetailForm">
+    <mat-label class="kLabelUSDetail">Version</mat-label>
     <input matInput formControlName="version">
   </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Projet</mat-label>
+  <mat-form-field class="usDetailForm">
+    <mat-label class="kLabelUSDetail">Project</mat-label>
     <mat-select formControlName="projetId" [(value)]="projetId">
       <mat-option >
-        Choix Projet
+        Project Choice
       </mat-option>
 
       <mat-option *ngFor="let toto of projets" [value]="toto.id">
@@ -31,57 +34,64 @@
     </mat-select>
   </mat-form-field>
 
-  <mat-form-field class="example-full-width">
-    <mat-label>As A</mat-label>
+  <mat-form-field class="usDetailForm">
+    <mat-label class="kLabelUSDetail">As a</mat-label>
     <input matInput formControlName="role">
   </mat-form-field>
 
-  <mat-form-field class="example-full-width">
-    <mat-label>I want to</mat-label>
+  <mat-form-field class="usDetailForm">
+    <mat-label class="kLabelUSDetail">I want to</mat-label>
     <input matInput formControlName="function1">
   </mat-form-field>
 
-  <mat-form-field class="example-full-width">
-    <mat-label>So That</mat-label>
+  <mat-form-field class="usDetailForm">
+    <mat-label class="kLabelUSDetail">So That</mat-label>
     <input matInput formControlName="function2">
   </mat-form-field>
 
-  <mat-form-field class="example-full-width">
-    <mat-label>Notes</mat-label>
+
+  <mat-form-field class="usDetailForm">
+    <mat-label class="kLabelUSDetail">Notes</mat-label>
     <input matInput formControlName="notes">
   </mat-form-field>
 
-  <mat-form-field class="example-full-width">
-    <mat-label>Priority</mat-label>
+
+
+
+  <mat-form-field class="usDetailForm">
+    <mat-label class="kLabelUSDetail">Priority</mat-label>
     <input matInput formControlName="priority">
   </mat-form-field>
 
-  <mat-form-field class="example-full-width">
-    <mat-label>Story Points</mat-label>
+
+  <mat-form-field class="usDetailForm">
+    <mat-label class="kLabelUSDetail">Story Points</mat-label>
     <input type="number" matInput formControlName="storyPoints">
   </mat-form-field>
 
-  <!-- <mat-form-field class="example-full-width">
-    <mat-label>Epic</mat-label>
-    <input matInput formControlName="epicStory">
-  </mat-form-field> -->
+
+  <mat-label class="kEpicLabel">Epic Story</mat-label>
+
+  <mat-radio-group class="kRadioGroup" name="epicStory" formControlName="epicStory"  [(ngModel)]="epicStory">
+    <mat-radio-button [value]="true" [checked]="epicStory === true" >Yes  </mat-radio-button>
+    <mat-radio-button [value]="false" [checked]="epicStory === false">No  </mat-radio-button>
+  </mat-radio-group>
+
+  <!--<mat-radio-group>
+    <mat-radio-button [(ngModel)]="epicStory" [value]="true">Yes</mat-radio-button>
+    <mat-radio-button [ngModel]="epicStory" [value]="false">No</mat-radio-button>
+  </mat-radio-group>
+  -->
+  <br>
+
+  <div class="row">
+    <button type="submit" class="btn btn-dark kSaveUS"><i class="fa fa-database"></i> Save </button>
+    <button type="button" class="btn btn-outline-dark ml-1 kBckUSList" routerLink="/userstory" ><i class="fa fa-close"></i> Cancel </button>
+  </div>
+  <br>
+  <br>
+  <br>
+
+ </form>
 
 
-    <mat-label>Epic Story  </mat-label>
-      <mat-radio-group name="epicStory" formControlName="epicStory"  [(ngModel)]="epicStory">
-        <mat-radio-button [value]="true" [checked]="epicStory === true" >Yes  </mat-radio-button>
-        <mat-radio-button [value]="false" [checked]="epicStory === false">No  </mat-radio-button>
-      </mat-radio-group>
-
-      <!--<mat-radio-group>
-        <mat-radio-button [(ngModel)]="epicStory" [value]="true">Yes</mat-radio-button>
-        <mat-radio-button [ngModel]="epicStory" [value]="false">No</mat-radio-button>
-      </mat-radio-group>
-      -->
-
-<div class="row">
-    <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> Save </button>
-      <button type="button" class="btn btn-outline-dark ml-1" routerLink="/userstory" ><i class="fa fa-close"></i> Cancel </button>
-
-</div>
-</form>

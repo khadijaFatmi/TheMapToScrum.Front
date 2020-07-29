@@ -1,0 +1,241 @@
+/*mise en forme de la page User Story List */
+
+.kForm {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+  background-color: #424343;
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  padding-left: 20px;
+}
+
+table{
+  width: 70%;
+  padding: 40 40 40 40 !important;
+}
+
+/*Angular Material : Surcharge des classes natives, mat-table & ses composants customisés*/
+.mat-table{
+  width: 100% !important;
+  box-sizing: border-box !important;
+  text-size-adjust: auto !important;
+  background-color: grey !important;
+
+}
+
+.mat-row{
+  align-self: justify !important;
+  text-align: justify !important;
+}
+
+.mat-header-row{
+  background: #424343 !important;
+  height: 40px !important;
+}
+
+.mat-header-cell{
+  align-self: center !important;
+  text-align: center !important;
+  font-size: 14px !important;
+  color: #ffffff !important;
+  font-weight: normal ;
+  background: #424343 !important;
+
+  height: auto !important;
+
+}
+.mat-column-version {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 12% !important;
+  width: 12% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  align-self: center !important;
+  text-align: justify !important;
+  font-size: auto !important;
+
+
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-column-projet {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 20% !important;
+  width: 20% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  align-self: center !important;
+  text-align: left !important;
+
+  font-size: auto !important;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+
+.mat-column-role {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 20% !important;
+  width: 20% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  align-self: left !important;
+  text-align: justify !important;
+  font-size: auto !important;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+
+.mat-column-priority {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 10% !important;
+  width: 10% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  align-self: center !important;
+  text-align: justify !important;
+  font-size: auto !important;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-column-storyPoints {
+  word-wrap: break-word !important;
+  white-space: normal !important;
+  flex: 0 0 7% !important;
+  width: 7% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  align-self: center !important;
+  text-align: justify !important;
+  font-size: auto !important;
+
+
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-column-epicStory {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 8% !important;
+  width: 8% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+
+  align-self: center !important;
+  text-align: justify !important;
+  font-size: 12px !important;
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-column-action {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 20% !important;
+  width: 20% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  align-self: center !important;
+  text-align: center !important;
+  font-size: 12px !important;
+
+
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+
+/* Bootstrap Classes: Surcharge Boutons actions */
+.kEdit {
+  background-color: #0664fb !important;
+  border-color: #03cdff !important;
+  size: 10px !important;
+  text-align: center !important;
+  font-size: 8px !important;
+
+}
+.kEdit:hover {
+  background-color: #06defb !important;
+}
+
+
+.kDelete {
+  background-color: #d4000b !important;
+  border-color: #ff2727 !important;
+  size: 10px !important;
+  text-align: center !important;
+  font-size: 8px !important;
+}
+
+.kDelete:hover{
+  background-color: #fd2828 !important;
+}
+
+.kNew {
+  background-color: #002383 !important;
+  border-color: #047ef0 !important;
+  size: 10px !important;
+  text-align: center !important;
+  color: white !important;
+  font-size: 16px !important;
+  align-content: unset !important;
+  padding: 20 20 20 20 !important;
+  margin-bottom: 10px !important;
+  width: 128px !important;
+  position: relative !important;
+  left: 20px !important;
+}
+
+.kNew:hover {
+  background-color: #0547ff !important;
+}
