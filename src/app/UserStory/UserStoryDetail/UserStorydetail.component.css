@@ -3,63 +3,36 @@
   width: 100%;
 }
 
-
+.kTitleUSDetail{
+  width: 80% !important;
+  text-align: center;
+  background-color: #424343;
+  margin-left: 60px !important;
+  margin-right: 60px !important;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+}
 
 .usDetailForm {
   width: 80%;
 
   display: block !important;
-  /**padding: 40 40 40 40 !important;**/
   background-color: grey !important;
   margin-left: 60px !important;
   margin-right: 60px !important;
   color: white !important;
 
-
-
-  -ms-hyphens: auto;
-  -moz-hyphens: auto;
-  -webkit-hyphens: auto;
-  hyphens: auto;
-   /*
-  word-wrap: break-word !important;
-  white-space: unset !important;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  color: white !important;
-
-  word-break: break-word;
-  align-self: center !important;
-
- flex: 0 0 20% !important;
-  width: 20% !important;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-
-  word-break: break-word;
-
-  align-self: center !important;
-  text-align: left !important;
-
-  font-size: auto !important;
-
-
-  */
-
-
 }
+
 .kRadioGroup {
   width: 80% !important;
   align-self: start !important;
   color: white !important;
   font-size: large !important;
   font-weight: normal !important;
-  /*padding: 40 40 40 40 !important;*/
   background-color: rgb(128, 128, 128) !important;
   display: flex; flex-direction: column;
   margin-left: 60px !important;
-  /* margin-right: 60px !important;
-  */
 }
 
 .kLabelUSDetail {
@@ -68,31 +41,21 @@
   font-size: large !important;
   font-weight: normal !important;
   outline: lawngreen !important;
-
-  /* padding: 40 40 40 40 !important; */
- /* margin-bottom: 40px !important;
-  */
 }
 
 .kEpicLabel {
   width: 100%;
-
-  /* display: block !important;
-  padding: -10 0 0 0 !important;*/
   margin-left: 60px !important;
   color: rgb(63, 218, 210) !important;
   font-size: large !important;
   font-weight: normal !important;
   background-color: grey !important;
-
-
 }
 
 
 .kSaveUS{
   background-color: #36d4ad;
   border-color: rgb(2, 146, 122) !important;
- /* size: 32px !important;*/
   text-align: center !important;
   color: white !important;
   font-weight: bold;
@@ -105,7 +68,6 @@
 .kBckUSList {
   background-color: rgb(64, 124, 111);
   border-color: #36d4ad !important;
-  /* size: 32px !important;*/
    text-align: center !important;
    color: white !important;
    font-weight: bold;

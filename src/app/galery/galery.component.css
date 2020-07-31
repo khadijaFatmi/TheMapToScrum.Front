@@ -9,6 +9,12 @@
   padding-top: 60px;
 }
 
+.kCaroussel {
+  height: 900px !important;
+  margin-left: 40px !important;
+  margin-right: 40px !important;
+  border:5px solid black;
+}
 .largeFontContact{
   font-size: 20px;
  }

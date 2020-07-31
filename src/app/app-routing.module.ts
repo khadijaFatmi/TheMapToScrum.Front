@@ -7,14 +7,14 @@ import { UserStoryDetailComponent } from './UserStory/UserStoryDetail/UserStoryd
 import { HomeComponent } from './home/home/home.component';
 import { ManifestoComponent } from './manifesto/manifesto/manifesto.component';
 import { AboutComponent } from './about/about/about.component';
-import { ContactComponent } from './contact/contact.component';
+import { GaleryComponent } from './/galery/galery.component';
 
 const routes: Routes = [
   {path: '', redirectTo : '/home' , pathMatch : 'full'},
   {path: 'home', component : HomeComponent},
   {path: 'manifesto', component : ManifestoComponent},
   {path: 'about', component : AboutComponent},
-  {path: 'contact', component : ContactComponent},
+  {path: 'galery', component : GaleryComponent},
   {path: 'projet', component : ProjetUSListeComponent},
   {path: 'userstory', component : UserStoryListComponent },
   {path: 'userstorydetail', component : UserStoryDetailComponent}

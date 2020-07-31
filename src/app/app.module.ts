@@ -18,9 +18,9 @@ import { OuinonPipe } from './pipes/ouinon.pipe';
 import { HomeComponent } from './home/home/home.component';
 import { AboutComponent } from './about/about/about.component';
 import { ManifestoComponent } from './manifesto/manifesto/manifesto.component';
+import { GaleryComponent } from './galery/galery.component';
 
-import {MatMenuModule} from '@angular/material/menu';
-import { ContactComponent } from './contact/contact.component';
+import { MatCarouselModule } from '@ngmodule/material-carousel';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,7 @@ import { ContactComponent } from './contact/contact.component';
       HomeComponent,
       AboutComponent,
       ManifestoComponent,
-      ContactComponent
+      GaleryComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +42,7 @@ import { ContactComponent } from './contact/contact.component';
     , MaterialModule
     , ReactiveFormsModule
     , FormsModule
+    ,  MatCarouselModule.forRoot(),
       ],
   providers: [
     ProjetService
