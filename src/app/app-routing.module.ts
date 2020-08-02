@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ProjetUSListeComponent } from './ProjetUS/ProjetUSListe.component';
+import { ProjectListComponent } from './Project/ProjectList/ProjectList.component';
 import { UserStoryListComponent } from './UserStory/UserStoryListe/UserStoryList.component';
 import { UserStoryDetailComponent } from './UserStory/UserStoryDetail/UserStorydetail.component';
 import { HomeComponent } from './home/home/home.component';
@@ -15,7 +15,7 @@ const routes: Routes = [
   {path: 'manifesto', component : ManifestoComponent},
   {path: 'about', component : AboutComponent},
   {path: 'galery', component : GaleryComponent},
-  {path: 'projet', component : ProjetUSListeComponent},
+  {path: 'projet', component : ProjectListComponent},
   {path: 'userstory', component : UserStoryListComponent },
   {path: 'userstorydetail', component : UserStoryDetailComponent}
 ];

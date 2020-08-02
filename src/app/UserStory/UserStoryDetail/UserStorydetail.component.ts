@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+
+import { Projet } from 'src/app/models/projets.model';
+import { ProjetService } from 'src/app/Project/Project.service';
 import { UserStoryService } from './../UserStory.service';
 import { UserStory } from './../../models/userstory.model';
-import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
-import { validateVerticalPosition } from '@angular/cdk/overlay';
-import { Projet } from 'src/app/models/projets.model';
-import { ProjetService } from 'src/app/ProjetUS/ProjetUSListe.service';
 
-import { MatRadioChange } from '@angular/material';
+
 
 
 
@@ -23,7 +23,7 @@ export class UserStoryDetailComponent implements OnInit {
   public entite: UserStory;
   public projets: Projet[];
 
-  constructor(private service: UserStoryService, private route: ActivatedRoute
+  constructor(private service: UserStoryService
     ,         private fb: FormBuilder, private ps: ProjetService) {
 
   }

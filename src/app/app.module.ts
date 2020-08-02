@@ -7,11 +7,11 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { ProjetUSListeComponent } from './ProjetUS/ProjetUSListe.component';
+import { ProjectListComponent } from './Project/ProjectList/ProjectList.component';
 import { UserStoryListComponent} from './UserStory/UserStoryListe/UserStoryList.component';
 import { UserStoryService} from './UserStory/UserStory.service';
 
-import { ProjetService } from './ProjetUS/ProjetUSListe.service';
+import { ProjetService } from './Project/Project.service';
 import { MaterialModule } from './material/material.module';
 import { UserStoryDetailComponent } from './UserStory/UserStoryDetail/UserStorydetail.component';
 import { OuinonPipe } from './pipes/ouinon.pipe';
@@ -21,18 +21,20 @@ import { ManifestoComponent } from './manifesto/manifesto/manifesto.component';
 import { GaleryComponent } from './galery/galery.component';
 
 import { MatCarouselModule } from '@ngmodule/material-carousel';
+import { ProjectdetailComponent } from './Project/ProjectDetail/ProjectDetail.component';
 
 @NgModule({
   declarations: [
     AppComponent
-    , ProjetUSListeComponent
+    , ProjectListComponent
     , UserStoryListComponent
     , UserStoryDetailComponent,
       OuinonPipe,
       HomeComponent,
       AboutComponent,
       ManifestoComponent,
-      GaleryComponent
+      GaleryComponent,
+      ProjectdetailComponent
   ],
   imports: [
     BrowserModule,

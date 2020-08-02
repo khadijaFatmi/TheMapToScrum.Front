@@ -1,109 +1,64 @@
 <div class="container-fluid" >
-<div>
 
-  <h1 class="titleUSList">User Stories</h1>
+  <div>
+    <h1 class="titleUSList">User Stories</h1>
+  </div>
+  <br/>
+  <div>
+    <h1 class="titleUSList">User Story List</h1>
+  </div>
+  <br/>
 
-</div>
-<br/>
-
-<div>
-  <h1 class="titleUSList">User Story List</h1>
-</div>
-
-<br/>
-
-<a class="btn btn-outline-success kNew" (click) = "Add()">
+  <a class="btn btn-outline-success kNew" (click) = "Add()">
   <i class="fa fa-plus-square uri"></i>New</a>
 
 <!-- <div>
 projets= variable de type ProjetUserStory[], p: iterateur, libelle= attribut de mon entité projet
 <li *ngFor="let p of projets">{{p.libelle}}</li>
-
 </div> -->
 
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="version">
+      <th mat-header-cell *matHeaderCellDef >Version</th>
+        <mat-cell *matCellDef="let element"> {{element.version}} </mat-cell>
+    </ng-container>
 
-<!--
-<ng-container matColumnDef="titre">
-<th mat-header-cell *matHeaderCellDef width ="15%"> UserStory </th>
-<mat-cell *matCellDef="let element"> {{element.titre}} </mat-cell>
-</ng-container> -->
+    <ng-container matColumnDef="projet">
+      <th mat-header-cell *matHeaderCellDef>Project</th>
+        <mat-cell *matCellDef="let element"> {{element.projet?.name}} </mat-cell>
+    </ng-container>
 
+    <ng-container matColumnDef="priority">
+      <th mat-header-cell *matHeaderCellDef>Priority</th>
+        <mat-cell *matCellDef="let element"> {{element.priority}} </mat-cell>
+    </ng-container>
 
-<ng-container matColumnDef="version">
-  <th mat-header-cell *matHeaderCellDef >Version</th>
-  <mat-cell *matCellDef="let element"> {{element.version}} </mat-cell>
-</ng-container>
+    <ng-container matColumnDef="role">
+     <th mat-header-cell *matHeaderCellDef>Role</th>
+        <mat-cell *matCellDef="let element"> {{element.role}} </mat-cell>
+    </ng-container>
 
+    <ng-container matColumnDef="storyPoints">
+      <th mat-header-cell *matHeaderCellDef>Story Points</th>
+        <mat-cell *matCellDef="let element"> {{element.storyPoints}} </mat-cell>
+    </ng-container>
 
+    <ng-container matColumnDef="epicStory">
+      <th  mat-header-cell *matHeaderCellDef>Epic</th>
+        <mat-cell *matCellDef="let element"> {{element.epicStory | Ouinon }} </mat-cell>
+    </ng-container>
 
-<ng-container matColumnDef="projet">
-  <th mat-header-cell *matHeaderCellDef>Project</th>
-  <mat-cell *matCellDef="let element"> {{element.projet?.name}} </mat-cell>
-  </ng-container>
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef>Action</th>
+        <mat-cell *matCellDef="let element">
+          <button class="btn btn-success kEdit" (click)="edit(element)" style="margin-left: 20px;">Edit</button>
+          <button class="btn btn-success kDelete" (click)="delete(element)" style="margin-left: 20px;">Delete</button>
+        </mat-cell>
+    </ng-container>
 
-<!-- inutile pour l'utilisateur
-<ng-container matColumnDef="name">
-  <th mat-header-cell *matHeaderCellDef> Name </th>
-  <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
-</ng-container>
-
-<ng-container matColumnDef="function1">
-  <th mat-header-cell *matHeaderCellDef>As A</th>
-  <mat-cell *matCellDef="let element"> {{element.function1}} </mat-cell>
-</ng-container>
-
-<ng-container matColumnDef="function2">
-  <th mat-header-cell *matHeaderCellDef>I want to</th>
-  <mat-cell *matCellDef="let element"> {{element.function2}} </mat-cell>
-</ng-container>
-
-
-<ng-container matColumnDef="notes">
-  <th mat-header-cell *matHeaderCellDef>Notes</th>
-  <mat-cell  *matCellDef="let element"> {{element.notes}} </mat-cell>
-</ng-container>
--->
-
-<ng-container matColumnDef="priority">
-  <th mat-header-cell *matHeaderCellDef>Priority</th>
-  <mat-cell *matCellDef="let element"> {{element.priority}} </mat-cell>
-</ng-container>
-
-
-
-<ng-container matColumnDef="role">
-  <th mat-header-cell *matHeaderCellDef>Role</th>
-  <mat-cell *matCellDef="let element"> {{element.role}} </mat-cell>
-</ng-container>
-
-
-<ng-container matColumnDef="storyPoints">
-  <th mat-header-cell *matHeaderCellDef>Story Points</th>
-  <mat-cell *matCellDef="let element"> {{element.storyPoints}} </mat-cell>
-</ng-container>
-
-<ng-container matColumnDef="epicStory">
-  <th  mat-header-cell *matHeaderCellDef>Epic</th>
-  <mat-cell *matCellDef="let element"> {{element.epicStory | Ouinon }} </mat-cell>
-</ng-container>
-
-<ng-container matColumnDef="action">
-  <th mat-header-cell *matHeaderCellDef>Action</th>
-  <mat-cell *matCellDef="let element">
-
-    <button class="btn btn-success kEdit" (click)="edit(element)" style="margin-left: 20px;">Edit</button>
-    <button class="btn btn-success kDelete" (click)="delete(element)" style="margin-left: 20px;">Delete</button>
-
-
-   </mat-cell>
-</ng-container>
-
-
-<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
-</mat-table>
-
-<br />
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+  <br />
 </div>

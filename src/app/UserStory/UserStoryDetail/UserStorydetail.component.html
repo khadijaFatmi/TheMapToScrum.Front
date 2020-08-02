@@ -15,8 +15,6 @@
   <input type="hidden" formControlName="dateModification">
   <input type="hidden" formControlName="isDeleted">
 
-
-
   <mat-form-field class="usDetailForm">
     <mat-label class="kLabelUSDetail">Title</mat-label>
     <input matInput formControlName="titre">
@@ -61,20 +59,15 @@
     <input matInput formControlName="notes">
   </mat-form-field>
 
-
-
-
   <mat-form-field class="usDetailForm">
     <mat-label class="kLabelUSDetail">Priority</mat-label>
     <input matInput formControlName="priority">
   </mat-form-field>
 
-
   <mat-form-field class="usDetailForm">
     <mat-label class="kLabelUSDetail">Story Points</mat-label>
     <input type="number" matInput formControlName="storyPoints">
   </mat-form-field>
-
 
   <mat-label class="kEpicLabel">Epic Story</mat-label>
 
@@ -83,11 +76,6 @@
     <mat-radio-button [value]="false" [checked]="epicStory === false">No  </mat-radio-button>
   </mat-radio-group>
 
-  <!--<mat-radio-group>
-    <mat-radio-button [(ngModel)]="epicStory" [value]="true">Yes</mat-radio-button>
-    <mat-radio-button [ngModel]="epicStory" [value]="false">No</mat-radio-button>
-  </mat-radio-group>
-  -->
   <br>
 
   <div class="row">

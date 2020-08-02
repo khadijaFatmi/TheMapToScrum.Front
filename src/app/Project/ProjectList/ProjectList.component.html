@@ -1,0 +1,66 @@
+<div>
+
+      <h1 class="kProjectTitles">Projects</h1>
+
+</div>
+
+
+
+
+
+<!-- <div>
+ projets= variable de type ProjetUserStory[], p: iterateur, libelle= attribut de mon entité projet
+  <li *ngFor="let p of projets">{{p.libelle}}</li>
+
+</div> -->
+
+
+
+<a class="btn btn-outline-success kNew" (click) = "Add()">
+  <i class="fa fa-plus-square uri"></i>New</a>
+
+
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="label">
+    <th mat-header-cell *matHeaderCellDef width ="15%"> Projet </th>
+    <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="author">
+    <th mat-header-cell *matHeaderCellDef width ="15%"> Author </th>
+    <mat-cell *matCellDef="let element"> {{element.author}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="team">
+    <th mat-header-cell *matHeaderCellDef width ="15%"> Team </th>
+    <mat-cell *matCellDef="let element"> {{element.team}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="department">
+    <th mat-header-cell *matHeaderCellDef width ="15%"> Department </th>
+    <mat-cell *matCellDef="let element"> {{element.department}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="creationdate">
+    <mat-header-cell *matHeaderCellDef > Creation </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.creationdate | date: 'yyyy-MM-dd'}} </mat-cell>
+  </ng-container>
+
+
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef>Action</th>
+      <mat-cell *matCellDef="let element">
+        <button class="btn btn-success kEdit" (click)="edit(element)" style="margin-left: 20px;">Edit</button>
+        <button class="btn btn-success kDelete" (click)="delete(element)" style="margin-left: 20px;">Delete</button>
+      </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+
+<div class="multi-inputs" >
+
+</div>
