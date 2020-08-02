@@ -1,1 +1,43 @@
-<p>projetusdetail works!</p>
+
+<div>
+  <br/>
+    <h1 class="kProjectDetailTitle">Project Detail</h1>
+  <br/>
+</div>
+
+<div>
+
+<form  [formGroup]="form" (ngSubmit)="onSubmit()">
+  <input type="hidden" formControlName="id">
+  <input type="hidden" formControlName="dateCreation">
+  <input type="hidden" formControlName="dateModification">
+  <input type="hidden" formControlName="isDeleted">
+
+  <mat-form-field class="kProjectDetailForm">
+    <mat-label class="kLabelProjectDetail">Label</mat-label>
+    <input matInput formControlName="label">
+  </mat-form-field>
+
+  <mat-form-field class="kProjectDetailForm">
+    <mat-label class="kLabelProjectDetail">Author</mat-label>
+    <input matInput formControlName="authorId">
+  </mat-form-field>
+
+  <mat-form-field class="kProjectDetailForm">
+    <mat-label class="kLabelProjectDetail">Team</mat-label>
+    <input matInput formControlName="teamId">
+  </mat-form-field>
+
+  <mat-form-field class="kProjectDetailForm">
+    <mat-label class="kLabelProjectDetail">Department</mat-label>
+    <input matInput formControlName="departmentId">
+  </mat-form-field>
+
+
+
+
+  </form>
+
+</div>
+
+

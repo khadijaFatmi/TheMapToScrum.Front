@@ -2,35 +2,32 @@
 <div>
   <br/>
   <br/>
-  <br/>
-  <br/>
-  <h1>Quotes</h1>
+  <h1 class="kQuotesTitle">Quotes</h1>
 </div>
-<br/>
+
 
 <div class="kCaroussel">
-  <mat-carousel style="max-height: 800px !important;"
+  <mat-carousel
     timings="250ms ease-in"
     [autoplay]="true"
     interval="5000"
     color="accent"
-    maxWidth="auto"
+    maxWidth="600px"
 
-    maxHeight="100%"
-    maintainAspectRatio="false"
-    proportion="68"
-
+    maintainAspectRatio="true"
+    proportion="77"
 
 
-    slides="9"
+
+    slides="44"
     [loop]="true"
     [hideArrows]="false"
-    [hideIndicators]="false"
+    [hideIndicators]="true"
     [useKeyboard]="true"
     [useMouseWheel]="false"
     orientation="ltr"
 
-    [style.height]="!maintainAspectRatio ? '100%' : '800px'"
+    [style.height]="!maintainAspectRatio ? '100%' : '600px'"
 
   >
     <mat-carousel-slide
@@ -40,7 +37,7 @@
 
       [style.height]="!maintainAspectRatio && slideHeight ? slideHeight : '800px'"
 
-      overlayColor="#00000040"
+      overlayColor="#00000000"
       [hideOverlay]="false"
     >
 

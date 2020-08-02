@@ -1,20 +1,38 @@
 
-.kDisplayContact{
+.kQuotesTitle {
+
+  width: 46%;
+  height: 60px !important;
+  margin-left: 300px;
   text-align: center;
-  font-display: auto;
-  background-color:  #424343;
-  color: white;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  padding-left: 40px;
-  padding-top: 60px;
+  color:white;
+  background-color: #424343;
+
 }
 
 .kCaroussel {
-  height: 900px !important;
-  margin-left: 40px !important;
+  height: 380px !important;
+  width: 450px !important;
+  padding-top: 10px !important;
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+  margin-left: 300px !important;
   margin-right: 40px !important;
-  border:5px solid black;
+  margin-top: 40px !important;
+  margin-bottom: 40px !important;
+  border:5px solid rgb(117, 116, 116);
 }
+
+/* .kCarousselMarging {
+  margin-left: 20px !important;
+
+} */
+
+.mat-carousel {
+  margin-left: 20px !important;
+}
+
 .largeFontContact{
   font-size: 20px;
  }

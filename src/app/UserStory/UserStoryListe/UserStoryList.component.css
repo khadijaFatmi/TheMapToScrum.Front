@@ -43,7 +43,7 @@ table{
   align-self: center !important;
   text-align: center !important;
   font-size: 14px !important;
-  color: #08c5ff !important;
+  color:  #07bcf3 !important;
   font-weight: normal ;
   background: #424343 !important;
 
@@ -72,8 +72,8 @@ table{
 .mat-column-projet {
   word-wrap: break-word !important;
   white-space: unset !important;
-  flex: 0 0 20% !important;
-  width: 20% !important;
+  flex: 0 0 15% !important;
+  width: 15% !important;
   overflow-wrap: break-word;
   word-wrap: break-word;
 
@@ -178,18 +178,18 @@ table{
 
 /* Bootstrap Classes: Surcharge Boutons actions */
 .kEdit {
-  background-color: rgb(58, 218, 183) !important;
+  background-color: #03aadd !important;
   border-color:#00ffff !important;
   /* size: 10px !important; */
   text-align: center !important;
   font-size: 9px !important;
   width: 50px !important;
   margin-right: 25px !important;
-  margin-left: 50px !important;
+  margin-left: 20px !important;
 
 }
 .kEdit:hover {
-  background-color: #01ffea !important;
+  background-color: #01c4ff !important;
 }
 
 
@@ -197,8 +197,8 @@ table{
   /*background-color: #d4000b !important;
   border-color: #ff2727 !important;
   */
-  background-color: rgb(30, 73, 64);
-  border-color: rgb(30, 71, 73) !important;
+  background-color: rgb(30, 49, 73);
+  border-color: rgb(30, 45, 73) !important;
   /* size: 10px !important; */
   text-align: center !important;
   font-size: 9px !important;
@@ -207,7 +207,7 @@ table{
 }
 
 .kDelete:hover{
-  background-color: #fd2828 !important;
+  background-color: #fd4128 !important;
 }
 
 .kNew {
@@ -227,5 +227,5 @@ table{
 }
 
 .kNew:hover {
-  background-color: #0547ff !important;
+  background-color: #05a3ff !important;
 }

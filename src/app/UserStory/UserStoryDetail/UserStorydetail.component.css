@@ -37,7 +37,7 @@
 
 .kLabelUSDetail {
   align-self: center !important;
-  color: rgb(63, 218, 210) !important;
+  color: rgb(63, 182, 218) !important;
   font-size: large !important;
   font-weight: normal !important;
   outline: lawngreen !important;
@@ -46,7 +46,7 @@
 .kEpicLabel {
   width: 100%;
   margin-left: 60px !important;
-  color: rgb(63, 218, 210) !important;
+  color: rgb(63, 182, 218) !important;
   font-size: large !important;
   font-weight: normal !important;
   background-color: grey !important;
@@ -54,8 +54,8 @@
 
 
 .kSaveUS{
-  background-color: #36d4ad;
-  border-color: rgb(2, 146, 122) !important;
+  background-color:rgb(2, 125, 146);
+  border-color: rgb(8, 180, 211) !important;
   text-align: center !important;
   color: white !important;
   font-weight: bold;
@@ -65,9 +65,13 @@
   width: 196px;
 }
 
+.kSaveUS:hover{
+  background-color: rgb(12, 198, 231);
+}
+
 .kBckUSList {
-  background-color: rgb(64, 124, 111);
-  border-color: #36d4ad !important;
+  background-color: rgb(64, 90, 124);
+  border-color: #3688d4 !important;
    text-align: center !important;
    color: white !important;
    font-weight: bold;
@@ -75,4 +79,8 @@
    margin-left: 40px !important;
    margin-right: 40px;
    width: 196px;
+}
+
+.kBckUSList:hover {
+  background-color: #3688d4;
 }

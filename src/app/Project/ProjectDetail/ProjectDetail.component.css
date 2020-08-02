@@ -1,0 +1,28 @@
+.kProjectDetailTitle {
+  width: 80%;
+  margin-left: 60px;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color:white;
+  background-color: #424343;
+}
+
+
+.kProjectDetailForm {
+  width: 80%;
+
+  display: block !important;
+  background-color: grey !important;
+  margin-left: 60px !important;
+  margin-right: 60px !important;
+  color: white !important;
+
+}
+
+.kLabelProjectDetail {
+  align-self: center !important;
+  color: rgb(255, 0, 200) !important;
+  font-size: large !important;
+  font-weight: normal !important;
+  outline: rgb(187, 6, 127) !important;
+}

@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home/home.component';
 import { ManifestoComponent } from './manifesto/manifesto/manifesto.component';
 import { AboutComponent } from './about/about/about.component';
 import { GaleryComponent } from './/galery/galery.component';
+import { ProjectdetailComponent } from './Project/ProjectDetail/ProjectDetail.component';
 
 const routes: Routes = [
   {path: '', redirectTo : '/home' , pathMatch : 'full'},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'about', component : AboutComponent},
   {path: 'galery', component : GaleryComponent},
   {path: 'projet', component : ProjectListComponent},
+  {path: 'projectdetail', component : ProjectdetailComponent},
   {path: 'userstory', component : UserStoryListComponent },
   {path: 'userstorydetail', component : UserStoryDetailComponent}
 ];
