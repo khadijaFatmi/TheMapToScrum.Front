@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Projet } from './models/projets.model';
+import { Projet } from './models/project.model';
 
 import { Observable } from 'rxjs';
 import '../assets/js/mySketch.js';

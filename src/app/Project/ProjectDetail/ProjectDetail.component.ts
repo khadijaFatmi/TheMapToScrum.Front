@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
-import { Projet } from 'src/app/models/projets.model';
+import { Project } from 'src/app/models/project.model';
 import { UserStory } from 'src/app/models/userstory.model';
 import { ProjetService } from '../Project.service';
 import { UserStoryService } from 'src/app/UserStory/UserStory.service';
@@ -15,7 +15,7 @@ export class ProjectdetailComponent implements OnInit {
 
   public form: FormGroup;
   private id: number;
-  public entite: Projet;
+  public entite: Project;
   public userstories: UserStory[];
 
   constructor(private service: ProjetService, private fb: FormBuilder, private uss: UserStoryService) { }
@@ -25,7 +25,8 @@ export class ProjectdetailComponent implements OnInit {
     this.form = this.fb.group({
      id: [''],
      label: ['', Validators.required],
-     authorId: ['', Validators.required],
+     technicalManagerId: ['', Validators.required],
+     businessManagerId: ['', Validators.required],
      teamId: [''],
      departmentId: ['', Validators.required],
      dateCreation: [''],
@@ -52,7 +53,8 @@ export class ProjectdetailComponent implements OnInit {
     this.form.patchValue({
       id: this.entite.id
       , label: this.entite.label
-      , authorId: this.entite.authorId
+      , technicalManagerId: this.entite.technicalManagerId
+      , businessManagerId: this.entite.businessManagerId
       , departmentId: this.entite.departmentId
       , dateCreation: this.entite.dateCreation
       , dateModification: this.entite.dateModification

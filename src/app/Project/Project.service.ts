@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams, HttpErrorResponse} from '@angular/common/http';
 import { Observable, throwError} from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Projet } from '../models/projets.model';
+import { Project } from '../models/project.model';
 import { Injectable } from '@angular/core';
 import { catchError, retry } from 'rxjs/operators';
 
@@ -10,30 +10,30 @@ import { catchError, retry } from 'rxjs/operators';
 })
 
 export class ProjetService {
-  private url = environment.apiUrl + '/projet';
+  private url = environment.apiUrl + '/project';
 
   constructor(private http: HttpClient) {}
 
-  liste(): Observable<Projet[]> {
-    return this.http.get<Projet[]>(this.url);
+  liste(): Observable<Project[]> {
+    return this.http.get<Project[]>(this.url);
   }
 
-  getById(id: number): Observable<Projet> {
-    return this.http.get<Projet>(this.url + '/' + id.toString());
+  getById(id: number): Observable<Project> {
+    return this.http.get<Project>(this.url + '/' + id.toString());
   }
 
-  update(entite: Projet): Observable<Projet> {
+  update(entite: Project): Observable<Project> {
     return this.http
-    .put<Projet>(this.url, entite)
+    .put<Project>(this.url, entite)
     .pipe(
       retry(3),
       catchError(this.handleError)
     );
   }
 
-  create(entite: Projet): Observable<Projet> {
+  create(entite: Project): Observable<Project> {
     return this.http
-    .post<Projet>(this.url, entite)
+    .post<Project>(this.url, entite)
     .pipe(
       retry(3),
       catchError(this.handleError)

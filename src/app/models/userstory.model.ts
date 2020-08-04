@@ -1,13 +1,13 @@
 import { BaseEntity } from './baseEntity.model';
 
-import { Projet } from './projets.model';
+import { Project } from './project.model';
 
 export class UserStory extends BaseEntity {
   titre: string;
   version: string;
-  projetId: number;
-  projet: Projet;
-  name: string;
+  projectId: number;
+  project: Project;
+  label: string;
   role: string;
   function1: string;
   function2: string;

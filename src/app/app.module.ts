@@ -23,6 +23,9 @@ import { GaleryComponent } from './galery/galery.component';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { ProjectdetailComponent } from './Project/ProjectDetail/ProjectDetail.component';
 
+import { TeamListComponent } from './team/TeamList/teamList.component';
+import { TeamDetailComponent } from './team/teamDetail/teamDetail.component';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -34,7 +37,9 @@ import { ProjectdetailComponent } from './Project/ProjectDetail/ProjectDetail.co
       AboutComponent,
       ManifestoComponent,
       GaleryComponent,
-      ProjectdetailComponent
+      ProjectdetailComponent,
+      TeamListComponent,
+      TeamDetailComponent
   ],
   imports: [
     BrowserModule,

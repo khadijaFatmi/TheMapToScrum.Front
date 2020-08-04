@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 
-import { Projet } from 'src/app/models/projets.model';
+import { Project } from 'src/app/models/project.model';
 import { ProjetService } from 'src/app/Project/Project.service';
 import { UserStoryService } from './../UserStory.service';
 import { UserStory } from './../../models/userstory.model';
@@ -21,7 +21,7 @@ export class UserStoryDetailComponent implements OnInit {
   public form: FormGroup;
   private id: number;
   public entite: UserStory;
-  public projets: Projet[];
+  public projets: Project[];
 
   constructor(private service: UserStoryService
     ,         private fb: FormBuilder, private ps: ProjetService) {
@@ -65,7 +65,7 @@ export class UserStoryDetailComponent implements OnInit {
   updateform(): void {
     this.form.patchValue({
       id: this.entite.id
-      , projetId: this.entite.projetId
+      , projetId: this.entite.projectId
       , titre: this.entite.titre
       , version: this.entite.version
       , role: this.entite.role
