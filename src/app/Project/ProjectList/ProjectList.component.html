@@ -1,45 +1,39 @@
 <div>
 
-      <h1 class="kProjectTitles">Projects</h1>
+      <h1 class="kProjectTitles">Projects List</h1>
 
 </div>
 
 
-
-
-
-<!-- <div>
- projets= variable de type ProjetUserStory[], p: iterateur, libelle= attribut de mon entité projet
-  <li *ngFor="let p of projets">{{p.libelle}}</li>
-
-</div> -->
-
-
-
 <a class="btn btn-outline-success kNew" (click) = "Add()">
-  <i class="fa fa-plus-square uri"></i>New</a>
+  <i class="fa fa-plus-square kBtnNew"></i>New</a>
 
 
 <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
   <ng-container matColumnDef="label">
-    <th mat-header-cell *matHeaderCellDef width ="15%"> Projet </th>
-    <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+    <th mat-header-cell *matHeaderCellDef width ="15%">Label</th>
+    <mat-cell *matCellDef="let element"> {{element.label}} </mat-cell>
   </ng-container>
 
-  <ng-container matColumnDef="author">
-    <th mat-header-cell *matHeaderCellDef width ="15%"> Author </th>
-    <mat-cell *matCellDef="let element"> {{element.author}} </mat-cell>
+  <ng-container matColumnDef="tecMgr">
+    <th mat-header-cell *matHeaderCellDef width ="15%">Technical Manager</th>
+    <mat-cell *matCellDef="let element"> {{element.technicalManager?.fullName}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="bizMgr">
+    <th mat-header-cell *matHeaderCellDef width ="15%">Business Manager</th>
+    <mat-cell *matCellDef="let element"> {{element.businessManager?.fullName}} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="team">
-    <th mat-header-cell *matHeaderCellDef width ="15%"> Team </th>
-    <mat-cell *matCellDef="let element"> {{element.team}} </mat-cell>
+    <th mat-header-cell *matHeaderCellDef width ="15%">Team</th>
+    <mat-cell *matCellDef="let element"> {{element.team?.label}} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="department">
-    <th mat-header-cell *matHeaderCellDef width ="15%"> Department </th>
-    <mat-cell *matCellDef="let element"> {{element.department}} </mat-cell>
+    <th mat-header-cell *matHeaderCellDef width ="15%">Department</th>
+    <mat-cell *matCellDef="let element"> {{element.department?.label}} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="creationdate">

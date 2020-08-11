@@ -1,0 +1,38 @@
+
+<div>
+  <br/>
+    <h1 class="kDPTDetailTitle">Teams</h1>
+  <br/>
+</div>
+
+  <div>
+    <form  [formGroup]="form" (ngSubmit)="onSubmit()">
+      <input type="hidden" formControlName="id">
+      <input type="hidden" formControlName="dateCreation">
+      <input type="hidden" formControlName="dateModification">
+      <input type="hidden" formControlName="isDeleted">
+
+      <mat-form-field class="kDPTDetailForm">
+        <mat-label class="kLabelDPTDetail">Label</mat-label>
+        <input matInput formControlName="label">
+      </mat-form-field>
+
+
+
+
+
+
+  <div class="row">
+    <button type="submit" class="btn btn-dark kSaveDPT"><i class="fa fa-database"></i>Save</button>
+    <button type="button" class="btn btn-outline-dark ml-1 kBckDPTList" routerLink="/department" ><i class="fa fa-close"></i>Cancel</button>
+  </div>
+</form>
+</div>
+
+
+
+
+
+
+
+

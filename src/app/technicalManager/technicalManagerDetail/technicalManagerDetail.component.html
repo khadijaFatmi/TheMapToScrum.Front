@@ -1,0 +1,41 @@
+
+<div>
+  <br/>
+    <h1 class="kSMDetailTitle">Scrum Master</h1>
+  <br/>
+</div>
+
+  <div>
+    <form  [formGroup]="form" (ngSubmit)="onSubmit()">
+      <input type="hidden" formControlName="id">
+      <input type="hidden" formControlName="dateCreation">
+      <input type="hidden" formControlName="dateModification">
+      <input type="hidden" formControlName="isDeleted">
+
+      <mat-form-field class="kSMDetailForm">
+        <mat-label class="kLabelSMDetail">Firstname</mat-label>
+        <input matInput formControlName="firstName">
+      </mat-form-field>
+      <mat-form-field class="kSMDetailForm">
+        <mat-label class="kLabelSMDetail">Lastname</mat-label>
+          <input matInput formControlName="lastName">
+      </mat-form-field>
+
+    </form>
+  </div>
+
+  <br>
+  <div class="row">
+    <button type="submit" class="btn btn-dark kSaveSM"><i class="fa fa-database"></i>Save</button>
+    <button type="button" class="btn btn-outline-dark ml-1 kBckSMList" routerLink="/technicalmanager" ><i class="fa fa-close"></i>Cancel</button>
+  </div>
+  <br>
+  <br>
+  <br>
+
+
+
+
+
+
+

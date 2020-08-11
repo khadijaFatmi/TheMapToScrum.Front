@@ -1,0 +1,152 @@
+.multi-inputs{
+  display: flex;
+  flex-direction: column;
+}
+table{
+  width: 60%;
+  padding: 40 40 0 40 !important;
+ }
+
+.kPOTitle {
+  width: 60%;
+  margin-left: 200px;
+  margin-top: 40px;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color:rgb(221, 33, 33);
+  background-color: #424343;
+}
+/*Angular Material : Surcharge des classes natives, mat-table & ses composants customisés*/
+.mat-table{
+  width: 60% !important;
+  box-sizing: border-box !important;
+  text-size-adjust: 12px !important;
+  background-color: grey !important;
+  margin-left: 200px !important;
+  margin-right: 25px !important;
+}
+
+.mat-row{
+  text-align: justify !important;
+}
+
+.mat-header-row{
+  background: #424343 !important;
+  height: 40px !important;
+}
+
+.mat-header-cell{
+  align-self: justify !important;
+  text-align: justify !important;
+  font-size: 12px !important;
+  color: rgb(221, 33, 33) !important;
+  font-weight: normal ;
+  background: #424343 !important;
+}
+
+.mat-column-firstname {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 25% !important;
+  width: 25% !important;
+  overflow-wrap: break-word;
+
+  align-self: center !important;
+  text-align: justify !important;
+  font-size: auto !important;
+
+  word-break: break-word;
+}
+
+.mat-column-lastName {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 25% !important;
+  width: 25% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  align-self: center !important;
+  text-align: left !important;
+
+  font-size: auto !important;
+}
+
+
+
+.mat-column-action {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 30% !important;
+  width: 30% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  align-self: center !important;
+  text-align: center !important;
+  font-size: 12px !important;
+}
+
+/* Bootstrap Classes: Surcharge Boutons actions */
+.kEditPO {
+  background-color: rgb(185, 8, 8) !important;
+  border-color:rgb(221, 33, 33) !important;
+  /* size: 10px !important; */
+  text-align: center !important;
+  font-size: 9px !important;
+  width: 50px !important;
+  margin-right: 15x !important;
+  margin-left: 20px !important;
+
+}
+.kEditPO:hover {
+  background-color: rgb(221, 33, 33) !important;
+}
+
+
+.kDeletePO {
+  /*background-color: #d4000b !important;
+  border-color: #ff2727 !important;
+  */
+  background-color: rgb(95, 13, 13);
+  border-color: rgb(184, 6, 6) !important;
+  /* size: 10px !important; */
+  text-align: center !important;
+  font-size: 9px !important;
+  margin-left: 20px !important;
+  width: 60px !important;
+}
+
+.kDeletePO:hover{
+  background-color: rgb(182, 7, 7) !important;
+}
+
+.kNewPO {
+  background-color:rgb(167, 14, 14) !important;
+  border-color: rgb(248, 2, 2) !important;
+  /* size: 10px !important; */
+  text-align: center !important;
+  color: white !important;
+  font-size: 18px !important;
+  align-content: unset !important;
+  padding: 40 20 20 20 !important;
+  margin-left: 200px !important;
+  margin-bottom: 10px !important;
+  width: 128px !important;
+  position: relative !important;
+  /* left: 20px !important; */
+}
+
+.kNewPO:hover {
+  background-color: rgb(245, 7, 7) !important;
+}
+
+
+.kBtnNew{
+  font-size: 20px;
+  padding-right: 10px;
+}

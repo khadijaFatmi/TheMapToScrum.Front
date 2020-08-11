@@ -1,15 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
-
 import { Project } from 'src/app/models/project.model';
-import { ProjetService } from 'src/app/Project/Project.service';
-import { UserStoryService } from './../UserStory.service';
-import { UserStory } from './../../models/userstory.model';
-
-
-
-
+import { ProjectService } from '../../services/project.service';
+import { UserStoryService } from '../../services/userStory.service';
+import { UserStory } from '../../models/userstory.model';
 
 
 @Component({
@@ -24,7 +18,7 @@ export class UserStoryDetailComponent implements OnInit {
   public projets: Project[];
 
   constructor(private service: UserStoryService
-    ,         private fb: FormBuilder, private ps: ProjetService) {
+    ,         private fb: FormBuilder, private ps: ProjectService) {
 
   }
 

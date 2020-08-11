@@ -1,0 +1,42 @@
+<div>
+
+  <h1 class="kSMTitle">Scrum Masters</h1>
+
+</div>
+
+
+<a class="btn btn-outline-success kNewSM" (click) = "Add()">
+<i class="fa fa-plus-square kBtnNew"></i>New</a>
+
+
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+<ng-container matColumnDef="firstName">
+<th mat-header-cell *matHeaderCellDef width ="35%">Firstname</th>
+<mat-cell *matCellDef="let element"> {{element.firstName}} </mat-cell>
+</ng-container>
+
+
+<ng-container matColumnDef="lastName">
+  <th mat-header-cell *matHeaderCellDef width ="35%">Lastname</th>
+  <mat-cell *matCellDef="let element"> {{element.lastName}} </mat-cell>
+  </ng-container>
+
+
+<ng-container matColumnDef="action">
+<th mat-header-cell *matHeaderCellDef>Action</th>
+  <mat-cell *matCellDef="let element">
+    <button class="btn btn-success kEditSM" (click)="edit(element)" style="margin-left: 20px;">Edit</button>
+    <button class="btn btn-success kDeleteSM" (click)="delete(element)" style="margin-left: 20px;">Delete</button>
+  </mat-cell>
+</ng-container>
+
+<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+<mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+
+<div class="multi-inputs" >
+
+</div>
+

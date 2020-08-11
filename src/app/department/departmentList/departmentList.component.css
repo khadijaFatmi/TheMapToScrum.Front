@@ -1,0 +1,141 @@
+.multi-inputs{
+  display: flex;
+  flex-direction: column;
+}
+table{
+  width: 60%;
+  padding: 40 40 0 40 !important;
+
+ }
+
+.kDepartmentTitle {
+  width: 60%;
+  margin-left: 200px;
+  margin-top: 30px;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color:#9c08ff;
+  background-color: #424343;
+}
+/*Angular Material : Surcharge des classes natives, mat-table & ses composants customisés*/
+.mat-table{
+  width: 60% !important;
+  box-sizing: border-box !important;
+  text-size-adjust: 12px !important;
+  background-color: grey !important;
+  margin-left: 200px !important;
+  margin-right: 25px !important;
+  margin-bottom: 40px;
+}
+
+.mat-row{
+  text-align: justify !important;
+}
+
+.mat-header-row{
+  background: #424343 !important;
+  height: 40px !important;
+}
+
+.mat-header-cell{
+  align-self: justify !important;
+  text-align: center !important;
+  font-size: 16px !important;
+  color: #a41cff !important;
+  font-weight: normal ;
+  background: #424343 !important;
+}
+
+.mat-column-label {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 45% !important;
+  width: 45% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  align-self: center !important;
+  text-align: left !important;
+
+  font-size: auto !important;
+}
+
+
+
+.mat-column-action {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 40% !important;
+  width: 40% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  align-self: center !important;
+  text-align: center !important;
+  font-size: 16px !important;
+}
+
+/* Bootstrap Classes: Surcharge Boutons actions */
+.kEditDptmt {
+  background-color: #9c08ff !important;
+  border-color:#5a0a8f !important;
+  /* size: 10px !important; */
+  text-align: center !important;
+  font-size: 9px !important;
+  width: 50px !important;
+  margin-right: 25px !important;
+  margin-left: 50px !important;
+
+}
+.kEditDptmt:hover {
+  background-color: #a639ee!important;
+}
+
+
+.kDeleteDptmt {
+  /*background-color: #d4000b !important;
+  border-color: #ff2727 !important;
+  */
+  background-color: #420d66;
+  border-color: #a639ee !important;
+  /* size: 10px !important; */
+  text-align: center !important;
+  font-size: 9px !important;
+  margin-left: 20px !important;
+  width: 60px !important;
+}
+
+.kDeleteDptmt:hover{
+  background-color: #421e5a;
+
+}
+
+.kNewDptmt {
+  background-color: #9c08ff !important;
+  border-color:#49146d !important;
+  /* size: 10px !important; */
+  text-align: center !important;
+  color: white !important;
+  font-size: 18px !important;
+  align-content: unset !important;
+  padding: 40 20 20 20 !important;
+  margin-left: 200px !important;
+  margin-bottom: 20px !important;
+  width: 128px !important;
+  position: relative !important;
+  /* left: 20px !important; */
+}
+
+.kNewT:hover {
+  background-color: #b03aff !important;
+}
+
+
+.kBtnNew{
+  font-size: 20px;
+  padding-right: 10px;
+}

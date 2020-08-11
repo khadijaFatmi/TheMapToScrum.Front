@@ -1,39 +1,43 @@
 import { HttpClient, HttpParams, HttpErrorResponse} from '@angular/common/http';
 import { Observable, throwError} from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Project } from '../models/project.model';
+import { Department } from '../models/department.model';
 import { Injectable } from '@angular/core';
-import { catchError, retry } from 'rxjs/operators';
+import { retry, catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class ProjetService {
-  private url = environment.apiUrl + '/project';
+
+
+export class DepartmentService {
+  private url = environment.apiUrl + '/Department';
 
   constructor(private http: HttpClient) {}
 
-  liste(): Observable<Project[]> {
-    return this.http.get<Project[]>(this.url);
+  liste(): Observable<Department[]> {
+    return this.http.get<Department[]>(this.url);
   }
-
-  getById(id: number): Observable<Project> {
-    return this.http.get<Project>(this.url + '/' + id.toString());
+  getById(id: number): Observable<Department> {
+    return this.http.get<Department>(this.url + '/' + id.toString());
   }
+  // add(objet: UserStory): Observable<UserStory> {
+  //   return this.http.post(this.url + '/' + form.toString());
+  // }
 
-  update(entite: Project): Observable<Project> {
+  update(entite: Department): Observable<Department> {
     return this.http
-    .put<Project>(this.url, entite)
+    .put<Department>(this.url, entite)
     .pipe(
       retry(3),
       catchError(this.handleError)
     );
   }
 
-  create(entite: Project): Observable<Project> {
+  create(entite: Department): Observable<Department> {
     return this.http
-    .post<Project>(this.url, entite)
+    .post<Department>(this.url, entite)
     .pipe(
       retry(3),
       catchError(this.handleError)
@@ -53,3 +57,4 @@ export class ProjetService {
     return throwError(error);
   }
 }
+

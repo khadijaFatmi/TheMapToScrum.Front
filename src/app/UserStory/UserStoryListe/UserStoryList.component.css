@@ -58,8 +58,8 @@ table{
   overflow-wrap: break-word;
 
 
-  align-self: center !important;
-  text-align: justify !important;
+  align-self: left !important;
+  text-align: left !important;
   font-size: auto !important;
 
 
@@ -79,7 +79,7 @@ table{
 
   word-break: break-word;
 
-  align-self: center !important;
+  align-self: left !important;
   text-align: left !important;
 
   font-size: auto !important;
@@ -99,7 +99,7 @@ table{
   word-break: break-word;
 
   align-self: left !important;
-  text-align: justify !important;
+  text-align: left !important;
   font-size: auto !important;
 
 
@@ -228,4 +228,10 @@ table{
 
 .kNew:hover {
   background-color: #05a3ff !important;
+}
+
+
+.kBtnNew{
+  font-size: 20px;
+  padding-right: 10px;
 }

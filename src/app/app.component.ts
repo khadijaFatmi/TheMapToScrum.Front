@@ -1,12 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Projet } from './models/project.model';
 
-import { Observable } from 'rxjs';
 import '../assets/js/mySketch.js';
-
-
-
-
 
 @Component({
   selector: 'app-root',
@@ -15,7 +9,4 @@ import '../assets/js/mySketch.js';
 })
 export class AppComponent {
   title = 'The Map To Scrum';
-  liste: Observable<Projet[]>;
-
-
 }

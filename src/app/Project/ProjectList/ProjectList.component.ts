@@ -1,26 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { ProjetService } from '../Project.service';
-import { Projet } from '../../models/project.model';
+import { ProjectService } from '../../services/project.service';
+import { Project } from '../../models/project.model';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-projectliste',
-  templateUrl: './ProjectList.component.html',
-  styleUrls: ['./ProjectList.component.css']
+  selector: 'app-project',
+  templateUrl: './projectList.component.html',
+  styleUrls: ['./projectList.component.css']
 })
 export class ProjectListComponent implements OnInit {
-  public projets: Projet[];
-  displayedColumns: string[] = ['label', 'author', 'team', 'department', 'creationdate', 'action'];
+  public projects: Project[];
+  displayedColumns: string[] = ['label', 'tecMgr', 'bizMgr', 'team', 'department', 'action'];
   public dataSource: any;
 
-  constructor(private service: ProjetService, private router: Router) {
+  constructor(private service: ProjectService, private router: Router) {
   }
 
   ngOnInit() {
    this.service.liste().
    subscribe(data => {
-    this.projets = data;
-    this.dataSource = this.projets;
+    this.projects = data;
+    this.dataSource = this.projects;
     console.log('lecture ok kdij :-)', data);
     },
       error => {
@@ -30,14 +30,14 @@ export class ProjectListComponent implements OnInit {
   }
 
 
-  edit(objet: Projet): void {
+  edit(objet: Project): void {
     console.log('objet ', objet);
-    window.localStorage.removeItem('projetId');
-    window.localStorage.setItem('projetId', objet.id.toString());
+    window.localStorage.removeItem('projectId');
+    window.localStorage.setItem('projectId', objet.id.toString());
     this.router.navigate(['projectdetail']);
   }
 
-  delete(objet: Projet): void {
+  delete(objet: Project): void {
     const id = objet.id;
     this.service.delete(id).
       subscribe(data => {

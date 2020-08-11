@@ -3,25 +3,34 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { Project } from 'src/app/models/project.model';
 import { UserStory } from 'src/app/models/userstory.model';
-import { ProjetService } from '../Project.service';
-import { UserStoryService } from 'src/app/UserStory/UserStory.service';
+import { ProjectService } from '../../services/project.service';
+import { UserStoryService } from '../../services/userStory.service';
+import { Department } from 'src/app/models/department.model';
+import { Team } from 'src/app/models/team.model';
+import { TeamService } from 'src/app/services/team.service';
+import { DepartmentService } from 'src/app/services/department.service';
 
 @Component({
   selector: 'app-projectdetail',
-  templateUrl: './projectdetail.component.html',
-  styleUrls: ['./projectdetail.component.css']
+  templateUrl: './projectDetail.component.html',
+  styleUrls: ['./projectDetail.component.css']
 })
-export class ProjectdetailComponent implements OnInit {
+export class ProjectDetailComponent implements OnInit {
 
   public form: FormGroup;
   private id: number;
   public entite: Project;
   public userstories: UserStory[];
+  public departments: Department[];
+  public teams: Team[];
 
-  constructor(private service: ProjetService, private fb: FormBuilder, private uss: UserStoryService) { }
+  constructor(private service: ProjectService, private fb: FormBuilder, private uss: UserStoryService,
+              private teamService: TeamService, private departmentService: DepartmentService) { }
 
   ngOnInit() {
-    this.id = Number(window.localStorage.getItem('projetid'));
+    this.loadDepartments();
+    this.loadTeams();
+    this.id = Number(window.localStorage.getItem('projectId'));
     this.form = this.fb.group({
      id: [''],
      label: ['', Validators.required],
@@ -55,6 +64,7 @@ export class ProjectdetailComponent implements OnInit {
       , label: this.entite.label
       , technicalManagerId: this.entite.technicalManagerId
       , businessManagerId: this.entite.businessManagerId
+      , teamId: this.entite.teamId
       , departmentId: this.entite.departmentId
       , dateCreation: this.entite.dateCreation
       , dateModification: this.entite.dateModification
@@ -66,7 +76,8 @@ export class ProjectdetailComponent implements OnInit {
   onSubmit(): void {
 
     if (this.id !== null) {
-      this.entite = Object.assign({}, this.form.value, this.form.get('epicStory').value);
+      // this.entite = Object.assign({}, this.form.value, this.form.get('epicStory').value);
+      this.entite = Object.assign({}, this.form.value);
       this.service.update(this.entite).subscribe(res => {
         alert('update success');
       },
@@ -74,7 +85,8 @@ export class ProjectdetailComponent implements OnInit {
         console.log('error');
       });
     } else {
-      this.entite = Object.assign({}, this.form.value, this.form.get('epicStory').value);
+      // this.entite = Object.assign({}, this.form.value, this.form.get('epicStory').value);
+      this.entite = Object.assign({}, this.form.value);
       this.service.create(this.entite).subscribe(res => {
         alert('create success');
       },
@@ -83,5 +95,21 @@ export class ProjectdetailComponent implements OnInit {
       });
     }
   }
+
+  loadDepartments(): void {
+    this.departmentService.liste().
+    subscribe(data => {
+     this.departments = data;
+    });
+
+  }
+
+  loadTeams(): void {
+
+      this.teamService.liste().
+      subscribe(data => {
+       this.teams = data;
+      });
+ }
 
 }

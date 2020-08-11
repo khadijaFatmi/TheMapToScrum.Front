@@ -1,0 +1,61 @@
+.kPODetailTitle {
+  width: 60%;
+  margin-left: 200px;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(233, 24, 24);
+  background-color: #424343;
+}
+
+
+.kPODetailForm {
+  width: 60%;
+
+  display: block !important;
+  background-color: grey !important;
+  margin-left: 200px !important;
+  margin-right: 60px !important;
+  color: white !important;
+
+}
+
+.kLabelPODetail {
+  align-self: center !important;
+  color: rgb(233, 24, 24) !important;
+  font-size: x-large !important;
+  font-weight: normal !important;
+  outline:rgb(241, 25, 25) !important;
+}
+
+
+.kSavePO{
+  background-color:rgb(167, 14, 14);
+  border-color: rgb(226, 34, 34) !important;
+  text-align: center !important;
+  color:rgb(226, 226, 226)  !important;
+  font-weight: bold;
+  font-size: 18px !important;
+  margin-left: 280px !important;
+  margin-right: 40px;
+  width: 196px;
+}
+
+.kSavePO:hover{
+  background-color: rgb(255, 0, 0);
+}
+
+.kBckPOList {
+  background-color: rgb(143, 45, 45);
+  border-color: rgb(197, 41, 41) !important;
+   text-align: center !important;
+   color: white !important;
+   font-weight: bold;
+   font-size: 18px !important;
+   margin-left: 40px !important;
+   margin-right: 40px;
+   width: 196px;
+}
+
+.kBckPOList:hover {
+  background-color: rgb(180, 36, 36);
+}

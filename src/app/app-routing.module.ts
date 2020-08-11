@@ -1,25 +1,55 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ProjectListComponent } from './Project/ProjectList/ProjectList.component';
-import { UserStoryListComponent } from './UserStory/UserStoryListe/UserStoryList.component';
-import { UserStoryDetailComponent } from './UserStory/UserStoryDetail/UserStorydetail.component';
+import { ProjectListComponent } from './project/projectList/projectList.component';
+import { ProjectDetailComponent } from './project/projectDetail/projectDetail.component';
+import { UserStoryListComponent } from './userStory/UserStoryListe/userStoryList.component';
+import { UserStoryDetailComponent } from './userStory/UserStoryDetail/userStorydetail.component';
+import { TechnicalManagerListComponent } from './technicalManager/technicalManagerList/technicalManagerList.component';
+import { TechnicalManagerDetailComponent } from './technicalManager/technicalManagerDetail/technicalManagerDetail.component';
+
+import { BusinessManagerListComponent} from './businessManager/businessManagerList/businessManagerList.component';
+import { BusinessManagerDetailComponent } from './businessManager/businessManagerDetail/businessManagerDetail.component';
+
+import { TeamDetailComponent } from './team/teamDetail/teamDetail.component';
+import { TeamListComponent } from './team/TeamList/teamList.component';
+
+import { DeveloperListComponent } from './developer/developerList/developerList.component';
+import { DeveloperDetailComponent } from './developer/developerDetail/developerDetail.component';
+
+import { DepartmentListComponent } from './department/departmentList/departmentList.component';
+import { DepartmentDetailComponent } from './department/departmentDetail/departmentDetail.component';
+
+import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home/home.component';
 import { ManifestoComponent } from './manifesto/manifesto/manifesto.component';
+import { LexicComponent } from './lexic/lexic.component';
 import { AboutComponent } from './about/about/about.component';
 import { GaleryComponent } from './/galery/galery.component';
-import { ProjectdetailComponent } from './Project/ProjectDetail/ProjectDetail.component';
+
 
 const routes: Routes = [
   {path: '', redirectTo : '/home' , pathMatch : 'full'},
   {path: 'home', component : HomeComponent},
-  {path: 'manifesto', component : ManifestoComponent},
   {path: 'about', component : AboutComponent},
+  {path: 'manifesto', component : ManifestoComponent},
+  {path: 'lexic', component : LexicComponent},
+  {path: 'contact', component : ContactComponent},
   {path: 'galery', component : GaleryComponent},
-  {path: 'projet', component : ProjectListComponent},
-  {path: 'projectdetail', component : ProjectdetailComponent},
+  {path: 'project', component : ProjectListComponent},
+  {path: 'projectdetail', component : ProjectDetailComponent},
   {path: 'userstory', component : UserStoryListComponent },
-  {path: 'userstorydetail', component : UserStoryDetailComponent}
+  {path: 'userstorydetail', component : UserStoryDetailComponent},
+  {path: 'technicalmanager', component : TechnicalManagerListComponent},
+  {path: 'technicalmanagerdetail', component : TechnicalManagerDetailComponent},
+  {path: 'businessmanager', component : BusinessManagerListComponent},
+  {path: 'businessmanagerdetail', component : BusinessManagerDetailComponent},
+  {path: 'team', component: TeamListComponent},
+  {path: 'teamdetail', component: TeamDetailComponent},
+  {path: 'developer', component: DeveloperListComponent},
+  {path: 'developerdetail', component: DeveloperDetailComponent},
+  {path: 'department', component: DepartmentListComponent},
+  {path: 'departmentDetail', component: DepartmentDetailComponent}
 ];
 
 @NgModule({

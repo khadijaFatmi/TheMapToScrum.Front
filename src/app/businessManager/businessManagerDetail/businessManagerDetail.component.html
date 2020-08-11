@@ -1,0 +1,43 @@
+
+<div>
+  <br/>
+    <h1 class="kPODetailTitle">Product Owners</h1>
+  <br/>
+</div>
+
+  <div>
+    <form  [formGroup]="form" (ngSubmit)="onSubmit()">
+      <input type="hidden" formControlName="id">
+      <input type="hidden" formControlName="dateCreation">
+      <input type="hidden" formControlName="dateModification">
+      <input type="hidden" formControlName="isDeleted">
+
+      <mat-form-field class="kPODetailForm">
+        <mat-label class="kLabelPODetail">Firstname</mat-label>
+        <input matInput formControlName="firstName">
+      </mat-form-field>
+      <mat-form-field class="kPODetailForm">
+        <mat-label class="kLabelPODetail">Lastname</mat-label>
+          <input matInput formControlName="lastName">
+      </mat-form-field>
+
+    </form>
+  </div>
+
+  <br>
+
+  <div class="row">
+    <button type="submit" class="btn btn-dark kSavePO"><i class="fa fa-database"></i>Save</button>
+    <button type="button" class="btn btn-outline-dark ml-1 kBckPOList" routerLink="/businessmanager" ><i class="fa fa-close"></i>Cancel</button>
+  </div>
+  <br>
+  <br>
+  <br>
+
+
+
+
+
+
+
+

@@ -1,0 +1,61 @@
+.kTeamDetailTitle {
+  width: 60%;
+  margin-left: 200px;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(251, 235, 8);
+  background-color: #424343;
+}
+
+
+.kTeamDetailForm {
+  width: 60%;
+
+  display: block !important;
+  background-color: grey !important;
+  margin-left: 200px !important;
+  margin-right: 60px !important;
+  color: white !important;
+
+}
+
+.kLabelTeamDetail {
+  align-self: center !important;
+  color: rgb(251, 235, 8) !important;
+  font-size: x-large !important;
+  font-weight: normal !important;
+  outline: rgb(223, 219, 10) !important;
+}
+
+
+.kSaveTeam{
+  background-color:rgb(235, 232, 37);
+  border-color: rgb(211, 157, 8) !important;
+  text-align: center !important;
+  color:rgb(49, 48, 44)  !important;
+  font-weight: bold;
+  font-size: 18px !important;
+  margin-left: 280px !important;
+  margin-right: 40px;
+  width: 196px;
+}
+
+.kSaveTeam:hover{
+  background-color: rgb(255, 230, 0);
+}
+
+.kBckTeamList {
+  background-color: rgb(186, 197, 31);
+  border-color: rgb(255, 238, 0) !important;
+   text-align: center !important;
+   color: white !important;
+   font-weight: bold;
+   font-size: 18px !important;
+   margin-left: 40px !important;
+   margin-right: 40px;
+   width: 196px;
+}
+
+.kBckTeamList:hover {
+  background-color: #d4d136;
+}

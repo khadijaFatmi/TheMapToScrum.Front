@@ -6,7 +6,7 @@
   <br/>
 
   <a class="btn btn-outline-success kNew" (click) = "Add()">
-  <i class="fa fa-plus-square uri"></i>New</a>
+  <i class="fa fa-plus-square kBtnNew"></i>New</a>
 
 <!-- <div>
 projets= variable de type ProjetUserStory[], p: iterateur, libelle= attribut de mon entité projet
@@ -20,9 +20,9 @@ projets= variable de type ProjetUserStory[], p: iterateur, libelle= attribut de 
         <mat-cell *matCellDef="let element"> {{element.version}} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="projet">
-      <th mat-header-cell *matHeaderCellDef>Project</th>
-        <mat-cell *matCellDef="let element"> {{element.projet?.name}} </mat-cell>
+    <ng-container matColumnDef="project">
+      <th mat-header-cell *matHeaderCellDef>Label</th>
+        <mat-cell *matCellDef="let element"> {{element.project?.label}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="priority">

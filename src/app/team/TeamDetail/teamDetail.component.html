@@ -1,1 +1,37 @@
-<p>team-detail works!</p>
+
+<div>
+  <br/>
+    <h1 class="kTeamDetailTitle">Teams</h1>
+  <br/>
+</div>
+
+  <div>
+    <form  [formGroup]="form" (ngSubmit)="onSubmit()">
+      <input type="hidden" formControlName="id">
+      <input type="hidden" formControlName="dateCreation">
+      <input type="hidden" formControlName="dateModification">
+      <input type="hidden" formControlName="isDeleted">
+
+      <mat-form-field class="kTeamDetailForm">
+        <mat-label class="kLabelTeamDetail">Label</mat-label>
+        <input matInput formControlName="label">
+      </mat-form-field>
+
+
+
+
+
+
+  <div class="row">
+    <button type="submit" class="btn btn-dark kSaveTeam"><i class="fa fa-database"></i>Save</button>
+    <button type="button" class="btn btn-outline-dark ml-1 kBckTeamList" routerLink="/team" ><i class="fa fa-close"></i>Cancel</button>
+  </div>
+</form>
+</div>
+
+
+
+
+
+
+

@@ -3,7 +3,7 @@
   margin-left: 60px;
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color:white;
+  color:#7e23f5;
   background-color: #424343;
 }
 
@@ -21,8 +21,47 @@
 
 .kLabelProjectDetail {
   align-self: center !important;
-  color: rgb(255, 0, 200) !important;
+  color: #7e23f5 !important;
   font-size: large !important;
   font-weight: normal !important;
-  outline: rgb(187, 6, 127) !important;
+
 }
+
+
+
+.kSaveProject{
+  background-color:  #6706a8;
+  border-color:  #450370!important;
+  text-align: center !important;
+  color: white !important;
+  font-weight: bold;
+  font-size: 18px !important;
+  margin-left: 280px !important;
+  margin-right: 40px;
+  margin-top: 40px;
+  width: 196px;
+}
+
+.kSaveProject:hover{
+  background-color: #7e23f5;
+}
+
+.kBckProjectList {
+  background-color: #480475;
+  border-color: #350357 !important;
+   text-align: center !important;
+   color: white !important;
+   font-weight: bold;
+   font-size: 18px !important;
+   margin-left: 40px !important;
+   margin-right: 40px;
+   margin-top: 40px;
+   width: 196px;
+}
+
+.kBckProjectList:hover {
+  background-color: #58058f;
+}
+
+
+

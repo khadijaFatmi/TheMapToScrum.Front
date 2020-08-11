@@ -1,11 +1,17 @@
 
 
-<nav id="header" class="app-component navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+ <div>
+  <h1 class="kAppTitle">The Map To Scrum</h1>
+
+
+
+<nav id="header" class="app-component navbar navbar-expand-lg navbar-dark bg-primary fixed-top kNav">
   <br/>
   <a ngPreserveWhitespaces class="app-component navbar-brand" routerLink="/">
 
-   <span class="kTitles">{{title}}</span>
+   <!-- <span class="kTitles">{{title}}</span> -->
   </a>
+
 
   <button mat-button [matMenuTriggerFor]="home">Home</button>
   <mat-menu #home="matMenu" >
@@ -14,17 +20,28 @@
 
   <button mat-button [matMenuTriggerFor]="about">About</button>
   <mat-menu #about="matMenu" >
-    <button mat-menu-item class="option-menu" routerLink="about" routerLinkActive="active">About</button>
+    <button mat-menu-item class="option-menu" routerLink="about" routerLinkActive="active">This Application</button>
+    <button mat-menu-item class="option-menu" routerLink="contact" routerLinkActive="active">Contact</button>
   </mat-menu>
 
-  <button mat-button [matMenuTriggerFor]="manifesto">Manifesto</button>
+  <button mat-button [matMenuTriggerFor]="manifesto">Scrum</button>
   <mat-menu #manifesto="matMenu" >
     <button mat-menu-item class="option-menu" routerLink="manifesto" routerLinkActive="active">Agile Manifesto</button>
+    <button mat-menu-item class="option-menu" routerLink="lexic" routerLinkActive="active">Agile Lexic</button>
+
   </mat-menu>
 
-  <button mat-button [matMenuTriggerFor]="projet">Projects</button>
-  <mat-menu #projet="matMenu" >
-    <button mat-menu-item class="option-menu" routerLink="projet" routerLinkActive="active">All Projects</button>
+  <button mat-button [matMenuTriggerFor]="project">Projects</button>
+  <mat-menu #project="matMenu" >
+    <button mat-menu-item class="option-menu" routerLink="project" routerLinkActive="active">All Projects</button>
+    <button mat-menu-item class="option-menu" routerLink="department" routerLinkActive="active">Departments</button>
+  </mat-menu>
+
+  <button mat-button [matMenuTriggerFor]="tech">Roles</button>
+  <mat-menu #tech="matMenu" >
+    <button mat-menu-item class="option-menu" routerLink="team" routerLinkActive="active">Team</button>
+    <button mat-menu-item class="option-menu" routerLink="technicalmanager" routerLinkActive="active">Scrum Master</button>
+    <button mat-menu-item class="option-menu" routerLink="businessmanager" routerLinkActive="active">Product Owner</button>
   </mat-menu>
 
   <button mat-button [matMenuTriggerFor]="userstories">UserStories</button>
@@ -32,12 +49,17 @@
     <button mat-menu-item class="option-menu" routerLink="userstory" routerLinkActive="active">User Stories List</button>
   </mat-menu>
 
+
+
   <button mat-button [matMenuTriggerFor]="galery">Galery</button>
   <mat-menu #galery="matMenu" >
     <button mat-menu-item class="option-menu" routerLink="galery" routerLinkActive="active">Inspiration Here</button>
   </mat-menu>
 
 </nav>
+</div>
+<br/>
+<br/>
 <br/>
 <br/>
 <br/>

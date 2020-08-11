@@ -1,0 +1,61 @@
+.kSMDetailTitle {
+  width: 60%;
+  margin-left: 200px;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(255, 145, 0);
+  background-color: #424343;
+}
+
+
+.kSMDetailForm {
+  width: 60%;
+
+  display: block !important;
+  background-color: grey !important;
+  margin-left: 200px !important;
+  margin-right: 60px !important;
+  color: white !important;
+
+}
+
+.kLabelSMDetail {
+  align-self: center !important;
+  color: rgb(255, 145, 0) !important;
+  font-size: x-large !important;
+  font-weight: normal !important;
+  outline: rgb(187, 109, 6) !important;
+}
+
+
+.kSaveSM{
+  background-color:rgb(255, 145, 0);
+  border-color: rgb(211, 157, 8) !important;
+  text-align: center !important;
+  color:rgb(226, 226, 226)  !important;
+  font-weight: bold;
+  font-size: 18px !important;
+  margin-left: 280px !important;
+  margin-right: 40px;
+  width: 196px;
+}
+
+.kSaveSM:hover{
+  background-color: rgb(216, 107, 5);
+}
+
+.kBckSMList {
+  background-color: rgb(197, 125, 31);
+  border-color: rgb(255, 145, 0) !important;
+   text-align: center !important;
+   color: white !important;
+   font-weight: bold;
+   font-size: 18px !important;
+   margin-left: 40px !important;
+   margin-right: 40px;
+   width: 196px;
+}
+
+.kBckSMList:hover {
+  background-color: #d46336;
+}

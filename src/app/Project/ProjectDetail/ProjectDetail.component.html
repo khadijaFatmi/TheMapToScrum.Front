@@ -20,24 +20,44 @@
 
   <mat-form-field class="kProjectDetailForm">
     <mat-label class="kLabelProjectDetail">Author</mat-label>
-    <input matInput formControlName="authorId">
+    <input matInput formControlName="technicalManagerId">
   </mat-form-field>
 
   <mat-form-field class="kProjectDetailForm">
     <mat-label class="kLabelProjectDetail">Team</mat-label>
-    <input matInput formControlName="teamId">
+    <mat-select formControlName="teamId" [(value)]="teamId">
+      <mat-option >
+        technicalManagerId Choice
+      </mat-option>
+
+      <mat-option *ngFor="let team of teams" [value]="team.id">
+        {{team.label}}
+      </mat-option>
+    </mat-select>
   </mat-form-field>
+
 
   <mat-form-field class="kProjectDetailForm">
     <mat-label class="kLabelProjectDetail">Department</mat-label>
-    <input matInput formControlName="departmentId">
+    <mat-select formControlName="departmentId" [(value)]="departmentId">
+      <mat-option >
+        departmentid Choice
+      </mat-option>
+
+      <mat-option *ngFor="let dpt of departments" [value]="dpt.id">
+        {{dpt.label}}
+      </mat-option>
+    </mat-select>
   </mat-form-field>
 
 
 
-
-  </form>
-
+  <div class="row">
+    <button type="submit" class="btn btn-dark kSaveProject"><i class="fa fa-database"></i>Save</button>
+    <button type="button" class="btn btn-outline-dark ml-1 kBckProjectList" routerLink="/project" ><i class="fa fa-close"></i>Cancel</button>
+  </div>
+</form>
 </div>
+
 
 

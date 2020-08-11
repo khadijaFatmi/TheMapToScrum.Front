@@ -1,1 +1,38 @@
-<p>team-list works!</p>
+<div>
+
+  <h1 class="kTTitle">Teams</h1>
+
+</div>
+
+
+<a class="btn btn-outline-success kNewT" (click) = "Add()">
+<i class="fa fa-plus-square kBtnNew"></i>New</a>
+
+
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+<ng-container matColumnDef="label">
+<th mat-header-cell *matHeaderCellDef width ="35%">Label</th>
+<mat-cell *matCellDef="let element"> {{element.label}} </mat-cell>
+</ng-container>
+
+
+
+<ng-container matColumnDef="action">
+<th mat-header-cell *matHeaderCellDef>Action</th>
+  <mat-cell *matCellDef="let element">
+    <button class="btn btn-success kEditT" (click)="edit(element)" style="margin-left: 20px;">Edit</button>
+    <button class="btn btn-success kDeleteT" (click)="delete(element)" style="margin-left: 20px;">Delete</button>
+  </mat-cell>
+</ng-container>
+
+<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+<mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+
+<div class="multi-inputs" >
+
+</div>
+
+
