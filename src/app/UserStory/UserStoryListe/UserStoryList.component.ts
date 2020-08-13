@@ -28,6 +28,7 @@ export class UserStoryListComponent implements OnInit {
       subscribe(data => {
         this.userstory = data;
         this.dataSource = this.userstory;
+        console.log('lecture us ok');
       },
       error => {
         console.log('erreur lecture :-/');
@@ -46,11 +47,12 @@ export class UserStoryListComponent implements OnInit {
     const id = objet.id;
     this.service.delete(id).
       subscribe(data => {
-        alert('delete success');
+        console.log('msg is delete OK, USid:' + ' ' + id);
+        alert('US deleted, success');
         this.router.navigate(['/userstory']);
       },
       error => {
-        console.log('erreur lecture :-/');
+        console.log('erreur lecture US :-/');
       });
   }
 

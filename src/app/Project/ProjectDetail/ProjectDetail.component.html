@@ -18,16 +18,40 @@
     <input matInput formControlName="label">
   </mat-form-field>
 
+
+
   <mat-form-field class="kProjectDetailForm">
-    <mat-label class="kLabelProjectDetail">Author</mat-label>
-    <input matInput formControlName="technicalManagerId">
+    <mat-label class="kLabelProjectDetail">Scrum Master</mat-label>
+    <mat-select formControlName="scrumMasterId" [(value)]="scrumMasterId">
+      <mat-option >
+        Choose your Scrum Master
+      </mat-option>
+
+      <mat-option *ngFor="let item of scrumMasters" [value]="item.id">
+        {{item.fullName}}
+      </mat-option>
+    </mat-select>
   </mat-form-field>
+
+  <mat-form-field class="kProjectDetailForm">
+    <mat-label class="kLabelProjectDetail">Product Owner</mat-label>
+    <mat-select formControlName="productOwnerId" [(value)]="productOwnerId">
+      <mat-option >
+        Choose your Product Owner
+      </mat-option>
+
+      <mat-option *ngFor="let item of productOwners" [value]="item.id">
+        {{item.fullName}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
 
   <mat-form-field class="kProjectDetailForm">
     <mat-label class="kLabelProjectDetail">Team</mat-label>
     <mat-select formControlName="teamId" [(value)]="teamId">
       <mat-option >
-        technicalManagerId Choice
+        Choose your Team
       </mat-option>
 
       <mat-option *ngFor="let team of teams" [value]="team.id">

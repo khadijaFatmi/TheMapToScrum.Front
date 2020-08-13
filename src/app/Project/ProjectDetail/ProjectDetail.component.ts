@@ -2,13 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { Project } from 'src/app/models/project.model';
-import { UserStory } from 'src/app/models/userstory.model';
 import { ProjectService } from '../../services/project.service';
+import { UserStory } from 'src/app/models/userstory.model';
 import { UserStoryService } from '../../services/userStory.service';
 import { Department } from 'src/app/models/department.model';
+import { DepartmentService } from 'src/app/services/department.service';
 import { Team } from 'src/app/models/team.model';
 import { TeamService } from 'src/app/services/team.service';
-import { DepartmentService } from 'src/app/services/department.service';
+
+import { ScrumMaster } from 'src/app/models/scrumMaster.model';
+import { ScrumMasterService } from 'src/app/services/scrumMaster.service';
+import { ProductOwner } from 'src/app/models/productOwner.model';
+import { ProductOwnerService } from 'src/app/services/productOwner.service';
 
 @Component({
   selector: 'app-projectdetail',
@@ -23,26 +28,37 @@ export class ProjectDetailComponent implements OnInit {
   public userstories: UserStory[];
   public departments: Department[];
   public teams: Team[];
+  public scrumMasters: ScrumMaster[];
+  public productOwners: ProductOwner[];
 
   constructor(private service: ProjectService, private fb: FormBuilder, private uss: UserStoryService,
-              private teamService: TeamService, private departmentService: DepartmentService) { }
+              private teamService: TeamService, private departmentService: DepartmentService,
+              private scrumMasterService: ScrumMasterService, private productOwnerService: ProductOwnerService) { }
 
   ngOnInit() {
+    this.form = this.fb.group({
+      id: [''],
+      label: ['', Validators.required],
+      scrumMasterId: ['', Validators.required],
+      productOwnerId: ['', Validators.required],
+      teamId: [''],
+      departmentId: ['', Validators.required],
+      dateCreation: [''],
+      dateModification: [''],
+      isDeleted: ['']
+    });
+
     this.loadDepartments();
     this.loadTeams();
-    this.id = Number(window.localStorage.getItem('projectId'));
-    this.form = this.fb.group({
-     id: [''],
-     label: ['', Validators.required],
-     technicalManagerId: ['', Validators.required],
-     businessManagerId: ['', Validators.required],
-     teamId: [''],
-     departmentId: ['', Validators.required],
-     dateCreation: [''],
-     dateModification: [''],
-     isDeleted: ['']
-   });
-    if (this.id !== null) {
+    this.loadScrumMasters();
+    this.loadProductOwners();
+    if (window.localStorage.getItem('projectId') != null) {
+      this.id = Number(window.localStorage.getItem('projectId'));
+    } else {
+      this.id = 0;
+    }
+
+    if (this.id !== 0) {
      this.service.getById(this.id).
      subscribe(data => {
        this.entite = data;
@@ -51,19 +67,15 @@ export class ProjectDetailComponent implements OnInit {
      error => {
        console.log('erreur lecture :-/');
      });
-     this.uss.liste().
-     subscribe(data => {
-       this.userstories = data;
-       });
-     }
+    }
    }
 
   updateform(): void {
     this.form.patchValue({
       id: this.entite.id
       , label: this.entite.label
-      , technicalManagerId: this.entite.technicalManagerId
-      , businessManagerId: this.entite.businessManagerId
+      , scrumMasterId: this.entite.scrumMasterId
+      , productOwnerId: this.entite.productOwnerId
       , teamId: this.entite.teamId
       , departmentId: this.entite.departmentId
       , dateCreation: this.entite.dateCreation
@@ -76,7 +88,6 @@ export class ProjectDetailComponent implements OnInit {
   onSubmit(): void {
 
     if (this.id !== null) {
-      // this.entite = Object.assign({}, this.form.value, this.form.get('epicStory').value);
       this.entite = Object.assign({}, this.form.value);
       this.service.update(this.entite).subscribe(res => {
         alert('update success');
@@ -85,7 +96,6 @@ export class ProjectDetailComponent implements OnInit {
         console.log('error');
       });
     } else {
-      // this.entite = Object.assign({}, this.form.value, this.form.get('epicStory').value);
       this.entite = Object.assign({}, this.form.value);
       this.service.create(this.entite).subscribe(res => {
         alert('create success');
@@ -112,4 +122,19 @@ export class ProjectDetailComponent implements OnInit {
       });
  }
 
+
+ loadScrumMasters(): void {
+    this.scrumMasterService.liste().
+    subscribe(data => {
+    this.scrumMasters = data;
+    });
+  }
+
+  loadProductOwners(): void {
+    this.productOwnerService.liste().
+    subscribe(data => {
+    this.productOwners = data;
+    console.log('PO loaded');
+    });
+  }
 }

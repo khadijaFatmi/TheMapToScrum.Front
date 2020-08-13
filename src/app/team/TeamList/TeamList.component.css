@@ -11,6 +11,7 @@ table{
 .kTTitle {
   width: 60%;
   margin-left: 200px;
+  margin-top: 20px;
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color:rgb(251, 235, 8);
@@ -24,6 +25,7 @@ table{
   background-color: grey !important;
   margin-left: 200px !important;
   margin-right: 25px !important;
+  margin-bottom: 40px;
 }
 
 .mat-row{
@@ -98,8 +100,8 @@ table{
   /*background-color: #d4000b !important;
   border-color: #ff2727 !important;
   */
-  background-color: rgb(157, 168, 2);
-  border-color: rgb(177, 180, 10) !important;
+  background-color: rgb(168, 157, 2);
+  border-color: rgb(180, 163, 10) !important;
   /* size: 10px !important; */
   text-align: center !important;
   font-size: 9px !important;
@@ -112,7 +114,7 @@ table{
 }
 
 .kNewT {
-  background-color: rgb(228, 225, 52) !important;
+  background-color: rgb(251, 235, 8) !important;
   border-color: rgb(204, 201, 44) !important;
   /* size: 10px !important; */
   text-align: center !important;

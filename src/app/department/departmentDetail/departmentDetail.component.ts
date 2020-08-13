@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
 import { Department} from '../../models/department.model';
 import { DepartmentService } from '../../services/department.service';
 
@@ -17,7 +19,7 @@ export class DepartmentDetailComponent implements OnInit {
     public entite: Department;
 
     constructor(private service: DepartmentService
-      ,         private fb: FormBuilder) {
+      ,         private fb: FormBuilder, private router: Router) {
     }
 
     ngOnInit() {
@@ -55,7 +57,7 @@ export class DepartmentDetailComponent implements OnInit {
 
     onSubmit(): void {
       console.log('envoi ');
-      if (this.id !== null) {
+      if (this.id !== 0) {
         this.entite = Object.assign({}, this.form.value);
         this.service.update(this.entite).subscribe(res => {
           alert('Department updated, success!');
@@ -67,6 +69,7 @@ export class DepartmentDetailComponent implements OnInit {
         this.entite = Object.assign({}, this.form.value);
         this.service.create(this.entite).subscribe(res => {
           alert('Department updated, success!');
+          this.router.navigate(['department']);
         },
         err => {
           console.log('Error when creating Department');

@@ -10,6 +10,7 @@ table{
 .kSMTitle {
   width: 60%;
   margin-left: 200px;
+  margin-top: 20px;
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color:rgb(251, 118, 8);
@@ -23,6 +24,7 @@ table{
   background-color: grey !important;
   margin-left: 200px !important;
   margin-right: 25px !important;
+  margin-bottom: 40px;
 }
 
 .mat-row{

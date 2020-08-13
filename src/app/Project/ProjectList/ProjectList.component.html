@@ -16,14 +16,14 @@
     <mat-cell *matCellDef="let element"> {{element.label}} </mat-cell>
   </ng-container>
 
-  <ng-container matColumnDef="tecMgr">
-    <th mat-header-cell *matHeaderCellDef width ="15%">Technical Manager</th>
-    <mat-cell *matCellDef="let element"> {{element.technicalManager?.fullName}} </mat-cell>
+  <ng-container matColumnDef="scrumMaster">
+    <th mat-header-cell *matHeaderCellDef width ="15%">Scrum Master</th>
+    <mat-cell *matCellDef="let element"> {{element.scrumMaster?.fullName}} </mat-cell>
   </ng-container>
 
-  <ng-container matColumnDef="bizMgr">
-    <th mat-header-cell *matHeaderCellDef width ="15%">Business Manager</th>
-    <mat-cell *matCellDef="let element"> {{element.businessManager?.fullName}} </mat-cell>
+  <ng-container matColumnDef="productOwner">
+    <th mat-header-cell *matHeaderCellDef width ="15%">Product Owner</th>
+    <mat-cell *matCellDef="let element"> {{element.productOwner?.fullName}} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="team">
@@ -37,7 +37,7 @@
   </ng-container>
 
   <ng-container matColumnDef="creationdate">
-    <mat-header-cell *matHeaderCellDef > Creation </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef >Creation</mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.creationdate | date: 'yyyy-MM-dd'}} </mat-cell>
   </ng-container>
 

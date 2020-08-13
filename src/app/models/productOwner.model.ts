@@ -1,6 +1,6 @@
 import { BaseEntity } from './baseEntity.model';
 
-export class BusinessManager extends BaseEntity {
+export class ProductOwner extends BaseEntity {
   lastName: string;
   firstName: string;
   fullName: string;

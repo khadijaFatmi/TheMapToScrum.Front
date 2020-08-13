@@ -1,5 +1,6 @@
 import { Component, OnInit, ComponentFactoryResolver } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router }  from '@angular/router';
 
 import { Team } from '../../models/team.model';
 import { TeamService } from '../../services/team.service';
@@ -16,11 +17,12 @@ export class TeamDetailComponent implements OnInit {
   private id: number;
   public entite: Team;
 
-  constructor(private service: TeamService, private fb: FormBuilder) { }
+  constructor(private service: TeamService, private fb: FormBuilder, private router: Router) { }
 
   ngOnInit() {
     if(window.localStorage.getItem('teamid') != null) {
       this.id = Number(window.localStorage.getItem('teamid'));
+      console.log('team ID stored locally' + ' ' + this.id);
     } else {
       this.id = 0;
     }
@@ -74,6 +76,7 @@ export class TeamDetailComponent implements OnInit {
       this.entite = Object.assign({}, this.form.value);
       this.service.create(this.entite).subscribe(res => {
         alert('success! Team created!');
+        this.router.navigate(['/team']);
       console.log('creation');
 
       });

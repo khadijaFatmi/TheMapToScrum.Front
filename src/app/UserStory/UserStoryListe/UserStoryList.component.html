@@ -1,7 +1,7 @@
 <div class="container-fluid" >
 
   <div>
-    <h1 class="titleUSList">User Stories</h1>
+    <h1 class="titleUSList">User Stories List</h1>
   </div>
   <br/>
 
@@ -20,8 +20,8 @@ projets= variable de type ProjetUserStory[], p: iterateur, libelle= attribut de 
         <mat-cell *matCellDef="let element"> {{element.version}} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="project">
-      <th mat-header-cell *matHeaderCellDef>Label</th>
+   <ng-container matColumnDef="project">
+      <th mat-header-cell *matHeaderCellDef>Project</th>
         <mat-cell *matCellDef="let element"> {{element.project?.label}} </mat-cell>
     </ng-container>
 

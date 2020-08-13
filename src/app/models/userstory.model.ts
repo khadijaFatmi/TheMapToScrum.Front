@@ -3,11 +3,11 @@ import { BaseEntity } from './baseEntity.model';
 import { Project } from './project.model';
 
 export class UserStory extends BaseEntity {
-  titre: string;
+  label: string;
   version: string;
   projectId: number;
   project: Project;
-  label: string;
+  Label: string;
   role: string;
   function1: string;
   function2: string;

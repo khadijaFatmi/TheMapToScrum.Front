@@ -1,18 +1,18 @@
 import { BaseEntity } from './baseEntity.model';
 
 import { Team } from './team.model';
-import { BusinessManager } from './businessManager.model';
+import { ProductOwner } from './productOwner.model';
 import { Department } from './department.model';
-import { TechnicalManager } from './technicalManager.model';
+import { ScrumMaster } from './scrumMaster.model';
 
 export class Project extends BaseEntity {
   label: string;
-  businessManagerId: number;
-  technicalManagerId: number;
+  productOwnerId: number;
+  scrumMasterId: number;
   teamId: number;
   departmentId: number;
-  businessManager: BusinessManager;
-  technicalManager: TechnicalManager;
+  productOwner: ProductOwner;
+  scrumMaster: ScrumMaster;
   team: Team;
   department: Department;
 }

@@ -15,7 +15,7 @@
 
   <mat-form-field class="usDetailForm">
     <mat-label class="kLabelUSDetail">Title</mat-label>
-    <input matInput formControlName="titre">
+    <input matInput formControlName="label">
   </mat-form-field>
 
   <mat-form-field class="usDetailForm">
@@ -25,13 +25,13 @@
 
   <mat-form-field class="usDetailForm">
     <mat-label class="kLabelUSDetail">Project</mat-label>
-    <mat-select formControlName="projetId" [(value)]="projetId">
+    <mat-select formControlName="projectId" [(value)]="projectId">
       <mat-option >
         Project Choice
       </mat-option>
 
-      <mat-option *ngFor="let toto of projets" [value]="toto.id">
-        {{toto.name}}
+      <mat-option *ngFor="let item of projects" [value]="item.id">
+        {{item.label}}
       </mat-option>
     </mat-select>
   </mat-form-field>

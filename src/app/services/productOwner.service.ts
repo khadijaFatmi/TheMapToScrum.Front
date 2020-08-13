@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams, HttpErrorResponse} from '@angular/common/http';
 import { Observable, throwError} from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { BusinessManager } from '../models/businessManager.model';
+import { ProductOwner } from '../models/productOwner.model';
 import { Injectable } from '@angular/core';
 import { retry, catchError } from 'rxjs/operators';
 
@@ -11,33 +11,31 @@ import { retry, catchError } from 'rxjs/operators';
 
 
 
-export class BusinessManagerService {
-  private url = environment.apiUrl + '/businessmanager';
+export class ProductOwnerService {
+  private url = environment.apiUrl + '/productowner';
 
   constructor(private http: HttpClient) {}
 
-  liste(): Observable<BusinessManager[]> {
-    return this.http.get<BusinessManager[]>(this.url);
+  liste(): Observable<ProductOwner []> {
+    return this.http.get<ProductOwner []>(this.url);
   }
-  getById(id: number): Observable<BusinessManager> {
-    return this.http.get<BusinessManager>(this.url + '/' + id.toString());
+  getById(id: number): Observable<ProductOwner > {
+    return this.http.get<ProductOwner >(this.url + '/' + id.toString());
   }
-  // add(objet: UserStory): Observable<UserStory> {
-  //   return this.http.post(this.url + '/' + form.toString());
-  // }
 
-  update(entite: BusinessManager): Observable<BusinessManager> {
+
+  update(entite: ProductOwner ): Observable<ProductOwner > {
     return this.http
-    .put<BusinessManager>(this.url, entite)
+    .put<ProductOwner >(this.url, entite)
     .pipe(
       retry(3),
       catchError(this.handleError)
     );
   }
 
-  create(entite: BusinessManager): Observable<BusinessManager> {
+  create(entite: ProductOwner ): Observable<ProductOwner > {
     return this.http
-    .post<BusinessManager>(this.url, entite)
+    .post<ProductOwner >(this.url, entite)
     .pipe(
       retry(3),
       catchError(this.handleError)

@@ -4,6 +4,8 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color:white;
   background-color: #424343;
+  margin-top: 20px;
+
 }
 .kForm {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -30,8 +32,7 @@ table{
 }
 
 .mat-row{
-  /* align-self: justify !important; */
-  text-align: justify !important;
+  text-align: center !important;
 }
 
 .mat-header-row{
@@ -40,49 +41,42 @@ table{
 }
 
 .mat-header-cell{
-  align-self: center !important;
-  text-align: center !important;
-  font-size: 14px !important;
+  /* align-self: left !important;
+  text-align: left !important; */
+  font-size: 12px !important;
   color:  #07bcf3 !important;
   font-weight: normal ;
   background: #424343 !important;
-
-  /* height: auto !important; */
 
 }
 .mat-column-version {
   word-wrap: break-word !important;
   white-space: unset !important;
-  flex: 0 0 12% !important;
-  width: 12% !important;
+  flex: 0 0 8% !important;
+  width: 8% !important;
   overflow-wrap: break-word;
-
 
   align-self: left !important;
   text-align: left !important;
-  font-size: auto !important;
-
-
+  font-size: 12px !important;
 
   word-break: break-word;
-
-
 }
 
 .mat-column-projet {
   word-wrap: break-word !important;
   white-space: unset !important;
-  flex: 0 0 15% !important;
-  width: 15% !important;
+  flex: 0 0 18% !important;
+  width: 18% !important;
   overflow-wrap: break-word;
   word-wrap: break-word;
 
   word-break: break-word;
 
-  align-self: left !important;
-  text-align: left !important;
+  /* align-self: justify !important;
+  text-align: left !important;*/
 
-  font-size: auto !important;
+  font-size: 12px !important;
 
 
 }
@@ -98,9 +92,9 @@ table{
 
   word-break: break-word;
 
-  align-self: left !important;
-  text-align: left !important;
-  font-size: auto !important;
+  /* align-self: justify !important;
+  text-align: left !important;*/
+  font-size: 12px !important;
 
 
 }
@@ -116,9 +110,9 @@ table{
 
   word-break: break-word;
 
-  align-self: center !important;
-  text-align: justify !important;
-  font-size: auto !important;
+  /* align-self: justify !important;
+  text-align: justify !important; */
+  font-size: 12px !important;
 
 }
 
@@ -132,8 +126,8 @@ table{
 
   word-break: break-word;
 
-  align-self: center !important;
-  text-align: justify !important;
+  /* align-self: justify !important;
+  text-align: justify !important; */
   font-size: auto !important;
 
 
@@ -149,8 +143,8 @@ table{
   word-wrap: break-word;
 
 
-  align-self: center !important;
-  text-align: justify !important;
+  /* align-self: justify !important;
+  text-align: justify !important; */
   font-size: 12px !important;
   word-break: break-word;
 
@@ -166,8 +160,8 @@ table{
 
   word-break: break-word;
 
-  align-self: center !important;
-  text-align: center !important;
+  /* align-self: justify !important;
+  text-align: right !important; */
   font-size: 12px !important;
 
 

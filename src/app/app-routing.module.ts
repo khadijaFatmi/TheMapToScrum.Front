@@ -5,11 +5,12 @@ import { ProjectListComponent } from './project/projectList/projectList.componen
 import { ProjectDetailComponent } from './project/projectDetail/projectDetail.component';
 import { UserStoryListComponent } from './userStory/UserStoryListe/userStoryList.component';
 import { UserStoryDetailComponent } from './userStory/UserStoryDetail/userStorydetail.component';
-import { TechnicalManagerListComponent } from './technicalManager/technicalManagerList/technicalManagerList.component';
-import { TechnicalManagerDetailComponent } from './technicalManager/technicalManagerDetail/technicalManagerDetail.component';
 
-import { BusinessManagerListComponent} from './businessManager/businessManagerList/businessManagerList.component';
-import { BusinessManagerDetailComponent } from './businessManager/businessManagerDetail/businessManagerDetail.component';
+import { ScrumMasterListComponent } from './scrumMaster/scrumMasterList/scrumMasterList.component';
+import { ScrumMasterDetailComponent } from './scrumMaster/scrumMasterDetail/scrumMasterDetail.component';
+
+import { ProductOwnerListComponent} from './productOwner/productOwnerList/productOwnerList.component';
+import { ProductOwnerDetailComponent } from './productOwner/productOwnerDetail/productOwnerDetail.component';
 
 import { TeamDetailComponent } from './team/teamDetail/teamDetail.component';
 import { TeamListComponent } from './team/TeamList/teamList.component';
@@ -40,10 +41,10 @@ const routes: Routes = [
   {path: 'projectdetail', component : ProjectDetailComponent},
   {path: 'userstory', component : UserStoryListComponent },
   {path: 'userstorydetail', component : UserStoryDetailComponent},
-  {path: 'technicalmanager', component : TechnicalManagerListComponent},
-  {path: 'technicalmanagerdetail', component : TechnicalManagerDetailComponent},
-  {path: 'businessmanager', component : BusinessManagerListComponent},
-  {path: 'businessmanagerdetail', component : BusinessManagerDetailComponent},
+  {path: 'scrummaster', component : ScrumMasterListComponent},
+  {path: 'scrummasterdetail', component : ScrumMasterDetailComponent},
+  {path: 'productowner', component : ProductOwnerListComponent},
+  {path: 'productownerdetail', component : ProductOwnerDetailComponent},
   {path: 'team', component: TeamListComponent},
   {path: 'teamdetail', component: TeamDetailComponent},
   {path: 'developer', component: DeveloperListComponent},

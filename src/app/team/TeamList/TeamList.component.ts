@@ -18,6 +18,10 @@ export class TeamListComponent implements OnInit {
   constructor(private service: TeamService, private router: Router) { }
 
   ngOnInit() {
+    this.listeEntities();
+  }
+
+  listeEntities(): void {
     this.service.liste().
     subscribe(data => {
       this.team = data;
@@ -42,7 +46,8 @@ export class TeamListComponent implements OnInit {
     this.service.delete(id).
     subscribe(data => {
       alert('Team deleted, success');
-      this.router.navigate(['/team']);
+       //  refresh list
+       this.listeEntities();
     },
       error => {
         console.log('erreur lecture Team');

@@ -1,9 +1,10 @@
 import { HttpClient, HttpParams, HttpErrorResponse} from '@angular/common/http';
 import { Observable, throwError} from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Project } from '../models/project.model';
 import { Injectable } from '@angular/core';
 import { catchError, retry } from 'rxjs/operators';
+
+import { Project } from '../models/project.model';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,10 @@ export class ProjectService {
 
   liste(): Observable<Project[]> {
     return this.http.get<Project[]>(this.url);
+  }
+
+  listAll(): Observable<Project[]> {
+    return this.http.get<Project[]>(this.url + '/All');
   }
 
   getById(id: number): Observable<Project> {

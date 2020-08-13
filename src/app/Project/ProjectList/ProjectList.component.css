@@ -74,9 +74,22 @@ table{
   align-self: center !important;
   text-align: left !important;
 
-  font-size: auto !important;
+  font-size: 12px !important;
 }
 
+.mat-column-bizMgr {
+  word-wrap: break-word !important;
+  white-space: normal !important;
+  flex: 0 0 15% !important;
+  width: 15% !important;
+  overflow-wrap: break-word;
+
+  word-break: break-word;
+
+  align-self: center !important;
+  text-align: left !important;
+  font-size: 12px !important;
+}
 
 .mat-column-team {
   word-wrap: break-word !important;
@@ -90,7 +103,7 @@ table{
 
   align-self: left !important;
   text-align: justify !important;
-  font-size: auto !important;
+  font-size: 12px !important;
 }
 
 
@@ -106,23 +119,11 @@ table{
 
   align-self: center !important;
   text-align: justify !important;
-  font-size: auto !important;
+  font-size: 12px !important;
 
 }
 
-.mat-column-creationdate {
-  word-wrap: break-word !important;
-  white-space: normal !important;
-  flex: 0 0 15% !important;
-  width: 15% !important;
-  overflow-wrap: break-word;
 
-  word-break: break-word;
-
-  align-self: center !important;
-  text-align: justify !important;
-  font-size: 8px !important;
-}
 
 
 .mat-column-action {

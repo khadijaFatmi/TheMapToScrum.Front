@@ -18,6 +18,10 @@ export class DepartmentListComponent implements OnInit {
   public dataSource: any;
 
   ngOnInit() {
+    this.listEntities();
+  }
+
+  listEntities(): void {
     this.service.liste().
     subscribe(data => {
       this.department = data;
@@ -41,7 +45,8 @@ export class DepartmentListComponent implements OnInit {
     this.service.delete(id).
       subscribe(data => {
         alert('department deleted, success');
-        this.router.navigate(['/department']);
+        // refresh Dept List
+        this.listEntities();
       },
       error => {
         console.log('erreur lecture :-/');
@@ -50,7 +55,7 @@ export class DepartmentListComponent implements OnInit {
 
   Add() {
     window.localStorage.removeItem('departmentid');
-    this.router.navigate(['departmentdetail']);
+    this.router.navigate(['departmentDetail']);
   }
 
 }

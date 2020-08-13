@@ -10,13 +10,17 @@ import { Router } from '@angular/router';
 })
 export class ProjectListComponent implements OnInit {
   public projects: Project[];
-  displayedColumns: string[] = ['label', 'tecMgr', 'bizMgr', 'team', 'department', 'action'];
+  displayedColumns: string[] = ['label', 'scrumMaster', 'productOwner', 'team', 'department', 'action'];
   public dataSource: any;
 
   constructor(private service: ProjectService, private router: Router) {
   }
 
   ngOnInit() {
+    this.listEntities();
+  }
+
+  listEntities() : void {
    this.service.liste().
    subscribe(data => {
     this.projects = data;
@@ -42,7 +46,7 @@ export class ProjectListComponent implements OnInit {
     this.service.delete(id).
       subscribe(data => {
         alert('delete success');
-        this.router.navigate(['/project']);
+        this.listEntities();
       },
       error => {
         console.log('erreur lecture :-/');

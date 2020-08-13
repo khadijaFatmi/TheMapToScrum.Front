@@ -15,7 +15,7 @@ export class UserStoryDetailComponent implements OnInit {
   public form: FormGroup;
   private id: number;
   public entite: UserStory;
-  public projets: Project[];
+  public projects: Project[];
 
   constructor(private service: UserStoryService
     ,         private fb: FormBuilder, private ps: ProjectService) {
@@ -23,11 +23,16 @@ export class UserStoryDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-   this.id = Number(window.localStorage.getItem('userstoryid'));
-   this.form = this.fb.group({
+    if(window.localStorage.getItem('userstoryid') != null) {
+      this.id = Number(window.localStorage.getItem('userstoryid'));
+    } else {
+      this.id = 0;
+    }
+    this.loadProjects();
+    this.form = this.fb.group({
     id: [''],
-    projetId: ['', Validators.required],
-    titre: ['', Validators.required],
+    projectId: ['', Validators.required],
+    label: ['', Validators.required],
     version: [''],
     role: ['', Validators.required],
     function1: ['', Validators.required],
@@ -40,7 +45,7 @@ export class UserStoryDetailComponent implements OnInit {
     dateModification: [''],
     isDeleted: ['']
   });
-   if (this.id !== null) {
+   if (this.id !== 0) {
     this.service.getById(this.id).
     subscribe(data => {
       this.entite = data;
@@ -49,18 +54,22 @@ export class UserStoryDetailComponent implements OnInit {
     error => {
       console.log('erreur lecture :-/');
     });
+
+    }
+  }
+
+  loadProjects(): void {
     this.ps.liste().
     subscribe(data => {
-      this.projets = data;
+      this.projects = data;
       });
-    }
   }
 
   updateform(): void {
     this.form.patchValue({
       id: this.entite.id
-      , projetId: this.entite.projectId
-      , titre: this.entite.titre
+      , projectId: this.entite.projectId
+      , label: this.entite.label
       , version: this.entite.version
       , role: this.entite.role
       , function1: this.entite.function1
@@ -73,13 +82,13 @@ export class UserStoryDetailComponent implements OnInit {
       , dateModification: this.entite.dateModification
       , isDeleted: this.entite.isDeleted
     });
-    console.log('valeur' + this.entite.epicStory);
+    console.log('valeur projectid=' + this.entite.projectId);
   }
 
 
   onSubmit(): void {
-    console.log('envoi ' + this.entite.epicStory);
-    if (this.id !== null) {
+    //console.log('envoi ' + this.entite.epicStory);
+    if (this.id !== 0) {
       this.entite = Object.assign({}, this.form.value, this.form.get('epicStory').value);
       this.service.update(this.entite).subscribe(res => {
         alert('update success');

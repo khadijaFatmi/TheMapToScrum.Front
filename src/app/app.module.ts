@@ -21,13 +21,13 @@ import { TeamService } from './services/team.service';
 import { TeamListComponent } from './team/TeamList/teamList.component';
 import { TeamDetailComponent } from './team/teamDetail/teamDetail.component';
 
-import { TechnicalManagerService } from './services/technicalManager.service';
-import { TechnicalManagerListComponent } from './technicalManager/technicalManagerList/technicalManagerList.component';
-import { TechnicalManagerDetailComponent } from './technicalManager/technicalManagerDetail/technicalManagerDetail.component';
+import { ScrumMasterService } from './services/scrumMaster.service';
+import { ScrumMasterListComponent } from './scrumMaster/scrumMasterList/scrumMasterList.component';
+import { ScrumMasterDetailComponent } from './scrumMaster/scrumMasterDetail/scrumMasterDetail.component';
 
-import { BusinessManagerService } from './services/businessManager.service';
-import { BusinessManagerListComponent } from './businessManager/businessManagerList/businessManagerList.component';
-import { BusinessManagerDetailComponent } from './businessManager/businessManagerDetail/businessManagerDetail.component';
+import { ProductOwnerService } from './services/productOwner.service';
+import { ProductOwnerListComponent } from './productOwner/productOwnerList/productOwnerList.component';
+import { ProductOwnerDetailComponent } from './productOwner/productOwnerDetail/productOwnerDetail.component';
 
 import { DeveloperService } from './services/developer.service';
 import { DeveloperListComponent } from './developer/developerList/developerList.component';
@@ -61,10 +61,10 @@ import { LexicComponent } from './lexic/lexic.component';
     , UserStoryDetailComponent
     , TeamListComponent
     , TeamDetailComponent
-    , TechnicalManagerListComponent
-    , TechnicalManagerDetailComponent
-    , BusinessManagerListComponent
-    , BusinessManagerDetailComponent
+    , ScrumMasterListComponent
+    , ScrumMasterDetailComponent
+    , ProductOwnerListComponent
+    , ProductOwnerDetailComponent
     , DeveloperListComponent
     , DeveloperDetailComponent
     , DepartmentListComponent
@@ -92,8 +92,8 @@ import { LexicComponent } from './lexic/lexic.component';
     ProjectService
     , UserStoryService
     , TeamService
-    , TechnicalManagerService
-    , BusinessManagerService
+    , ScrumMasterService
+    , ProductOwnerService
     , DeveloperService
     , DepartmentService
   ],
