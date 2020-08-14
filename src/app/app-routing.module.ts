@@ -50,7 +50,8 @@ const routes: Routes = [
   {path: 'developer', component: DeveloperListComponent},
   {path: 'developerdetail', component: DeveloperDetailComponent},
   {path: 'department', component: DepartmentListComponent},
-  {path: 'departmentDetail', component: DepartmentDetailComponent}
+  {path: 'departmentDetail', component: DepartmentDetailComponent},
+  {path: '**', component: HomeComponent, data: { title: 'Page non trouvée' } }
 ];
 
 @NgModule({

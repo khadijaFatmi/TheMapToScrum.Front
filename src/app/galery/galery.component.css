@@ -1,9 +1,10 @@
 
 .kQuotesTitle {
 
-  width: 46%;
+  width: 450px;
   height: 60px !important;
   margin-left: 300px;
+  margin-bottom: 10px;
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color:white;
