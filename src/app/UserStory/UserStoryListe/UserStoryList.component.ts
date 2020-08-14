@@ -23,6 +23,10 @@ export class UserStoryListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.loadListUS();
+  }
+
+  loadListUS(): void {
 
       this.service.liste().
       subscribe(data => {
@@ -49,7 +53,8 @@ export class UserStoryListComponent implements OnInit {
       subscribe(data => {
         console.log('msg is delete OK, USid:' + ' ' + id);
         alert('US deleted, success');
-        this.router.navigate(['/userstory']);
+        // refresh US list after deleting
+        this.loadListUS();
       },
       error => {
         console.log('erreur lecture US :-/');

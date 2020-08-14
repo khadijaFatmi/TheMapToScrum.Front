@@ -7,10 +7,10 @@
   width: 80% !important;
   text-align: center;
   background-color: #424343;
-  margin-left: 60px !important;
+  margin-left: 90px !important;
   margin-right: 60px !important;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: white;
+  color: #07bcf3;
 }
 
 .usDetailForm {
@@ -18,7 +18,7 @@
 
   display: block !important;
   background-color: grey !important;
-  margin-left: 60px !important;
+  margin-left: 90px !important;
   margin-right: 60px !important;
   color: white !important;
 
@@ -32,7 +32,7 @@
   font-weight: normal !important;
   background-color: rgb(128, 128, 128) !important;
   display: flex; flex-direction: column;
-  margin-left: 60px !important;
+  margin-left: 90px !important;
 }
 
 .kLabelUSDetail {
@@ -45,7 +45,7 @@
 
 .kEpicLabel {
   width: 100%;
-  margin-left: 60px !important;
+  margin-left: 90px !important;
   color: rgb(63, 182, 218) !important;
   font-size: large !important;
   font-weight: normal !important;
@@ -54,8 +54,8 @@
 
 
 .kSaveUS{
-  background-color:rgb(2, 125, 146);
-  border-color: rgb(8, 180, 211) !important;
+  background-color:#07bcf3;
+  border-color: #17aedb !important;
   text-align: center !important;
   color: white !important;
   font-weight: bold;
@@ -66,12 +66,12 @@
 }
 
 .kSaveUS:hover{
-  background-color: rgb(12, 198, 231);
+  background-color: #41d3ff;
 }
 
 .kBckUSList {
-  background-color: rgb(64, 90, 124);
-  border-color: #3688d4 !important;
+  background-color: #03303d;
+  border-color: #065970 !important;
    text-align: center !important;
    color: white !important;
    font-weight: bold;
