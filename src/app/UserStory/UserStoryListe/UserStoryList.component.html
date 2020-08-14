@@ -25,6 +25,11 @@ projets= variable de type ProjetUserStory[], p: iterateur, libelle= attribut de 
         <mat-cell *matCellDef="let element"> {{element.project?.label}} </mat-cell>
     </ng-container>
 
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef>Title</th>
+        <mat-cell *matCellDef="let element"> {{element.label}} </mat-cell>
+    </ng-container>
+
     <ng-container matColumnDef="priority">
       <th mat-header-cell *matHeaderCellDef>Priority</th>
         <mat-cell *matCellDef="let element"> {{element.priority}} </mat-cell>

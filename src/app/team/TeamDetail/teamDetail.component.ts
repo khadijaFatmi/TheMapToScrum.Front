@@ -1,6 +1,6 @@
 import { Component, OnInit, ComponentFactoryResolver } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Router }  from '@angular/router';
+import { Router } from '@angular/router';
 
 import { Team } from '../../models/team.model';
 import { TeamService } from '../../services/team.service';
@@ -20,7 +20,7 @@ export class TeamDetailComponent implements OnInit {
   constructor(private service: TeamService, private fb: FormBuilder, private router: Router) { }
 
   ngOnInit() {
-    if(window.localStorage.getItem('teamid') != null) {
+    if (window.localStorage.getItem('teamid') != null) {
       this.id = Number(window.localStorage.getItem('teamid'));
       console.log('team ID stored locally' + ' ' + this.id);
     } else {

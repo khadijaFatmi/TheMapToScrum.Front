@@ -16,7 +16,7 @@ export class UserStoryListComponent implements OnInit {
   // displayedColumns: string[] = ['version', 'projet', 'name', 'role', 'function1',
   // 'function2', 'notes', 'priority', 'storyPoints', 'epicStory', 'action'];
 
-  displayedColumns: string[] = ['version', 'project', 'role', 'priority', 'storyPoints', 'epicStory', 'action'];
+  displayedColumns: string[] = ['version', 'project', 'title', 'role', 'priority', 'storyPoints', 'epicStory', 'action'];
   public dataSource: any;
 
   constructor(private service: UserStoryService, private router: Router) {

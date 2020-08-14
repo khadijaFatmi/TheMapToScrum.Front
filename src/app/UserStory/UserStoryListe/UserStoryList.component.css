@@ -18,7 +18,7 @@
 }
 
 table{
-  width: 70%;
+  width: 100%;
   padding: 40 40 0 40 !important;
 }
 
@@ -28,21 +28,23 @@ table{
   box-sizing: border-box !important;
   text-size-adjust: auto !important;
   background-color: grey !important;
+  margin-bottom: 40px;
 
 }
 
 .mat-row{
-  text-align: center !important;
+  text-align: justify !important;
 }
 
 .mat-header-row{
   background: #424343 !important;
   height: 40px !important;
+
 }
 
 .mat-header-cell{
-  /* align-self: left !important;
-  text-align: left !important; */
+  /* align-self: left !important;*/
+  text-align: left !important;
   font-size: 12px !important;
   color:  #07bcf3 !important;
   font-weight: normal ;
@@ -52,22 +54,44 @@ table{
 .mat-column-version {
   word-wrap: break-word !important;
   white-space: unset !important;
-  flex: 0 0 8% !important;
-  width: 8% !important;
+  flex: 0 0 6% !important;
+  width: 6% !important;
   overflow-wrap: break-word;
 
-  align-self: left !important;
-  text-align: left !important;
-  font-size: 12px !important;
+
+
+  font-size: 10px !important;
 
   word-break: break-word;
 }
 
-.mat-column-projet {
+.mat-column-project {
   word-wrap: break-word !important;
   white-space: unset !important;
-  flex: 0 0 18% !important;
-  width: 18% !important;
+  flex: 0 0 15% !important;
+  width: 15% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  /* align-self: justify !important;*/
+  text-align: center !important;
+
+  font-size: 12px !important;
+
+
+}
+.mat-row-project{
+  text-align: center !important;
+}
+
+
+.mat-column-title {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 20% !important;
+  width: 20% !important;
   overflow-wrap: break-word;
   word-wrap: break-word;
 
@@ -85,8 +109,8 @@ table{
 .mat-column-role {
   word-wrap: break-word !important;
   white-space: unset !important;
-  flex: 0 0 20% !important;
-  width: 20% !important;
+  flex: 0 0 15% !important;
+  width: 15% !important;
   overflow-wrap: break-word;
   word-wrap: break-word;
 
@@ -103,8 +127,8 @@ table{
 .mat-column-priority {
   word-wrap: break-word !important;
   white-space: unset !important;
-  flex: 0 0 10% !important;
-  width: 10% !important;
+  flex: 0 0 8% !important;
+  width: 8% !important;
   overflow-wrap: break-word;
 
 
@@ -119,8 +143,8 @@ table{
 .mat-column-storyPoints {
   word-wrap: break-word !important;
   white-space: normal !important;
-  flex: 0 0 7% !important;
-  width: 7% !important;
+  flex: 0 0 8% !important;
+  width: 8% !important;
   overflow-wrap: break-word;
 
 
@@ -128,7 +152,7 @@ table{
 
   /* align-self: justify !important;
   text-align: justify !important; */
-  font-size: auto !important;
+  font-size: 11px !important;
 
 
 
@@ -145,7 +169,7 @@ table{
 
   /* align-self: justify !important;
   text-align: justify !important; */
-  font-size: 12px !important;
+  font-size: 11px !important;
   word-break: break-word;
 
 }
@@ -205,7 +229,7 @@ table{
 }
 
 .kNew {
-  background-color: #0089b3 !important;
+  background-color: #07bcf3 !important;
   border-color: #1465b1 !important;
   /* size: 10px !important; */
   text-align: center !important;
@@ -221,7 +245,7 @@ table{
 }
 
 .kNew:hover {
-  background-color: #05a3ff !important;
+  background-color: #2acdff !important;
 }
 
 
