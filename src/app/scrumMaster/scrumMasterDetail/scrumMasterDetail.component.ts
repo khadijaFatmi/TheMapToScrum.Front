@@ -75,7 +75,7 @@ export class ScrumMasterDetailComponent implements OnInit {
       this.entite = Object.assign({}, this.form.value);
       this.service.create(this.entite).subscribe(res => {
         alert('a new Scrum Master created');
-        this.router.navigate(['technicalmanager']);
+        this.router.navigate(['scrummaster']);
       },
       err => {
         console.log('error');

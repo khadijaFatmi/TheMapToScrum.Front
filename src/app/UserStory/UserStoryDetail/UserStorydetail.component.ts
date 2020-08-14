@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
 import { Project } from 'src/app/models/project.model';
 import { ProjectService } from '../../services/project.service';
 import { UserStoryService } from '../../services/userStory.service';
@@ -8,8 +10,8 @@ import { UserStory } from '../../models/userstory.model';
 
 @Component({
   selector: 'app-userstorydetail',
-  templateUrl: './UserStoryDetail.component.html',
-  styleUrls: ['./UserStoryDetail.component.css']
+  templateUrl: './userStoryDetail.component.html',
+  styleUrls: ['./userStoryDetail.component.css']
 })
 export class UserStoryDetailComponent implements OnInit {
   public form: FormGroup;
@@ -18,12 +20,12 @@ export class UserStoryDetailComponent implements OnInit {
   public projects: Project[];
 
   constructor(private service: UserStoryService
-    ,         private fb: FormBuilder, private ps: ProjectService) {
+    ,         private fb: FormBuilder, private ps: ProjectService, private router: Router) {
 
   }
 
   ngOnInit() {
-    if(window.localStorage.getItem('userstoryid') != null) {
+    if (window.localStorage.getItem('userstoryid') != null) {
       this.id = Number(window.localStorage.getItem('userstoryid'));
     } else {
       this.id = 0;
@@ -45,9 +47,9 @@ export class UserStoryDetailComponent implements OnInit {
     dateModification: [''],
     isDeleted: ['']
   });
-   if (this.id !== 0) {
-    this.service.getById(this.id).
-    subscribe(data => {
+    if (this.id !== 0) {
+      this.service.getById(this.id).
+      subscribe(data => {
       this.entite = data;
       this.updateform();
     },
@@ -87,11 +89,12 @@ export class UserStoryDetailComponent implements OnInit {
 
 
   onSubmit(): void {
-    //console.log('envoi ' + this.entite.epicStory);
+    // console.log('envoi ' + this.entite.epicStory);
     if (this.id !== 0) {
       this.entite = Object.assign({}, this.form.value, this.form.get('epicStory').value);
       this.service.update(this.entite).subscribe(res => {
         alert('update success');
+        this.router.navigate(['/userstory']);
       },
       err => {
         console.log('error');
@@ -100,6 +103,7 @@ export class UserStoryDetailComponent implements OnInit {
       this.entite = Object.assign({}, this.form.value, this.form.get('epicStory').value);
       this.service.create(this.entite).subscribe(res => {
         alert('create success');
+        this.router.navigate(['/userstory']);
       },
       err => {
         console.log('error');

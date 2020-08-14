@@ -10,15 +10,15 @@ import { MaterialModule } from './material/material.module';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
 
 import { UserStoryService} from './services/userStory.service';
-import { UserStoryListComponent} from './userStory/UserStoryListe/userStoryList.component';
-import { UserStoryDetailComponent } from './userStory/UserStoryDetail/userStorydetail.component';
+import { UserStoryListComponent } from './userStory/userStoryListe/userStoryList.component';
+import { UserStoryDetailComponent } from './userStory/userStoryDetail/userStoryDetail.component';
 
 import { ProjectService } from './services/project.service';
 import { ProjectListComponent } from './project/projectList/projectList.component';
 import { ProjectDetailComponent } from './project/projectDetail/projectDetail.component';
 
 import { TeamService } from './services/team.service';
-import { TeamListComponent } from './team/TeamList/teamList.component';
+import { TeamListComponent } from './team/teamList/teamList.component';
 import { TeamDetailComponent } from './team/teamDetail/teamDetail.component';
 
 import { ScrumMasterService } from './services/scrumMaster.service';
@@ -57,8 +57,7 @@ import { LexicComponent } from './lexic/lexic.component';
     AppComponent
     , ProjectListComponent
     , ProjectDetailComponent
-    , UserStoryListComponent
-    , UserStoryDetailComponent
+
     , TeamListComponent
     , TeamDetailComponent
     , ScrumMasterListComponent
@@ -77,6 +76,8 @@ import { LexicComponent } from './lexic/lexic.component';
     , MamaBearComponent
     , ToolsComponent
     , ContactComponent, LexicComponent
+    , UserStoryListComponent
+    , UserStoryDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -90,12 +91,12 @@ import { LexicComponent } from './lexic/lexic.component';
       ],
   providers: [
     ProjectService
-    , UserStoryService
     , TeamService
     , ScrumMasterService
     , ProductOwnerService
     , DeveloperService
     , DepartmentService
+    , UserStoryService
   ],
   bootstrap: [AppComponent]
 })

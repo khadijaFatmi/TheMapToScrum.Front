@@ -1,9 +1,9 @@
 
 
- <div>
-  <h1 class="kAppTitle">The Map To Scrum</h1>
+ <div class="kAppTitle">
+  <h1 >The Map To Scrum</h1>
 
-
+ </div>
 
 <nav id="header" class="app-component navbar navbar-expand-lg navbar-dark bg-primary fixed-top kNav">
   <br/>
@@ -40,8 +40,8 @@
   <button mat-button [matMenuTriggerFor]="tech">Roles</button>
   <mat-menu #tech="matMenu" >
     <button mat-menu-item class="option-menu" routerLink="team" routerLinkActive="active">Team</button>
-    <button mat-menu-item class="option-menu" routerLink="technicalmanager" routerLinkActive="active">Scrum Master</button>
-    <button mat-menu-item class="option-menu" routerLink="businessmanager" routerLinkActive="active">Product Owner</button>
+    <button mat-menu-item class="option-menu" routerLink="scrummaster" routerLinkActive="active">Scrum Master</button>
+    <button mat-menu-item class="option-menu" routerLink="productowner" routerLinkActive="active">Product Owner</button>
   </mat-menu>
 
   <button mat-button [matMenuTriggerFor]="userstories">UserStories</button>
@@ -57,7 +57,7 @@
   </mat-menu>
 
 </nav>
-</div>
+
 <br/>
 <br/>
 <br/>
@@ -65,3 +65,4 @@
 <br/>
 
 <router-outlet></router-outlet>
+<footer>Version 0.0.1</footer>

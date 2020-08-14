@@ -11,7 +11,7 @@ import { ScrumMaster} from '../../models/scrumMaster.model';
 })
 export class ScrumMasterListComponent implements OnInit {
 
-  public techMgr: ScrumMaster[];
+  public scrumMaster: ScrumMaster[];
   displayedColumns: string[] = ['firstName', 'lastName', 'action'];
   public dataSource: any;
 
@@ -24,8 +24,8 @@ export class ScrumMasterListComponent implements OnInit {
 listeEntities(): void {
   this.service.liste().
     subscribe(data => {
-      this.techMgr = data;
-      this.dataSource = this.techMgr;
+      this.scrumMaster = data;
+      this.dataSource = this.scrumMaster;
       console.log('lecture Scrum Master ok' , data);
     },
        error => {
@@ -37,9 +37,9 @@ listeEntities(): void {
 
 edit(objet: ScrumMaster): void {
   console.log('objet ', objet);
-  window.localStorage.removeItem('techMgrid');
-  window.localStorage.setItem('techMgrId', objet.id.toString());
-  this.router.navigate(['technicalmanagerdetail']);
+  window.localStorage.removeItem('productOwnerd');
+  window.localStorage.setItem('scrumMasterId', objet.id.toString());
+  this.router.navigate(['productownerdetail']);
 }
 
 delete(objet: ScrumMaster): void {

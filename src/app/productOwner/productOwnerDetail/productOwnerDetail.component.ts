@@ -16,7 +16,7 @@ export class ProductOwnerDetailComponent implements OnInit {
   public form: FormGroup;
   private id: number;
   public entite: ProductOwner;
-  public technicalManager: ProductOwner[];
+  public productOwner: ProductOwner[];
 
 
   constructor(private service: ProductOwnerService

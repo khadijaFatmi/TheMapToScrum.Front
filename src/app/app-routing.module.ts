@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { ProjectListComponent } from './project/projectList/projectList.component';
 import { ProjectDetailComponent } from './project/projectDetail/projectDetail.component';
-import { UserStoryListComponent } from './userStory/UserStoryListe/userStoryList.component';
-import { UserStoryDetailComponent } from './userStory/UserStoryDetail/userStorydetail.component';
+import { UserStoryListComponent } from './userStory/userStoryListe/userStoryList.component';
+import { UserStoryDetailComponent } from './userStory/userStoryDetail/userStoryDetail.component';
 
 import { ScrumMasterListComponent } from './scrumMaster/scrumMasterList/scrumMasterList.component';
 import { ScrumMasterDetailComponent } from './scrumMaster/scrumMasterDetail/scrumMasterDetail.component';
@@ -13,7 +13,7 @@ import { ProductOwnerListComponent} from './productOwner/productOwnerList/produc
 import { ProductOwnerDetailComponent } from './productOwner/productOwnerDetail/productOwnerDetail.component';
 
 import { TeamDetailComponent } from './team/teamDetail/teamDetail.component';
-import { TeamListComponent } from './team/TeamList/teamList.component';
+import { TeamListComponent } from './team/teamList/teamList.component';
 
 import { DeveloperListComponent } from './developer/developerList/developerList.component';
 import { DeveloperDetailComponent } from './developer/developerDetail/developerDetail.component';

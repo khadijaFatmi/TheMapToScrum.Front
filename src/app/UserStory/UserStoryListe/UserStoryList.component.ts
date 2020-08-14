@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { UserStoryService } from '../../services/userStory.service';
-import { UserStory } from '../../models/UserStory.model';
+import { UserStory } from '../../models/userStory.model';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-userstory',
-  templateUrl: './UserStoryList.component.html',
-  styleUrls: ['./UserStoryList.component.css']
+  templateUrl: './userStoryList.component.html',
+  styleUrls: ['./userStoryList.component.css']
 })
 export class UserStoryListComponent implements OnInit {
   public userstory: UserStory[];

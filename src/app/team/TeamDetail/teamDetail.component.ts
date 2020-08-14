@@ -66,18 +66,18 @@ export class TeamDetailComponent implements OnInit {
       this.entite = Object.assign({}, this.form.value);
       this.service.update(this.entite).subscribe(res => {
         alert('Team updated!');
+        this.router.navigate(['/team']);
       },
       err => {
-        console.log()
+        console.log();
       }
-      )
-    }
-    else {
-      this.entite = Object.assign({}, this.form.value);
-      this.service.create(this.entite).subscribe(res => {
+      );
+      } else {
+        this.entite = Object.assign({}, this.form.value);
+        this.service.create(this.entite).subscribe(res => {
         alert('success! Team created!');
         this.router.navigate(['/team']);
-      console.log('creation');
+        console.log('creation');
 
       });
 
