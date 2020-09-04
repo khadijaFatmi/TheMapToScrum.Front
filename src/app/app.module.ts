@@ -51,13 +51,12 @@ import { ToolsComponent } from './tools/tools.component';
 import { LexicComponent } from './lexic/lexic.component';
 
 
-
+// declaration des composants
 @NgModule({
   declarations: [
     AppComponent
     , ProjectListComponent
     , ProjectDetailComponent
-
     , TeamListComponent
     , TeamDetailComponent
     , ScrumMasterListComponent
@@ -79,6 +78,7 @@ import { LexicComponent } from './lexic/lexic.component';
     , UserStoryListComponent
     , UserStoryDetailComponent
   ],
+  // modules necessaires à l'execution du prg
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -89,6 +89,7 @@ import { LexicComponent } from './lexic/lexic.component';
     , FormsModule
     ,  MatCarouselModule.forRoot(),
       ],
+  // declaration des services utilises dans l'app et declares ici
   providers: [
     ProjectService
     , TeamService
@@ -98,6 +99,7 @@ import { LexicComponent } from './lexic/lexic.component';
     , DepartmentService
     , UserStoryService
   ],
+  // demarrage de l'application dans appComponent
   bootstrap: [AppComponent]
 })
 export class AppModule { }

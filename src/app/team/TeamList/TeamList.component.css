@@ -8,15 +8,6 @@ table{
 
  }
 
-.kTTitle {
-  width: 60%;
-  margin-left: 200px;
-  margin-top: 20px;
-  text-align: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color:rgb(251, 235, 8);
-  background-color: #424343;
-}
 /*Angular Material : Surcharge des classes natives, mat-table & ses composants customisés*/
 .mat-table{
   width: 60% !important;
@@ -79,6 +70,17 @@ table{
   font-size: 12px !important;
 }
 
+
+
+.kTTitle {
+  width: 60%;
+  margin-left: 200px;
+  margin-top: 20px;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color:rgb(251, 235, 8);
+  background-color: #424343;
+}
 /* Bootstrap Classes: Surcharge Boutons actions */
 .kEditT {
   background-color: rgb(221, 209, 47) !important;
@@ -137,4 +139,13 @@ table{
 .kBtnNew{
   font-size: 20px;
   padding-right: 10px;
+}
+
+
+
+.kSpinner{
+  color: rgb(251, 235, 8) !important;
+  text-align: center !important;
+  margin-left: 550px;
+  margin-bottom: 20px;
 }

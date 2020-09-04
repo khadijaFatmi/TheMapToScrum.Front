@@ -14,6 +14,7 @@ export class ScrumMasterListComponent implements OnInit {
   public scrumMaster: ScrumMaster[];
   displayedColumns: string[] = ['firstName', 'lastName', 'action'];
   public dataSource: any;
+  public isLoading = false;
 
   constructor(private service: ScrumMasterService, private router: Router) { }
 
@@ -22,14 +23,17 @@ export class ScrumMasterListComponent implements OnInit {
 }
 
 listeEntities(): void {
+  this.isLoading = true;
   this.service.liste().
     subscribe(data => {
       this.scrumMaster = data;
       this.dataSource = this.scrumMaster;
       console.log('lecture Scrum Master ok' , data);
+      this.isLoading = false;
     },
        error => {
         console.log('lecture Scrum Master ko');
+        this.isLoading = false;
        }
 
     );

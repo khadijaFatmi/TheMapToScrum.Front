@@ -12,6 +12,7 @@ export class ProjectListComponent implements OnInit {
   public projects: Project[];
   displayedColumns: string[] = ['label', 'scrumMaster', 'productOwner', 'team', 'department', 'action'];
   public dataSource: any;
+  public isLoading = false;
 
   constructor(private service: ProjectService, private router: Router) {
   }
@@ -20,15 +21,18 @@ export class ProjectListComponent implements OnInit {
     this.listEntities();
   }
 
-  listEntities() : void {
-   this.service.liste().
-   subscribe(data => {
+  listEntities(): void {
+    this.isLoading = true;
+    this.service.liste().
+    subscribe(data => {
     this.projects = data;
     this.dataSource = this.projects;
     console.log('lecture ok kdij :-)', data);
+    this.isLoading = false;
     },
       error => {
         console.log('erreur lecture :-/');
+        this.isLoading = false;
       }
     );
   }

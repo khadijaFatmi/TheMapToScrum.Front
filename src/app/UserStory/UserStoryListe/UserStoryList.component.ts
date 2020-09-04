@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class UserStoryListComponent implements OnInit {
   public userstory: UserStory[];
+  public isLoading = false;
 
   // 1ere version de la liste, trop de champs inutiles pour l'utilisateur,seront visible
   // dans détail
@@ -27,15 +28,20 @@ export class UserStoryListComponent implements OnInit {
   }
 
   loadListUS(): void {
-
+      this.isLoading = true;
       this.service.liste().
       subscribe(data => {
         this.userstory = data;
         this.dataSource = this.userstory;
         console.log('lecture us ok');
+        // setTimeout(() => {
+        //   console.log('spinner'); } , 3000)
+        // ;
+        this.isLoading = false;
       },
       error => {
         console.log('erreur lecture :-/');
+        this.isLoading = false;
       });
 
   }

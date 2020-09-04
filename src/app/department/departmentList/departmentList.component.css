@@ -8,15 +8,6 @@ table{
 
  }
 
-.kDepartmentTitle {
-  width: 60%;
-  margin-left: 200px;
-  margin-top: 30px;
-  text-align: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color:#9c08ff;
-  background-color: #424343;
-}
 /*Angular Material : Surcharge des classes natives, mat-table & ses composants customisés*/
 .mat-table{
   width: 60% !important;
@@ -80,6 +71,16 @@ table{
 }
 
 /* Bootstrap Classes: Surcharge Boutons actions */
+
+.kDepartmentTitle {
+  width: 60%;
+  margin-left: 200px;
+  margin-top: 30px;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color:#9c08ff;
+  background-color: #424343;
+}
 .kEditDptmt {
   background-color: #9c08ff !important;
   border-color:#5a0a8f !important;
@@ -139,3 +140,12 @@ table{
   font-size: 20px;
   padding-right: 10px;
 }
+
+
+.kSpinner{
+  color: #9c08ff;
+  text-align: center !important;
+  margin-left: 550px;
+  margin-bottom: 20px;
+}
+

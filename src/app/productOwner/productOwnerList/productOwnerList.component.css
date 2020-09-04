@@ -5,17 +5,9 @@
 table{
   width: 60%;
   padding: 40 40 0 40 !important;
- }
-
-.kPOTitle {
-  width: 60%;
-  margin-left: 200px;
-  margin-top: 40px;
-  text-align: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color:rgb(221, 33, 33);
-  background-color: #424343;
 }
+
+
 /*Angular Material : Surcharge des classes natives, mat-table & ses composants customisés*/
 .mat-table{
   width: 60% !important;
@@ -92,6 +84,15 @@ table{
 }
 
 /* Bootstrap Classes: Surcharge Boutons actions */
+.kPOTitle {
+  width: 60%;
+  margin-left: 200px;
+  margin-top: 40px;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color:rgb(221, 33, 33);
+  background-color: #424343;
+}
 .kEditPO {
   background-color: rgb(185, 8, 8) !important;
   border-color:rgb(221, 33, 33) !important;
@@ -103,6 +104,7 @@ table{
   margin-left: 20px !important;
 
 }
+
 .kEditPO:hover {
   background-color: rgb(221, 33, 33) !important;
 }
@@ -150,3 +152,12 @@ table{
   font-size: 20px;
   padding-right: 10px;
 }
+
+
+.kSpinner{
+  color: rgb(221, 33, 33) !important;
+  text-align: center !important;
+  margin-left: 550px;
+  margin-bottom: 20px;
+}
+

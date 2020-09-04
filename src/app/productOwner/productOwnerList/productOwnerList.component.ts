@@ -14,21 +14,25 @@ export class ProductOwnerListComponent implements OnInit {
   public techMgr: ProductOwner[];
   displayedColumns: string[] = ['firstName', 'lastName', 'action'];
   public dataSource: any;
+  public isLoading = false;
 
   constructor(private service: ProductOwnerService, private router: Router) { }
 
   ngOnInit() {
     this.listEntities();
   }
-  listEntities() : void {
+  listEntities(): void {
+    this.isLoading = true;
     this.service.liste().
     subscribe(data => {
       this.techMgr = data;
       this.dataSource = this.techMgr;
       console.log('lecture productowner ok' , data);
+      this.isLoading = false;
     },
        error => {
         console.log('lecture productowner ko');
+        this.isLoading = false;
        }
 
     );

@@ -6,7 +6,7 @@ import * as Material from '@angular/material';
 import { MAT_DATE_LOCALE } from '@angular/material';
 
 
-
+// factorisation de tous les imports des modules matarial
 @NgModule({
   imports: [
     BrowserModule

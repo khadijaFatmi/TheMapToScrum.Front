@@ -11,6 +11,7 @@ import { Department } from 'src/app/models/department.model';
 export class DepartmentListComponent implements OnInit {
 
   public department: Department[];
+  public isLoading = false;
 
   constructor(private service: DepartmentService, private router: Router) { }
 
@@ -22,13 +23,16 @@ export class DepartmentListComponent implements OnInit {
   }
 
   listEntities(): void {
+    this.isLoading = true;
     this.service.liste().
     subscribe(data => {
       this.department = data;
       this.dataSource = this.department;
+      this.isLoading = false;
     },
     error => {
       console.log('erreur lecture department :-/');
+      this.isLoading = false;
     });
   }
 

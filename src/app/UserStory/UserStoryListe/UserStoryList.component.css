@@ -253,3 +253,11 @@ table{
   font-size: 20px;
   padding-right: 10px;
 }
+
+.kSpinner{
+  color: #07bcf3 !important;
+  text-align: center !important;
+  margin-left: 600px;
+  margin-bottom: 20px;
+
+}

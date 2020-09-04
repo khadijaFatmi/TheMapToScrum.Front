@@ -14,6 +14,7 @@ export class TeamListComponent implements OnInit {
   public team: Team[];
   displayedColumns: string[] = ['label', 'action'];
   public dataSource: any;
+  public isLoading = false;
 
   constructor(private service: TeamService, private router: Router) { }
 
@@ -22,14 +23,17 @@ export class TeamListComponent implements OnInit {
   }
 
   listeEntities(): void {
+    this.isLoading = true;
     this.service.liste().
     subscribe(data => {
       this.team = data;
       this.dataSource = this.team;
       console.log('lecture team OK', data);
+      this.isLoading = false;
     },
       error => {
         console.log('lecture Team KO');
+        this.isLoading = false;
       }
     );
   }

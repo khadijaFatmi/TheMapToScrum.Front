@@ -18,11 +18,13 @@ export class UserStoryDetailComponent implements OnInit {
   private id: number;
   public entite: UserStory;
   public projects: Project[];
+  public storyPointsArray: number[];
 
   constructor(private service: UserStoryService
     ,         private fb: FormBuilder, private ps: ProjectService, private router: Router) {
 
   }
+
 
   ngOnInit() {
     if (window.localStorage.getItem('userstoryid') != null) {
@@ -30,6 +32,7 @@ export class UserStoryDetailComponent implements OnInit {
     } else {
       this.id = 0;
     }
+    this.storyPointsArray = [1, 2, 3, 5, 8, 11];
     this.loadProjects();
     this.form = this.fb.group({
     id: [''],

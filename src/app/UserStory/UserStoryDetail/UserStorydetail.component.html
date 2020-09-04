@@ -62,10 +62,28 @@
     <input matInput formControlName="priority">
   </mat-form-field>
 
+
+  <div class="row">
+    <div class="col-md-6">
+  <mat-form-field class="usDetailForm">
+    <mat-label class="kLabelUSDetail">Story Points</mat-label>
+    <mat-select formControlName="storyPoints" [(value)]="storyPoints">
+      <!-- <mat-option >
+        Points Choice
+      </mat-option> -->
+
+      <mat-option *ngFor="let item of storyPointsArray" [value]="item">
+        {{item}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+</div>
+<!--
   <mat-form-field class="usDetailForm">
     <mat-label class="kLabelUSDetail">Story Points</mat-label>
     <input type="number" matInput formControlName="storyPoints">
-  </mat-form-field>
+  </mat-form-field> -->
 
   <mat-label class="kEpicLabel">Epic Story</mat-label>
 
