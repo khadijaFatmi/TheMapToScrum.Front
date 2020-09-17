@@ -30,15 +30,22 @@ export class ProjectDetailComponent implements OnInit {
   public teams: Team[];
   public scrumMasters: ScrumMaster[];
   public productOwners: ProductOwner[];
+  public projectStatuses: any[];
 
   constructor(private service: ProjectService, private fb: FormBuilder, private uss: UserStoryService,
               private teamService: TeamService, private departmentService: DepartmentService,
               private scrumMasterService: ScrumMasterService, private productOwnerService: ProductOwnerService) { }
 
   ngOnInit() {
+    this.projectStatuses = [{'id': 1, 'libelle': 'Initiate'}
+                          , {'id': 2, 'libelle': 'PlanAndEstimate'}
+                          , {'id': 3, 'libelle': 'Implement'}
+                          , {'id': 4, 'libelle': 'ReviewAndRetrospective'}
+                          , {'id': 5, 'libelle': 'Release'} ];
     this.form = this.fb.group({
       id: [''],
       label: ['', Validators.required],
+      projectStatus: ['', Validators.required],
       scrumMasterId: ['', Validators.required],
       productOwnerId: ['', Validators.required],
       teamId: [''],
@@ -74,6 +81,7 @@ export class ProjectDetailComponent implements OnInit {
     this.form.patchValue({
       id: this.entite.id
       , label: this.entite.label
+      , projectStatus: this.entite.projectStatus
       , scrumMasterId: this.entite.scrumMasterId
       , productOwnerId: this.entite.productOwnerId
       , teamId: this.entite.teamId

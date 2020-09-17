@@ -9,6 +9,7 @@ import { MatCarouselSlide, MatCarouselSlideComponent } from '@ngmodule/material-
 })
 export class GaleryComponent implements OnInit {
 
+  maintainAspectRatio = 1;
   constructor() { }
 
   slides = [

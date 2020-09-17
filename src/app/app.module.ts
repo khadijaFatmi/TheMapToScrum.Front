@@ -49,6 +49,14 @@ import { GaleryComponent } from './galery/galery.component';
 import { MamaBearComponent } from './mamaBear/mamaBear.component';
 import { ToolsComponent } from './tools/tools.component';
 import { LexicComponent } from './lexic/lexic.component';
+import { ScrumdefinitionComponent } from './scrumdefinition/scrumdefinition.component';
+
+import { SprintBacklogComponent } from './sprintBacklog/sprintBacklog.component';
+import { ProductBacklogComponent } from './productBacklog/productBacklog.component';
+import { SprintPlanningComponent } from './sprintPlanning/sprintPlanning.component';
+
+
+import { TaskFeaturesComponent } from './taskFeatures/taskFeatures.component';
 
 
 // declaration des composants
@@ -77,6 +85,10 @@ import { LexicComponent } from './lexic/lexic.component';
     , ContactComponent, LexicComponent
     , UserStoryListComponent
     , UserStoryDetailComponent
+    , ScrumdefinitionComponent
+    , SprintBacklogComponent
+    , ProductBacklogComponent
+    , TaskFeaturesComponent
   ],
   // modules necessaires à l'execution du prg
   imports: [

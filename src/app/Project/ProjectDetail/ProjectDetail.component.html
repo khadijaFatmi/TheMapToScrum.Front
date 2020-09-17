@@ -22,7 +22,7 @@
 
   <mat-form-field class="kProjectDetailForm">
     <mat-label class="kLabelProjectDetail">Scrum Master</mat-label>
-    <mat-select formControlName="scrumMasterId" [(value)]="scrumMasterId">
+    <mat-select formControlName="scrumMasterId" >
       <mat-option >
         Choose your Scrum Master
       </mat-option>
@@ -35,7 +35,7 @@
 
   <mat-form-field class="kProjectDetailForm">
     <mat-label class="kLabelProjectDetail">Product Owner</mat-label>
-    <mat-select formControlName="productOwnerId" [(value)]="productOwnerId">
+    <mat-select formControlName="productOwnerId" >
       <mat-option >
         Choose your Product Owner
       </mat-option>
@@ -49,7 +49,7 @@
 
   <mat-form-field class="kProjectDetailForm">
     <mat-label class="kLabelProjectDetail">Team</mat-label>
-    <mat-select formControlName="teamId" [(value)]="teamId">
+    <mat-select formControlName="teamId">
       <mat-option >
         Choose your Team
       </mat-option>
@@ -63,7 +63,7 @@
 
   <mat-form-field class="kProjectDetailForm">
     <mat-label class="kLabelProjectDetail">Department</mat-label>
-    <mat-select formControlName="departmentId" [(value)]="departmentId">
+    <mat-select formControlName="departmentId">
       <mat-option >
         departmentid Choice
       </mat-option>
@@ -73,6 +73,21 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
+
+
+  <mat-form-field class="kProjectDetailForm">
+    <mat-label class="kLabelProjectDetail">Status</mat-label>
+    <mat-select formControlName="projectStatus">
+      <mat-option >
+        Status Choice
+      </mat-option>
+
+      <mat-option *ngFor="let item of projectStatuses" [value]="item.id">
+        {{item.libelle}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
 
 
 

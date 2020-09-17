@@ -15,5 +15,7 @@ export class UserStory extends BaseEntity {
   priority: string;
   storyPoints: number;
   epicStory: boolean;
+  usStatus: number;
+  strUsStatus: string;
 
 }

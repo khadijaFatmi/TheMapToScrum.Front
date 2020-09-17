@@ -10,7 +10,8 @@ import { Router } from '@angular/router';
 })
 export class ProjectListComponent implements OnInit {
   public projects: Project[];
-  displayedColumns: string[] = ['label', 'scrumMaster', 'productOwner', 'team', 'department', 'action'];
+  displayedColumns: string[] = ['label', 'scrumMaster', 'productOwner',
+  'team', 'department', 'status', 'action'];
   public dataSource: any;
   public isLoading = false;
 

@@ -25,7 +25,7 @@
 
   <mat-form-field class="usDetailForm">
     <mat-label class="kLabelUSDetail">Project</mat-label>
-    <mat-select formControlName="projectId" [(value)]="projectId">
+    <mat-select formControlName="projectId" >
       <mat-option >
         Project Choice
       </mat-option>
@@ -67,13 +67,27 @@
     <div class="col-md-6">
   <mat-form-field class="usDetailForm">
     <mat-label class="kLabelUSDetail">Story Points</mat-label>
-    <mat-select formControlName="storyPoints" [(value)]="storyPoints">
+    <mat-select formControlName="storyPoints">
       <!-- <mat-option >
         Points Choice
       </mat-option> -->
 
       <mat-option *ngFor="let item of storyPointsArray" [value]="item">
         {{item}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div class="col-sm">
+  <mat-form-field class="usDetailForm">
+    <mat-label class="kLabelUSDetail">Status</mat-label>
+    <mat-select formControlName="usStatus">
+      <mat-option >
+        Status Choice
+      </mat-option>
+
+      <mat-option *ngFor="let item of usStatuses" [value]="item.id">
+        {{item.libelle}}
       </mat-option>
     </mat-select>
   </mat-form-field>
@@ -87,7 +101,7 @@
 
   <mat-label class="kEpicLabel">Epic Story</mat-label>
 
-  <mat-radio-group class="kRadioGroup" name="epicStory" formControlName="epicStory"  [(ngModel)]="epicStory">
+  <mat-radio-group class="kRadioGroup" name="epicStory" formControlName="epicStory"  >
     <mat-radio-button [value]="true" [checked]="epicStory === true" >Yes  </mat-radio-button>
     <mat-radio-button [value]="false" [checked]="epicStory === false">No  </mat-radio-button>
   </mat-radio-group>

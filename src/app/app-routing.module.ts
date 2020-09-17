@@ -27,6 +27,7 @@ import { ManifestoComponent } from './manifesto/manifesto/manifesto.component';
 import { LexicComponent } from './lexic/lexic.component';
 import { AboutComponent } from './about/about/about.component';
 import { GaleryComponent } from './/galery/galery.component';
+import { ScrumdefinitionComponent } from './scrumdefinition/scrumdefinition.component';
 
 
 const routes: Routes = [
@@ -34,6 +35,7 @@ const routes: Routes = [
   {path: 'home', component : HomeComponent},
   {path: 'about', component : AboutComponent},
   {path: 'manifesto', component : ManifestoComponent},
+  {path: 'scrumdefinition', component : ScrumdefinitionComponent},
   {path: 'lexic', component : LexicComponent},
   {path: 'contact', component : ContactComponent},
   {path: 'galery', component : GaleryComponent},

@@ -17,35 +17,39 @@
 <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
   <ng-container matColumnDef="label">
-    <th mat-header-cell *matHeaderCellDef width ="15%">Label</th>
+    <th mat-header-cell *matHeaderCellDef>Label</th>
     <mat-cell *matCellDef="let element"> {{element.label}} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="scrumMaster">
-    <th mat-header-cell *matHeaderCellDef width ="15%">Scrum Master</th>
+    <th mat-header-cell *matHeaderCellDef>Scrum Master</th>
     <mat-cell *matCellDef="let element"> {{element.scrumMaster?.fullName}} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="productOwner">
-    <th mat-header-cell *matHeaderCellDef width ="15%">Product Owner</th>
+    <th mat-header-cell *matHeaderCellDef>Product Owner</th>
     <mat-cell *matCellDef="let element"> {{element.productOwner?.fullName}} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="team">
-    <th mat-header-cell *matHeaderCellDef width ="15%">Team</th>
+    <th mat-header-cell *matHeaderCellDef>Team</th>
     <mat-cell *matCellDef="let element"> {{element.team?.label}} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="department">
-    <th mat-header-cell *matHeaderCellDef width ="15%">Department</th>
+    <th mat-header-cell *matHeaderCellDef>Department</th>
     <mat-cell *matCellDef="let element"> {{element.department?.label}} </mat-cell>
   </ng-container>
 
-  <ng-container matColumnDef="creationdate">
+  <!-- <ng-container matColumnDef="creationdate">
     <mat-header-cell *matHeaderCellDef >Creation</mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.creationdate | date: 'yyyy-MM-dd'}} </mat-cell>
-  </ng-container>
+  </ng-container> -->
 
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef>Status</th>
+    <mat-cell *matCellDef="let element"> {{ element.strProjectStatus }} </mat-cell>
+  </ng-container>
 
   <ng-container matColumnDef="action">
     <th mat-header-cell *matHeaderCellDef>Action</th>

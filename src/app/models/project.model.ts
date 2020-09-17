@@ -7,6 +7,8 @@ import { ScrumMaster } from './scrumMaster.model';
 
 export class Project extends BaseEntity {
   label: string;
+  projectStatus: number;
+  strProjectStatus: string;
   productOwnerId: number;
   scrumMasterId: number;
   teamId: number;

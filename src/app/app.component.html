@@ -27,7 +27,8 @@
   <button mat-button [matMenuTriggerFor]="manifesto">Scrum</button>
   <mat-menu #manifesto="matMenu" >
     <button mat-menu-item class="option-menu" routerLink="manifesto" routerLinkActive="active">Agile Manifesto</button>
-    <button mat-menu-item class="option-menu" routerLink="lexic" routerLinkActive="active">Agile Lexic</button>
+    <button mat-menu-item class="option-menu" routerLink="scrumdefinition" routerLinkActive="active">What is Scrum</button>
+    <button mat-menu-item class="option-menu" routerLink="lexic" routerLinkActive="active">Agile Glossary</button>
 
   </mat-menu>
 
@@ -37,6 +38,13 @@
     <button mat-menu-item class="option-menu" routerLink="department" routerLinkActive="active">Departments</button>
   </mat-menu>
 
+
+
+  <button mat-button [matMenuTriggerFor]="userstories">UserStories</button>
+  <mat-menu #userstories="matMenu" >
+    <button mat-menu-item class="option-menu" routerLink="userstory" routerLinkActive="active">User Stories List</button>
+  </mat-menu>
+
   <button mat-button [matMenuTriggerFor]="tech">Roles</button>
   <mat-menu #tech="matMenu" >
     <button mat-menu-item class="option-menu" routerLink="team" routerLinkActive="active">Dev Team</button>
@@ -44,11 +52,13 @@
     <button mat-menu-item class="option-menu" routerLink="productowner" routerLinkActive="active">Product Owner</button>
   </mat-menu>
 
-  <button mat-button [matMenuTriggerFor]="userstories">UserStories</button>
-  <mat-menu #userstories="matMenu" >
-    <button mat-menu-item class="option-menu" routerLink="userstory" routerLinkActive="active">User Stories List</button>
-  </mat-menu>
-
+<!--
+  <button mat-button [matMenuTriggerFor]="tech">Artifacts</button>
+  <mat-menu #tech="matMenu" >
+    <button mat-menu-item class="option-menu" routerLink="productBacklog" routerLinkActive="active">Product Backlog</button>
+    <button mat-menu-item class="option-menu" routerLink="sprintBacklog" routerLinkActive="active">Sprint Backlog</button>
+    <button mat-menu-item class="option-menu" routerLink="sprintPlanning" routerLinkActive="active">Sprint Planning</button>
+  </mat-menu> -->
 
 
   <button mat-button [matMenuTriggerFor]="galery">Galery</button>

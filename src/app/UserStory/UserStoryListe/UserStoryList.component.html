@@ -62,6 +62,11 @@ projets= variable de type ProjetUserStory[], p: iterateur, libelle= attribut de 
         <mat-cell *matCellDef="let element"> {{element.epicStory | Ouinon }} </mat-cell>
     </ng-container>
 
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+         <mat-cell *matCellDef="let element"> {{element.strUsStatus}} </mat-cell>
+     </ng-container>
+
     <ng-container matColumnDef="action">
       <th mat-header-cell *matHeaderCellDef>Action</th>
         <mat-cell *matCellDef="let element">

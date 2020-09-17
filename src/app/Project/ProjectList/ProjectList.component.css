@@ -3,7 +3,7 @@
   flex-direction: column;
 }
 table{
-  width: 70%;
+  width: 90%;
   padding: 40 40 0 40 !important;
  }
 
@@ -20,7 +20,7 @@ table{
 }
 
 .mat-row{
-  text-align: justify !important;
+  text-align: center !important;
 }
 
 .mat-header-row{
@@ -29,8 +29,8 @@ table{
 }
 
 .mat-header-cell{
-  align-self: center !important;
-  text-align: center !important;
+  /* align-self: center !important; */
+  text-align: justify !important;
   font-size: 12px !important;
   color: #7e23f5 !important;
   font-weight: normal ;
@@ -44,8 +44,8 @@ table{
   width: 15% !important;
   overflow-wrap: break-word;
 
-  align-self: center !important;
-  text-align: justify !important;
+  /* align-self: center !important;
+  text-align: justify !important; */
   font-size: 12px !important;
 
   word-break: break-word;
@@ -54,15 +54,15 @@ table{
 .mat-column-scrumMaster {
   word-wrap: break-word !important;
   white-space: unset !important;
-  flex: 0 0 15% !important;
-  width: 15% !important;
+  flex: 0 0 12% !important;
+  width: 12% !important;
   overflow-wrap: break-word;
   word-wrap: break-word;
 
   word-break: break-word;
-
+/*
   align-self: center !important;
-  text-align: left !important;
+  text-align: left !important; */
 
   font-size: 12px !important;
 }
@@ -70,29 +70,28 @@ table{
 .mat-column-productOwner {
   word-wrap: break-word !important;
   white-space: normal !important;
-  flex: 0 0 15% !important;
-  width: 15% !important;
+  flex: 0 0 12% !important;
+  width: 12% !important;
   overflow-wrap: break-word;
 
   word-break: break-word;
-
+/*
   align-self: center !important;
-  text-align: left !important;
+  text-align: left !important; */
   font-size: 12px !important;
 }
 
 .mat-column-team {
   word-wrap: break-word !important;
   white-space: unset !important;
-  flex: 0 0 15% !important;
-  width: 15% !important;
+  flex: 0 0 12% !important;
+  width: 12% !important;
   overflow-wrap: break-word;
-  word-wrap: break-word;
 
   word-break: break-word;
-
+/*
   align-self: left !important;
-  text-align: justify !important;
+  text-align: justify !important; */
   font-size: 12px !important;
 }
 
@@ -100,34 +99,46 @@ table{
 .mat-column-department {
   word-wrap: break-word !important;
   white-space: unset !important;
-  flex: 0 0 15% !important;
-  width: 15% !important;
+  flex: 0 0 12% !important;
+  width: 12% !important;
   overflow-wrap: break-word;
 
 
   word-break: break-word;
-
+/*
   align-self: center !important;
-  text-align: justify !important;
+  text-align: justify !important; */
   font-size: 12px !important;
 
 }
 
 
-
-
 .mat-column-action {
   word-wrap: break-word !important;
   white-space: unset !important;
-  flex: 0 0 30% !important;
-  width: 30% !important;
+  flex: 0 0 20% !important;
+  width: 20% !important;
+  overflow-wrap: break-word;
+  word-break: break-word;
+
+  font-size: 12px !important;
+}
+
+
+
+.mat-column-status {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 15% !important;
+  width: 15% !important;
   overflow-wrap: break-word;
   word-wrap: break-word;
 
   word-break: break-word;
-
+  color: #7008f8;
+/*
   align-self: center !important;
-  text-align: center !important;
+  text-align: center !important; */
   font-size: 12px !important;
 }
 
@@ -147,12 +158,11 @@ table{
 .kEdit {
   background-color: #7e23f5 !important;
   border-color: #5618a8 !important;
-  /* size: 10px !important; */
   text-align: center !important;
   font-size: 9px !important;
   width: 50px !important;
-  margin-right: 25px !important;
-  margin-left: 50px !important;
+
+  margin-left: 1px !important;
 
 }
 .kEdit:hover {
@@ -169,7 +179,7 @@ table{
   /* size: 10px !important; */
   text-align: center !important;
   font-size: 9px !important;
-  margin-left: 20px !important;
+  /* margin-left: 20px !important; */
   width: 60px !important;
 }
 

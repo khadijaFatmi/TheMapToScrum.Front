@@ -24,6 +24,16 @@
 
 }
 
+.usStatus{
+  margin-left: auto;
+  width: 80%;
+
+  display: block !important;
+  background-color: grey !important;
+  margin-right: 60px !important;
+  color: white !important;
+}
+
 .kRadioGroup {
   width: 80% !important;
   align-self: start !important;

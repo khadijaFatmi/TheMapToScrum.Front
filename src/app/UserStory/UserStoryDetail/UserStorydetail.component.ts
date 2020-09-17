@@ -16,9 +16,11 @@ import { UserStory } from '../../models/userstory.model';
 export class UserStoryDetailComponent implements OnInit {
   public form: FormGroup;
   private id: number;
+  public epicStory = false;
   public entite: UserStory;
   public projects: Project[];
   public storyPointsArray: number[];
+  public usStatuses: any [];
 
   constructor(private service: UserStoryService
     ,         private fb: FormBuilder, private ps: ProjectService, private router: Router) {
@@ -32,6 +34,17 @@ export class UserStoryDetailComponent implements OnInit {
     } else {
       this.id = 0;
     }
+
+    this.usStatuses = [
+                      {'id': 1, 'libelle': 'new'}
+                    , {'id': 2, 'libelle': 'inProgress'}
+                    , {'id': 3, 'libelle': 'completed'}
+                    , {'id': 4, 'libelle': 'accepted'}
+                    , {'id': 5, 'libelle': 'pending'}
+                    , {'id': 6, 'libelle': 'inEvaluation'}
+                    , {'id': 7, 'libelle': 'rejected'}
+                    , {'id': 8, 'libelle': 'blocked'}
+                    , {'id': 9, 'libelle': 'inVerification'}];
     this.storyPointsArray = [1, 2, 3, 5, 8, 11];
     this.loadProjects();
     this.form = this.fb.group({
@@ -45,6 +58,7 @@ export class UserStoryDetailComponent implements OnInit {
     notes: ['', Validators.required],
     priority: ['', Validators.required],
     storyPoints: ['', Validators.required],
+    usStatus: ['', Validators.required],
     epicStory: ['', Validators.required],
     dateCreation: [''],
     dateModification: [''],
@@ -82,12 +96,14 @@ export class UserStoryDetailComponent implements OnInit {
       , notes: this.entite.notes
       , priority: this.entite.priority
       , storyPoints: this.entite.storyPoints
+      , usStatus: this.entite.usStatus
       , epicStory: this.entite.epicStory
       , dateCreation: this.entite.dateCreation
       , dateModification: this.entite.dateModification
       , isDeleted: this.entite.isDeleted
     });
     console.log('valeur projectid=' + this.entite.projectId);
+    this.epicStory = this.entite.epicStory;
   }
 
 
