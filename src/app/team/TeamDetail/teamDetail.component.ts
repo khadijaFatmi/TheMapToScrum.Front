@@ -1,6 +1,9 @@
-import { Component, OnInit, ComponentFactoryResolver } from '@angular/core';
+import { Component, OnInit, ComponentFactoryResolver, OnDestroy } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastaService, ToastOptions } from 'ngx-toasta';
+import { Subscription } from 'rxjs';
+
 
 import { Team } from '../../models/team.model';
 import { TeamService } from '../../services/team.service';
@@ -11,15 +14,27 @@ import { TeamService } from '../../services/team.service';
   styleUrls: ['./teamDetail.component.css']
 })
 
-export class TeamDetailComponent implements OnInit {
+export class TeamDetailComponent implements OnInit, OnDestroy {
 
   public form: FormGroup;
   private id: number;
   public entite: Team;
+  public isLoading = false;
+  private subscriptions: Subscription [] = [];
 
-  constructor(private service: TeamService, private fb: FormBuilder, private router: Router) { }
+  toastOptions: ToastOptions = {
+    title: 'Developers Teams Details',
+    showClose: true,
+    timeout: 5000,
+  };
+
+  constructor(private service: TeamService
+            , private fb: FormBuilder
+            , private router: Router
+            , private toastService: ToastaService) { }
 
   ngOnInit() {
+    this.isLoading = true;
     if (window.localStorage.getItem('teamid') != null) {
       this.id = Number(window.localStorage.getItem('teamid'));
       console.log('team ID stored locally' + ' ' + this.id);
@@ -35,15 +50,22 @@ export class TeamDetailComponent implements OnInit {
       isDeleted: ['']
     });
     if (this.id !== 0) {
+      this.subscriptions.push(
       this.service.getById(this.id).
       subscribe(data => {
         this.entite = data;
         this.updateform();
-      },
-      error => {
-        console.log('erreur lecture Team');
-      });
-
+        console.log('Request Successful, Developers Teams Details Loaded!');
+        this.isLoading = false;
+        this.toastOptions.msg = 'Success! Developers Teams Details Loaded';
+        this.toastService.success(this.toastOptions);
+        },
+        error => {
+          console.log('Fail! Developers Teams Details not loaded!');
+          this.isLoading = false;
+          this.toastOptions.msg = 'Failed to Load Developers Teams Details';
+          this.toastService.error(this.toastOptions);
+        }));
     }
 
   }
@@ -77,11 +99,14 @@ export class TeamDetailComponent implements OnInit {
         this.service.create(this.entite).subscribe(res => {
         alert('success! Team created!');
         this.router.navigate(['/team']);
-        console.log('creation');
+        console.log('creation Developers Teams Details');
 
       });
+    }
+}
 
-  }
+ngOnDestroy() {
+  this.subscriptions.forEach(subscription => subscription.unsubscribe());
+}
 
-  }
 }

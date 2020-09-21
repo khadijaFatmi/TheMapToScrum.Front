@@ -61,3 +61,16 @@
 .kBckTeamList:hover {
   background-color: #d4d136;
 }
+
+
+.kSpinner{
+  color: rgb(251, 235, 8) !important;
+  text-align: center !important;
+  width: 4rem;
+  height: 4rem;
+  display: inline-flex;
+  justify-content: center;
+  /* margin-left: 400px;
+  margin-bottom: 20px;*/
+
+}

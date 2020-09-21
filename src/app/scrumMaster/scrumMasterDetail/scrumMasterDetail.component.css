@@ -59,3 +59,16 @@
 .kBckSMList:hover {
   background-color: #d46336;
 }
+
+
+.kSpinner{
+  color: rgb(251, 118, 8) !important;
+  text-align: center !important;
+  width: 4rem;
+  height: 4rem;
+  display: inline-flex;
+  justify-content: center;
+  /* margin-left: 400px;
+  margin-bottom: 20px;*/
+
+}

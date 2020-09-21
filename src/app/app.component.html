@@ -27,7 +27,7 @@
   <button mat-button [matMenuTriggerFor]="manifesto">Scrum</button>
   <mat-menu #manifesto="matMenu" >
     <button mat-menu-item class="option-menu" routerLink="manifesto" routerLinkActive="active">Agile Manifesto</button>
-    <button mat-menu-item class="option-menu" routerLink="scrumdefinition" routerLinkActive="active">What is Scrum</button>
+    <button mat-menu-item class="option-menu" routerLink="scrumdefinition" routerLinkActive="active">What Scrum Is</button>
     <button mat-menu-item class="option-menu" routerLink="lexic" routerLinkActive="active">Agile Glossary</button>
 
   </mat-menu>
@@ -47,9 +47,9 @@
 
   <button mat-button [matMenuTriggerFor]="tech">Roles</button>
   <mat-menu #tech="matMenu" >
-    <button mat-menu-item class="option-menu" routerLink="team" routerLinkActive="active">Dev Team</button>
-    <button mat-menu-item class="option-menu" routerLink="scrummaster" routerLinkActive="active">Scrum Master</button>
-    <button mat-menu-item class="option-menu" routerLink="productowner" routerLinkActive="active">Product Owner</button>
+    <button mat-menu-item class="option-menu" routerLink="team" routerLinkActive="active">Dev Teams</button>
+    <button mat-menu-item class="option-menu" routerLink="scrummaster" routerLinkActive="active">Scrum Masters</button>
+    <button mat-menu-item class="option-menu" routerLink="productowner" routerLinkActive="active">Product Owners</button>
   </mat-menu>
 
 <!--
@@ -73,6 +73,6 @@
 <br/>
 <br/>
 <br/>
-
+<ngx-toasta></ngx-toasta>
 <router-outlet></router-outlet>
 <footer>Version 0.0.1</footer>

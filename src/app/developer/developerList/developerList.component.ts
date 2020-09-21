@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastaService, ToastOptions } from 'ngx-toasta';
 
 import { DeveloperService } from '../../services/developer.service';
 import { Developer } from 'src/app/models/developer.model';
@@ -12,24 +13,39 @@ import { Developer } from 'src/app/models/developer.model';
 export class DeveloperListComponent implements OnInit {
 
   public developer: Developer[];
-
-  displayedColumns: string[] = ['firstName', 'lastName', 'action'];
+  public isLoading = false;
   public dataSource: any;
+  displayedColumns: string[] = ['firstName', 'lastName', 'action'];
 
-  constructor(private service: DeveloperService, private router: Router) {
+  toastOptions: ToastOptions = {
+    title: 'Developers List',
+    showClose: true,
+    timeout: 5000,
+  };
+
+  constructor(private service: DeveloperService
+            , private router: Router
+            , private toastService: ToastaService) {
   }
 
   ngOnInit() {
 
+      this.isLoading = true;
       this.service.liste().
       subscribe(data => {
         this.developer = data;
         this.dataSource = this.developer;
-      },
-      error => {
-        console.log('erreur lecture Developer :-/');
-      });
-
+        console.log('Request Successful, Developer List Loaded!');
+        this.isLoading = false;
+        this.toastOptions.msg = 'Success! Developer List Loaded';
+        this.toastService.success(this.toastOptions);
+        },
+        error => {
+          console.log('Fail! Developer list not loaded!');
+          this.isLoading = false;
+          this.toastOptions.msg = 'Failed to Load Developer List';
+          this.toastService.error(this.toastOptions);
+        });
   }
 
   edit(objet: Developer): void {
@@ -43,11 +59,11 @@ export class DeveloperListComponent implements OnInit {
     const id = objet.id;
     this.service.delete(id).
       subscribe(data => {
-        alert('delete success');
+        alert('Request successful, deleted Developer :-)');
         this.router.navigate(['/developer']);
       },
       error => {
-        console.log('erreur lecture Dev :-/');
+        console.log('Request failed to read Developer:-/');
       });
   }
 

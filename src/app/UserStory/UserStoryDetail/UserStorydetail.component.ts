@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import {  ToastaService, ToastOptions } from 'ngx-toasta';
 
 import { Project } from 'src/app/models/project.model';
 import { ProjectService } from '../../services/project.service';
 import { UserStoryService } from '../../services/userStory.service';
 import { UserStory } from '../../models/userstory.model';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -13,7 +15,7 @@ import { UserStory } from '../../models/userstory.model';
   templateUrl: './userStoryDetail.component.html',
   styleUrls: ['./userStoryDetail.component.css']
 })
-export class UserStoryDetailComponent implements OnInit {
+export class UserStoryDetailComponent implements OnInit, OnDestroy {
   public form: FormGroup;
   private id: number;
   public epicStory = false;
@@ -21,9 +23,21 @@ export class UserStoryDetailComponent implements OnInit {
   public projects: Project[];
   public storyPointsArray: number[];
   public usStatuses: any [];
+  public isLoading = false;
+  private subscriptions: Subscription [] = [];
+
+  toastOptions: ToastOptions = {
+    title: 'User Stories Details',
+    showClose: true,
+    timeout: 5000,
+  };
+
 
   constructor(private service: UserStoryService
-    ,         private fb: FormBuilder, private ps: ProjectService, private router: Router) {
+            , private fb: FormBuilder
+            , private ps: ProjectService
+            , private router: Router
+            , private toastService: ToastaService) {
 
   }
 
@@ -65,23 +79,37 @@ export class UserStoryDetailComponent implements OnInit {
     isDeleted: ['']
   });
     if (this.id !== 0) {
-      this.service.getById(this.id).
-      subscribe(data => {
-      this.entite = data;
-      this.updateform();
-    },
-    error => {
-      console.log('erreur lecture :-/');
-    });
+      this.subscriptions.push(
+        this.service.getById(this.id).
+        subscribe(data => {
+        this.entite = data;
+        this.updateform();
+      },
+      error => {
+        console.log('Failed to read this us detail :-/');
+    }));
 
     }
   }
 
   loadProjects(): void {
-    this.ps.liste().
-    subscribe(data => {
-      this.projects = data;
-      });
+    this.isLoading = true;
+    this.subscriptions.push(
+      this.ps.liste().
+      subscribe(data => {
+        this.projects = data;
+        console.log('Request Success!User Stories Details Loaded!');
+        this.isLoading = false;
+        this.toastOptions.msg = 'Success! User Stories Details loaded!';
+        this.toastService.success(this.toastOptions);
+      },
+      error => {
+        console.log('Request Fail! US details not loaded!');
+        this.isLoading = false;
+        this.toastOptions.msg = 'Failed to Load User Stories Details';
+        this.toastService.error(this.toastOptions);
+      }
+    ));
   }
 
   updateform(): void {
@@ -128,6 +156,10 @@ export class UserStoryDetailComponent implements OnInit {
         console.log('error');
       });
     }
+  }
+
+  ngOnDestroy() {
+    this.subscriptions.forEach(subscription => subscription.unsubscribe());
   }
 
 }

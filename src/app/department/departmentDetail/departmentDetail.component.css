@@ -61,3 +61,16 @@
 .kBckDPTList:hover {
   background-color: #58058f;
 }
+
+
+.kSpinner{
+  color: #9c08ff;
+  text-align: center !important;
+  width: 4rem;
+  height: 4rem;
+  display: inline-flex;
+  justify-content: center;
+  /* margin-left: 400px;
+  margin-bottom: 20px;*/
+
+}

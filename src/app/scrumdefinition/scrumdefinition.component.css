@@ -30,6 +30,22 @@
   font-style: oblique;
 }
 
+.kEvents{
+  font-style: italic;
+  font-weight: bolder;
+  color: rgb(2, 191, 216);
+}
+.kRoles{
+  font-style: italic;
+  font-weight: bolder;
+  color: rgb(216, 2, 66);
+}
+
+.kArtifacts{
+  font-style: italic;
+  font-weight: bolder;
+  color: rgb(2, 216, 20);
+}
 
 .kStyleH3{
   font-style: italic;

@@ -157,7 +157,12 @@ table{
 .kSpinner{
   color: rgb(221, 33, 33) !important;
   text-align: center !important;
-  margin-left: 550px;
-  margin-bottom: 20px;
+  width: 4rem;
+  height: 4rem;
+  display: inline-flex;
+  justify-content: center;
+  /* margin-left: 400px;
+  margin-bottom: 20px;*/
+
 }
 

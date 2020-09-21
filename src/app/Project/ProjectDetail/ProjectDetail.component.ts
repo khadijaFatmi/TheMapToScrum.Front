@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ToastaService, ToastOptions } from 'ngx-toasta';
+
 
 import { Project } from 'src/app/models/project.model';
 import { ProjectService } from '../../services/project.service';
@@ -14,13 +16,14 @@ import { ScrumMaster } from 'src/app/models/scrumMaster.model';
 import { ScrumMasterService } from 'src/app/services/scrumMaster.service';
 import { ProductOwner } from 'src/app/models/productOwner.model';
 import { ProductOwnerService } from 'src/app/services/productOwner.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-projectdetail',
   templateUrl: './projectDetail.component.html',
   styleUrls: ['./projectDetail.component.css']
 })
-export class ProjectDetailComponent implements OnInit {
+export class ProjectDetailComponent implements OnInit, OnDestroy {
 
   public form: FormGroup;
   private id: number;
@@ -31,12 +34,22 @@ export class ProjectDetailComponent implements OnInit {
   public scrumMasters: ScrumMaster[];
   public productOwners: ProductOwner[];
   public projectStatuses: any[];
+  public isLoading = false;
+  private subscriptions: Subscription [] = [];
+
+  toastOptions: ToastOptions = {
+    title: 'Project Detail',
+    showClose: true,
+    timeout: 5000,
+  };
 
   constructor(private service: ProjectService, private fb: FormBuilder, private uss: UserStoryService,
               private teamService: TeamService, private departmentService: DepartmentService,
-              private scrumMasterService: ScrumMasterService, private productOwnerService: ProductOwnerService) { }
+              private scrumMasterService: ScrumMasterService, private productOwnerService: ProductOwnerService,
+              private toastService: ToastaService) { }
 
   ngOnInit() {
+    this.isLoading = true;
     this.projectStatuses = [{'id': 1, 'libelle': 'Initiate'}
                           , {'id': 2, 'libelle': 'PlanAndEstimate'}
                           , {'id': 3, 'libelle': 'Implement'}
@@ -66,14 +79,22 @@ export class ProjectDetailComponent implements OnInit {
     }
 
     if (this.id !== 0) {
-     this.service.getById(this.id).
-     subscribe(data => {
-       this.entite = data;
-       this.updateform();
-     },
-     error => {
-       console.log('erreur lecture :-/');
-     });
+      this.subscriptions.push(
+        this.service.getById(this.id).
+        subscribe(data => {
+          this.entite = data;
+          this.updateform();
+          this.isLoading = false;
+          console.log('Request Successful! Project Detail loaded!:-)');
+          this.toastOptions.msg = 'Success! Details of Project Loaded!';
+          this.toastService.success(this.toastOptions);
+        },
+        error => {
+          console.log('Request Failed! Project Detail not loaded!:-/');
+          this.isLoading = false;
+          this.toastOptions.msg = 'Failed to Load Project Details!';
+          this.toastService.error(this.toastOptions);
+      }));
     }
    }
 
@@ -98,51 +119,58 @@ export class ProjectDetailComponent implements OnInit {
     if (this.id !== null) {
       this.entite = Object.assign({}, this.form.value);
       this.service.update(this.entite).subscribe(res => {
-        alert('update success');
+        alert('ProjectDetail successful updated ');
       },
       err => {
-        console.log('error');
+        console.log('ProjectDetail Request failed');
       });
     } else {
       this.entite = Object.assign({}, this.form.value);
       this.service.create(this.entite).subscribe(res => {
-        alert('create success');
+        alert('ProjectDetail successful creation');
       },
       err => {
-        console.log('error');
+        console.log('ProjectDetail failed creation');
       });
     }
   }
 
   loadDepartments(): void {
-    this.departmentService.liste().
-    subscribe(data => {
-     this.departments = data;
-    });
+    this.subscriptions.push(
+      this.departmentService.liste().
+        subscribe(data => {
+        this.departments = data;
+    }));
 
   }
 
   loadTeams(): void {
-
+    this.subscriptions.push(
       this.teamService.liste().
       subscribe(data => {
-       this.teams = data;
-      });
- }
+        this.teams = data;
+    }));
+  }
 
 
  loadScrumMasters(): void {
-    this.scrumMasterService.liste().
-    subscribe(data => {
-    this.scrumMasters = data;
-    });
+    this.subscriptions.push(
+      this.scrumMasterService.liste().
+      subscribe(data => {
+        this.scrumMasters = data;
+    }));
   }
 
   loadProductOwners(): void {
-    this.productOwnerService.liste().
-    subscribe(data => {
-    this.productOwners = data;
-    console.log('PO loaded');
-    });
+    this.subscriptions.push(
+      this.productOwnerService.liste().
+      subscribe(data => {
+        this.productOwners = data;
+        console.log('PO loaded');
+    }));
+  }
+
+  ngOnDestroy() {
+    this.subscriptions.forEach(subscriptions => subscriptions.unsubscribe());
   }
 }

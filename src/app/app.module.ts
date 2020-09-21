@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ToastaModule } from 'ngx-toasta';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -57,6 +59,7 @@ import { SprintPlanningComponent } from './sprintPlanning/sprintPlanning.compone
 
 
 import { TaskFeaturesComponent } from './taskFeatures/taskFeatures.component';
+import { AlertService } from './services/alert.service';
 
 
 // declaration des composants
@@ -99,7 +102,8 @@ import { TaskFeaturesComponent } from './taskFeatures/taskFeatures.component';
     , MaterialModule
     , ReactiveFormsModule
     , FormsModule
-    ,  MatCarouselModule.forRoot(),
+    ,  MatCarouselModule.forRoot()
+    , ToastaModule.forRoot()
       ],
   // declaration des services utilises dans l'app et declares ici
   providers: [
@@ -110,6 +114,7 @@ import { TaskFeaturesComponent } from './taskFeatures/taskFeatures.component';
     , DeveloperService
     , DepartmentService
     , UserStoryService
+    , AlertService
   ],
   // demarrage de l'application dans appComponent
   bootstrap: [AppComponent]

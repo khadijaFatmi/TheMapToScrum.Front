@@ -1,21 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ToastaService, ToastOptions } from 'ngx-toasta';
+
 import { ProjectService } from '../../services/project.service';
 import { Project } from '../../models/project.model';
-import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+
+
 
 @Component({
   selector: 'app-project',
   templateUrl: './projectList.component.html',
   styleUrls: ['./projectList.component.css']
 })
-export class ProjectListComponent implements OnInit {
+export class ProjectListComponent implements OnInit, OnDestroy {
   public projects: Project[];
   displayedColumns: string[] = ['label', 'scrumMaster', 'productOwner',
   'team', 'department', 'status', 'action'];
   public dataSource: any;
   public isLoading = false;
+  private subscriptions: Subscription [] = [];
 
-  constructor(private service: ProjectService, private router: Router) {
+  toastOptions: ToastOptions = {
+    title: 'Projects List',
+    showClose: true,
+    timeout: 5000,
+  };
+
+
+  constructor(private service: ProjectService
+    ,         private router: Router
+    ,         private toastService: ToastaService) {
   }
 
   ngOnInit() {
@@ -24,18 +39,24 @@ export class ProjectListComponent implements OnInit {
 
   listEntities(): void {
     this.isLoading = true;
-    this.service.liste().
-    subscribe(data => {
-    this.projects = data;
-    this.dataSource = this.projects;
-    console.log('lecture ok kdij :-)', data);
-    this.isLoading = false;
-    },
-      error => {
-        console.log('erreur lecture :-/');
+    this.subscriptions.push(
+      this.service.liste().
+      subscribe(data => {
+        this.projects = data;
+        this.dataSource = this.projects;
+        console.log('Request Successful! List of all projects Loaded :-)', data);
         this.isLoading = false;
+        this.toastOptions.msg = 'Success! List of all projects Loaded!';
+        this.toastService.success(this.toastOptions);
+      },
+      error => {
+        console.log('Request Failed to Load Projects List');
+        this.isLoading = false;
+        this.toastOptions.msg = 'Failed to Load Projects List';
+        this.toastService.error(this.toastOptions);
+
       }
-    );
+    ));
   }
 
 
@@ -48,18 +69,23 @@ export class ProjectListComponent implements OnInit {
 
   delete(objet: Project): void {
     const id = objet.id;
-    this.service.delete(id).
-      subscribe(data => {
-        alert('delete success');
-        this.listEntities();
-      },
-      error => {
-        console.log('erreur lecture :-/');
-      });
+    this.subscriptions.push(
+      this.service.delete(id).
+        subscribe(data => {
+          alert('Request Successful Project deleted!');
+          this.listEntities();
+        },
+        error => {
+          console.log('Request Failed to delete this project');
+      }));
   }
 
   Add() {
     window.localStorage.removeItem('projectId');
     this.router.navigate(['projectdetail']);
+  }
+
+  ngOnDestroy() {
+    this.subscriptions.forEach(subscriptions => subscriptions.unsubscribe());
   }
 }

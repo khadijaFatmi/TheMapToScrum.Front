@@ -1,22 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { DepartmentService } from 'src/app/services/department.service';
 import { Router } from '@angular/router';
+import { ToastaService, ToastOptions } from 'ngx-toasta';
+
 import { Department } from 'src/app/models/department.model';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-department-list',
   templateUrl: './departmentList.component.html',
   styleUrls: ['./departmentList.component.css']
 })
-export class DepartmentListComponent implements OnInit {
+export class DepartmentListComponent implements OnInit, OnDestroy {
 
   public department: Department[];
   public isLoading = false;
+  private subscriptions: Subscription [] = [];
 
-  constructor(private service: DepartmentService, private router: Router) { }
+  constructor(private service: DepartmentService
+            , private router: Router
+            , private toastService: ToastaService) { }
 
   displayedColumns: string[] = ['label', 'action'];
   public dataSource: any;
+
+  toastOptions: ToastOptions = {
+    title: 'Entity Departments List',
+    showClose: true,
+    timeout: 5000,
+  };
+
 
   ngOnInit() {
     this.listEntities();
@@ -24,16 +37,22 @@ export class DepartmentListComponent implements OnInit {
 
   listEntities(): void {
     this.isLoading = true;
-    this.service.liste().
-    subscribe(data => {
-      this.department = data;
-      this.dataSource = this.department;
-      this.isLoading = false;
-    },
-    error => {
-      console.log('erreur lecture department :-/');
-      this.isLoading = false;
-    });
+    this.subscriptions.push(
+      this.service.liste().
+      subscribe(data => {
+        this.department = data;
+        this.dataSource = this.department;
+        this.isLoading = false;
+        console.log('Dpt list Request Success:-)');
+        this.toastOptions.msg = 'Success! Entity Departments List Loaded';
+        this.toastService.success(this.toastOptions);
+      },
+      error => {
+        console.log('Dpt list Request Fail:-/');
+        this.isLoading = false;
+        this.toastOptions.msg = 'Fail! Error while loading Entity Departments List';
+        this.toastService.error(this.toastOptions);
+    }));
   }
 
   edit(objet: Department): void {
@@ -46,7 +65,8 @@ export class DepartmentListComponent implements OnInit {
 
   delete(objet: Department): void {
     const id = objet.id;
-    this.service.delete(id).
+    this.subscriptions.push(
+      this.service.delete(id).
       subscribe(data => {
         alert('department deleted, success');
         // refresh Dept List
@@ -54,12 +74,16 @@ export class DepartmentListComponent implements OnInit {
       },
       error => {
         console.log('erreur lecture :-/');
-      });
+      }));
   }
 
   Add() {
     window.localStorage.removeItem('departmentid');
     this.router.navigate(['departmentDetail']);
+  }
+
+  ngOnDestroy() {
+    this.subscriptions.forEach(subscriptions => subscriptions.unsubscribe());
   }
 
 }

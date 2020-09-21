@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastaService, ToastOptions } from 'ngx-toasta';
+import { Subscription } from 'rxjs';
 
 import { ScrumMaster } from '../../models/scrumMaster.model';
 import { ScrumMasterService } from '../../services/scrumMaster.service';
@@ -10,19 +12,30 @@ import { ScrumMasterService } from '../../services/scrumMaster.service';
   templateUrl: './scrummasterDetail.component.html',
   styleUrls: ['./scrummasterDetail.component.css']
 })
-export class ScrumMasterDetailComponent implements OnInit {
+export class ScrumMasterDetailComponent implements OnInit, OnDestroy {
 
 
   public form: FormGroup;
   private id: number;
   public entite: ScrumMaster;
+  public isLoading = false;
+  private subscriptions: Subscription [] = [];
+
+  toastOptions: ToastOptions = {
+    title: 'Scrum Master Details',
+    showClose: true,
+    timeout: 5000,
+  };
 
   constructor(private service: ScrumMasterService
-    ,         private fb: FormBuilder, private router: Router) { }
+            , private fb: FormBuilder
+            , private router: Router
+            , private toastService: ToastaService) { }
 
 
   ngOnInit() {
 
+    this.isLoading = true;
     this.form = this.fb.group({
       id: [''],
       firstName: ['', Validators.required],
@@ -37,14 +50,22 @@ export class ScrumMasterDetailComponent implements OnInit {
       this.id = 0;
     }
     if (this.id !== 0) {
-     this.service.getById(this.id).
-     subscribe(data => {
-       this.entite = data;
-       this.updateform();
-     },
-     error => {
-       console.log('erreur lecture ScrumMaster');
-     });
+      this.subscriptions.push(
+        this.service.getById(this.id).
+        subscribe(data => {
+          this.entite = data;
+          this.updateform();
+          console.log('Request Successful, Scrum Master Details Loaded!');
+          this.isLoading = false;
+          this.toastOptions.msg = 'Success! Scrum Master Details Loaded';
+          this.toastService.success(this.toastOptions);
+        },
+        error => {
+          console.log('Fail! Scrum Master Details not loaded!');
+          this.isLoading = false;
+          this.toastOptions.msg = 'Failed to Load Scrum Master Details';
+          this.toastService.error(this.toastOptions);
+    }));
    }
   }
 
@@ -81,6 +102,10 @@ export class ScrumMasterDetailComponent implements OnInit {
         console.log('error');
       });
     }
+  }
+
+  ngOnDestroy() {
+    this.subscriptions.forEach(subscriptions => subscriptions.unsubscribe());
   }
 }
 

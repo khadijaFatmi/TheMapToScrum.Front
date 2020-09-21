@@ -64,4 +64,16 @@
 }
 
 
+.kSpinner{
+  color: #7e23f5 !important;
+  text-align: center !important;
+  width: 4rem;
+  height: 4rem;
+  display: inline-flex;
+  justify-content: center;
+  /* margin-left: 400px;
+  margin-bottom: 20px;*/
+
+}
+
 
