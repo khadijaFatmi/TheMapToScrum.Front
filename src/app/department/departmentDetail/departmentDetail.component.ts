@@ -80,27 +80,35 @@ export class DepartmentDetailComponent implements OnInit, OnDestroy {
       console.log('envoi ');
       if (this.id !== 0) {
         this.entite = Object.assign({}, this.form.value);
+        this.subscriptions.push(
         this.service.update(this.entite).subscribe(res => {
+          this.toastOptions.msg = 'Failed to update Entity Departments List';
+          this.toastService.success(this.toastOptions);
           alert('Department updated, success!');
         },
         err => {
+          this.toastOptions.msg = 'Failed to update Entity Departments List';
+          this.toastService.error(this.toastOptions);
           console.log('error');
-        });
+        }));
       } else {
         this.entite = Object.assign({}, this.form.value);
+        this.subscriptions.push(
         this.service.create(this.entite).subscribe(res => {
-          alert('Department updated, success!');
+          this.toastOptions.msg = 'Failed to update Entity Departments List';
+          this.toastService.success(this.toastOptions);
           this.router.navigate(['department']);
         },
-        err => {
+        error => {
+          this.toastOptions.msg = 'Failed to update Entity Departments List' + ' ' + error.statusText;
+          this.toastService.error(this.toastOptions);
           console.log('Error when creating Department');
-        });
+        }));
       }
     }
 
     ngOnDestroy() {
       this.subscriptions.forEach(subscriptions => subscriptions.unsubscribe());
     }
-
   }
 

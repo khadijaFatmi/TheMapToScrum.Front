@@ -50,15 +50,15 @@ export class UserStoryDetailComponent implements OnInit, OnDestroy {
     }
 
     this.usStatuses = [
-                      {'id': 1, 'libelle': 'new'}
-                    , {'id': 2, 'libelle': 'inProgress'}
-                    , {'id': 3, 'libelle': 'completed'}
-                    , {'id': 4, 'libelle': 'accepted'}
-                    , {'id': 5, 'libelle': 'pending'}
-                    , {'id': 6, 'libelle': 'inEvaluation'}
-                    , {'id': 7, 'libelle': 'rejected'}
-                    , {'id': 8, 'libelle': 'blocked'}
-                    , {'id': 9, 'libelle': 'inVerification'}];
+                      {'id': 1, 'libelle': 'New'}
+                    , {'id': 2, 'libelle': 'InProgress'}
+                    , {'id': 3, 'libelle': 'Completed'}
+                    , {'id': 4, 'libelle': 'Accepted'}
+                    , {'id': 5, 'libelle': 'Pending'}
+                    , {'id': 6, 'libelle': 'InEvaluation'}
+                    , {'id': 7, 'libelle': 'Rejected'}
+                    , {'id': 8, 'libelle': 'Blocked'}
+                    , {'id': 9, 'libelle': 'InVerification'}];
     this.storyPointsArray = [1, 2, 3, 5, 8, 11];
     this.loadProjects();
     this.form = this.fb.group({
