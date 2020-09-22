@@ -41,7 +41,7 @@ export class ProductOwnerListComponent implements OnInit, OnDestroy {
         this.dataSource = this.techMgr;
         console.log('Request Successful, Product Owners List Loaded!');
         this.isLoading = false;
-        this.toastOptions.msg = 'Success! Product Owners List Loaded';
+        this.toastOptions.msg = 'Success! Product Owners List Has Been Loaded';
         this.toastService.success(this.toastOptions);
       },
       error => {
@@ -65,12 +65,16 @@ delete(objet: ProductOwner): void {
   this.subscriptions.push(
     this.service.delete(id).
       subscribe(data => {
-        alert('Request Successful, Product Owner deleted :-)');
+        console.log('Request Successful, Product Owner Deleted!');
+        this.toastOptions.msg = 'Success! Product Owner Has Been Deleted';
+        this.toastService.success(this.toastOptions);
         // refresh list
         this.listEntities();
       },
       error => {
-        console.log('Request Failed to read PO :-/');
+        console.log('Fail! Product Owner has not been delete!');
+        this.toastOptions.msg = 'Failed to Delete Product Owner';
+        this.toastService.error(this.toastOptions);
   }));
 }
 

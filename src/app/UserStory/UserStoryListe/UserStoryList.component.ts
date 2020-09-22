@@ -38,10 +38,10 @@ export class UserStoryListComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.loadListUS();
+    this.loadListEntities();
   }
 
-  loadListUS(): void {
+  loadListEntities(): void {
       this.isLoading = true;
       this.subscriptions.push(
         this.service.liste().
@@ -74,13 +74,16 @@ export class UserStoryListComponent implements OnInit, OnDestroy {
     this.subscriptions.push(
     this.service.delete(id).
       subscribe(data => {
-        console.log('US deleted with success:' + ' ' + id);
-        alert('US deleted, success');
+        console.log('Request Success! User Story deleted!');
+        this.toastOptions.msg = 'Success! User Story Has Been Deleted';
+        this.toastService.success(this.toastOptions);
         // refresh US list after deleting
-        this.loadListUS();
+        this.loadListEntities();
       },
       error => {
-        console.log('Fail to delete US!');
+        console.log('Request Fail! US not deleted!');
+        this.toastOptions.msg = 'Fail! User Story Has Not Been Deleted';
+        this.toastService.error(this.toastOptions);
       }));
   }
 

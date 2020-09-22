@@ -44,13 +44,13 @@ export class DepartmentListComponent implements OnInit, OnDestroy {
         this.dataSource = this.department;
         this.isLoading = false;
         console.log('Dpt list Request Success:-)');
-        this.toastOptions.msg = 'Success! Entity Departments List Loaded';
+        this.toastOptions.msg = 'Success! Departments List Loaded';
         this.toastService.success(this.toastOptions);
       },
       error => {
         console.log('Dpt list Request Fail:-/');
         this.isLoading = false;
-        this.toastOptions.msg = 'Fail! Error while loading Entity Departments List';
+        this.toastOptions.msg = 'Fail! Error While Loading Departments List';
         this.toastService.error(this.toastOptions);
     }));
   }
@@ -68,12 +68,16 @@ export class DepartmentListComponent implements OnInit, OnDestroy {
     this.subscriptions.push(
       this.service.delete(id).
       subscribe(data => {
-        alert('department deleted, success');
+        console.log('Request Success: Department deleted-)');
+        this.toastOptions.msg = 'Success! Department Has Been Deleted';
+        this.toastService.success(this.toastOptions);
         // refresh Dept List
         this.listEntities();
       },
       error => {
-        console.log('erreur lecture :-/');
+        console.log('Request Fail: Department not deleted-)');
+        this.toastOptions.msg = 'Fail! Department Has Not Been Deleted';
+        this.toastService.success(this.toastOptions);
       }));
   }
 

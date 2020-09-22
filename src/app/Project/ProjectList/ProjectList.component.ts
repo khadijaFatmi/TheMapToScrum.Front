@@ -44,9 +44,8 @@ export class ProjectListComponent implements OnInit, OnDestroy {
       subscribe(data => {
         this.projects = data;
         this.dataSource = this.projects;
-        console.log('Request Successful! List of all projects Loaded :-)', data);
-        this.isLoading = false;
-        this.toastOptions.msg = 'Success! List of all projects Loaded!';
+        console.log('Request Successful! List of all projects Loaded :-)');
+        this.toastOptions.msg = 'Success! List Of All Projects Loaded!';
         this.toastService.success(this.toastOptions);
       },
       error => {
@@ -72,11 +71,15 @@ export class ProjectListComponent implements OnInit, OnDestroy {
     this.subscriptions.push(
       this.service.delete(id).
         subscribe(data => {
-          alert('Request Successful Project deleted!');
+          console.log('Request Successful! Project deleted :-)');
+          this.toastOptions.msg = 'Success! Project Deleted!';
+          this.toastService.success(this.toastOptions);
           this.listEntities();
         },
         error => {
-          console.log('Request Failed to delete this project');
+          console.log('Request Fail! Project not deleted :-)');
+          this.toastOptions.msg = 'Fail! Project Has Not Been Deleted!';
+          this.toastService.success(this.toastOptions);
       }));
   }
 

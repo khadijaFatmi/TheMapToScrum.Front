@@ -86,21 +86,31 @@ export class ScrumMasterDetailComponent implements OnInit, OnDestroy {
     if (this.id !== 0) {
       console.log('SMid not null');
       this.entite = Object.assign({}, this.form.value);
+      this.subscriptions.push(
       this.service.update(this.entite).subscribe(res => {
-        alert('Scrum Master updated');
+        console.log('Request Successful, Scrum Master updated!');
+        this.toastOptions.msg = 'Success! Scrum Maste Updated';
+        this.toastService.success(this.toastOptions);
       },
-      err => {
-        console.log('error');
-      });
+      error => {
+        console.log('Fail! Scrum Master not updated!');
+        this.toastOptions.msg = 'Failed to Update Scrum Master';
+        this.toastService.error(this.toastOptions);
+      }));
     } else {
       this.entite = Object.assign({}, this.form.value);
+      this.subscriptions.push(
       this.service.create(this.entite).subscribe(res => {
-        alert('a new Scrum Master created');
+        console.log('Request Successful, Scrum Master created!');
+        this.toastOptions.msg = 'Success! A New Scrum Master Has Been Created';
+        this.toastService.success(this.toastOptions);
         this.router.navigate(['scrummaster']);
       },
-      err => {
-        console.log('error');
-      });
+      error => {
+        console.log('Request Fail, Scrum Master not created!');
+        this.toastOptions.msg = 'Fail! No Scrum Master Created';
+        this.toastService.error(this.toastOptions);
+      }));
     }
   }
 

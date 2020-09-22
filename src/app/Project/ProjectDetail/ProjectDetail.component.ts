@@ -119,18 +119,26 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
     if (this.id !== null) {
       this.entite = Object.assign({}, this.form.value);
       this.service.update(this.entite).subscribe(res => {
-        alert('ProjectDetail successful updated ');
+        console.log('Request Successful! Project Updated!:-)');
+        this.toastOptions.msg = 'Success! Project Has Been Updated!';
+        this.toastService.success(this.toastOptions);
       },
-      err => {
-        console.log('ProjectDetail Request failed');
+      error => {
+        console.log('Request Fail! Project has not been Updated!:-)');
+        this.toastOptions.msg = 'Fail! Project Has Not Been Updated!';
+        this.toastService.error(this.toastOptions);
       });
     } else {
       this.entite = Object.assign({}, this.form.value);
       this.service.create(this.entite).subscribe(res => {
-        alert('ProjectDetail successful creation');
+        console.log('Request Successful! Project Created!:-)');
+        this.toastOptions.msg = 'Success! A New Project Has Been Created!';
+        this.toastService.success(this.toastOptions);
       },
-      err => {
-        console.log('ProjectDetail failed creation');
+      error => {
+        console.log('Request Fail! Project has not been Created!:-)');
+        this.toastOptions.msg = 'Fail! Project Has Not Been Created! No New Project Created!';
+        this.toastService.error(this.toastOptions);
       });
     }
   }

@@ -59,14 +59,14 @@ export class ProductOwnerDetailComponent implements OnInit, OnDestroy {
         subscribe(data => {
           this.entite = data;
           this.updateform();
-          console.log('Request Successful, Product Owners Details Loaded!');
           this.isLoading = false;
+          console.log('Request Successful, Product Owners Details Loaded!');
           this.toastOptions.msg = 'Success! Product Owners Details Loaded';
           this.toastService.success(this.toastOptions);
         },
         error => {
-          console.log('Fail! Product Owners details not loaded!');
           this.isLoading = false;
+          console.log('Fail! Product Owners details not loaded!');
           this.toastOptions.msg = 'Failed to Load Product Owners details';
           this.toastService.error(this.toastOptions);
         }));
@@ -89,21 +89,31 @@ export class ProductOwnerDetailComponent implements OnInit, OnDestroy {
 
     if (this.id !== 0) {
       this.entite = Object.assign({}, this.form.value);
+      this.subscriptions.push(
       this.service.update(this.entite).subscribe(res => {
-        alert('Product Owner updated');
+        console.log('Request Successful, Product Owner updated!');
+        this.toastOptions.msg = 'Success! Product Owner Has Been Updated';
+        this.toastService.success(this.toastOptions);
       },
-      err => {
-        console.log('Request failed to update PO');
-      });
+      error => {
+        console.log('Fail! Product Owner not updated!');
+        this.toastOptions.msg = 'Failed to Update Product Owner';
+        this.toastService.error(this.toastOptions);
+      }));
     } else {
       this.entite = Object.assign({}, this.form.value);
+      this.subscriptions.push(
       this.service.create(this.entite).subscribe(res => {
-        alert('A new Product Owner created!');
+        console.log('Request Successful, Product Owner created!');
+        this.toastOptions.msg = 'Success! A New Product Owner Has Been Created';
+        this.toastService.success(this.toastOptions);
         this.router.navigate(['businessmanager']);
       },
-      err => {
-        console.log('error on submitting PO');
-      });
+      error => {
+        console.log('Fail! Product Owner not created!');
+        this.toastOptions.msg = 'Failed to Create Product Owner! No New Product Owner!';
+        this.toastService.error(this.toastOptions);
+      }));
     }
   }
 

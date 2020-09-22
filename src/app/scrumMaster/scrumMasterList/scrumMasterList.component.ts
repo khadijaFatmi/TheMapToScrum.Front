@@ -39,14 +39,14 @@ listeEntities(): void {
     this.service.liste().
       subscribe(data => {
         this.scrumMaster = data;
-        console.log('Request Successful, Scrum Masters List Loaded!');
         this.isLoading = false;
+        console.log('Request Successful, Scrum Masters List Loaded!');
         this.toastOptions.msg = 'Success! Scrum Masters List Loaded';
         this.toastService.success(this.toastOptions);
         },
         error => {
-          console.log('Fail! Scrum Masters list not loaded!');
           this.isLoading = false;
+          console.log('Fail! Scrum Masters list not loaded!');
           this.toastOptions.msg = 'Failed to Load Scrum Masters List';
           this.toastService.error(this.toastOptions);
       }));
@@ -64,12 +64,16 @@ delete(objet: ScrumMaster): void {
   this.subscriptions.push(
     this.service.delete(id).
       subscribe(data => {
-        alert('Request successful,Scrum Masters deleted :-)');
+        console.log('Request Successful, Scrum Master deleted!');
+        this.toastOptions.msg = 'Success! Scrum Master Has Been Deleted';
+        this.toastService.success(this.toastOptions);
       //  refresh list
         this.listeEntities();
       },
       error => {
-        console.log('Request failed to delete Scrum Master :-/');
+        console.log('Request failed to delete Scrum Master!');
+        this.toastOptions.msg = 'Failed to Delete Scrum Master';
+        this.toastService.error(this.toastOptions);
       }));
 }
 

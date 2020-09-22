@@ -84,9 +84,14 @@ export class UserStoryDetailComponent implements OnInit, OnDestroy {
         subscribe(data => {
         this.entite = data;
         this.updateform();
+        console.log('Request Success!User Story Details Loaded!');
+        this.toastOptions.msg = 'Success! User Story Details Has Been Loaded!';
+        this.toastService.success(this.toastOptions);
       },
       error => {
-        console.log('Failed to read this us detail :-/');
+        console.log('Request Fail! US details not loaded!');
+        this.toastOptions.msg = 'Failed to Load User Story Details';
+        this.toastService.error(this.toastOptions);
     }));
 
     }
@@ -98,15 +103,15 @@ export class UserStoryDetailComponent implements OnInit, OnDestroy {
       this.ps.liste().
       subscribe(data => {
         this.projects = data;
-        console.log('Request Success!User Stories Details Loaded!');
+        console.log('Request Success!User Story Details Loaded!');
         this.isLoading = false;
-        this.toastOptions.msg = 'Success! User Stories Details loaded!';
+        this.toastOptions.msg = 'Success! User Story Details loaded!';
         this.toastService.success(this.toastOptions);
       },
       error => {
         console.log('Request Fail! US details not loaded!');
         this.isLoading = false;
-        this.toastOptions.msg = 'Failed to Load User Stories Details';
+        this.toastOptions.msg = 'Failed to Load User Story Details';
         this.toastService.error(this.toastOptions);
       }
     ));
@@ -140,20 +145,28 @@ export class UserStoryDetailComponent implements OnInit, OnDestroy {
     if (this.id !== 0) {
       this.entite = Object.assign({}, this.form.value, this.form.get('epicStory').value);
       this.service.update(this.entite).subscribe(res => {
-        alert('update success');
+        console.log('Request Success! User Story Updated!');
+        this.toastOptions.msg = 'Success! User Story Has Been Updated!';
+        this.toastService.success(this.toastOptions);
         this.router.navigate(['/userstory']);
       },
       err => {
-        console.log('error');
+        console.log('Request Fail! US not updated!');
+        this.toastOptions.msg = 'Failed to Update User Story';
+        this.toastService.error(this.toastOptions);
       });
     } else {
       this.entite = Object.assign({}, this.form.value, this.form.get('epicStory').value);
       this.service.create(this.entite).subscribe(res => {
-        alert('create success');
+        console.log('Request Success! User Story Created!');
+        this.toastOptions.msg = 'Success! A New User Story Has Been Created!';
+        this.toastService.success(this.toastOptions);
         this.router.navigate(['/userstory']);
       },
-      err => {
-        console.log('error');
+      error => {
+        console.log('Request Fail! US not created!');
+        this.toastOptions.msg = 'Failed to Create A New User Story';
+        this.toastService.error(this.toastOptions);
       });
     }
   }

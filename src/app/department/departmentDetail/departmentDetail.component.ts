@@ -51,15 +51,15 @@ export class DepartmentDetailComponent implements OnInit, OnDestroy {
         subscribe(data => {
           this.entite = data;
           this.updateform();
-          console.log('Request Successful, Entity Departments List Loaded!');
+          console.log('Request Successful, Department Details Loaded!');
           this.isLoading = false;
-          this.toastOptions.msg = 'Success! Entity Departments List Is Loaded!';
+          this.toastOptions.msg = 'Success! Department Details Have Been Loaded!';
           this.toastService.success(this.toastOptions);
         },
         error => {
-          console.log('Fail! Entity Departments list not loaded!');
+          console.log('Fail! Department details not loaded!');
           this.isLoading = false;
-          this.toastOptions.msg = 'Failed to Load Entity Departments List';
+          this.toastOptions.msg = 'Fail! Department Details Have Not Been Loaded';
           this.toastService.error(this.toastOptions);
         }));
       }
@@ -82,25 +82,23 @@ export class DepartmentDetailComponent implements OnInit, OnDestroy {
         this.entite = Object.assign({}, this.form.value);
         this.subscriptions.push(
         this.service.update(this.entite).subscribe(res => {
-          this.toastOptions.msg = 'Failed to update Entity Departments List';
+          this.toastOptions.msg = 'Success! Department Has Been Updated';
           this.toastService.success(this.toastOptions);
-          alert('Department updated, success!');
         },
-        err => {
-          this.toastOptions.msg = 'Failed to update Entity Departments List';
+        error => {
+          this.toastOptions.msg = 'Fail! Department Has Not Been Updated';
           this.toastService.error(this.toastOptions);
-          console.log('error');
         }));
       } else {
         this.entite = Object.assign({}, this.form.value);
         this.subscriptions.push(
         this.service.create(this.entite).subscribe(res => {
-          this.toastOptions.msg = 'Failed to update Entity Departments List';
+          this.toastOptions.msg = 'Success! A New Department Has Been Created';
           this.toastService.success(this.toastOptions);
           this.router.navigate(['department']);
         },
         error => {
-          this.toastOptions.msg = 'Failed to update Entity Departments List' + ' ' + error.statusText;
+          this.toastOptions.msg = 'Fail! Department Has Not Been Created. No New Department Created!' + ' ' + error.statusText;
           this.toastService.error(this.toastOptions);
           console.log('Error when creating Department');
         }));
