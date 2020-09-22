@@ -41,14 +41,14 @@ export class TeamListComponent implements OnInit, OnDestroy {
       subscribe(data => {
         this.team = data;
         this.dataSource = this.team;
-        console.log('Request Successful, Developer Teams List Loaded!');
         this.isLoading = false;
+        console.log('Request Successful, Developer Teams List Loaded!');
         this.toastOptions.msg = 'Success! Developer Teams List Loaded';
         this.toastService.success(this.toastOptions);
         },
         error => {
-          console.log('Fail! Developer Teams List not loaded!');
           this.isLoading = false;
+          console.log('Fail! Developer Teams List not loaded!');
           this.toastOptions.msg = 'Failed to Load Developer Teams List';
           this.toastService.error(this.toastOptions);
       }));
@@ -66,12 +66,16 @@ export class TeamListComponent implements OnInit, OnDestroy {
     this.subscriptions.push(
       this.service.delete(id).
       subscribe(data => {
-        alert('Team deleted, success');
+        console.log('Request Successful, Developer Teams deleted!');
+        this.toastOptions.msg = 'Success! Developer Team Has Been Deleted';
+        this.toastService.success(this.toastOptions);
        //  refresh list
         this.listeEntities();
       },
         error => {
-          console.log('Request failde in reading Teams List');
+          console.log('Request Fail! Developer Teams deleted!');
+          this.toastOptions.msg = 'Fail! Developer Team Has Not Been Deleted';
+          this.toastService.error(this.toastOptions);
       }));
   }
 

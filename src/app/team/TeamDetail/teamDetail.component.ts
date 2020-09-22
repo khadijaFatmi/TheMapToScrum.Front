@@ -55,15 +55,15 @@ export class TeamDetailComponent implements OnInit, OnDestroy {
       subscribe(data => {
         this.entite = data;
         this.updateform();
-        console.log('Request Successful, Developers Teams Details Loaded!');
+        console.log('Request Successful, Developers Team Details Loaded!');
         this.isLoading = false;
-        this.toastOptions.msg = 'Success! Developers Teams Details Loaded';
+        this.toastOptions.msg = 'Success! Developers Team Details Loaded';
         this.toastService.success(this.toastOptions);
         },
         error => {
           console.log('Fail! Developers Teams Details not loaded!');
           this.isLoading = false;
-          this.toastOptions.msg = 'Failed to Load Developers Teams Details';
+          this.toastOptions.msg = 'Failed to Load Developers Team Details';
           this.toastService.error(this.toastOptions);
         }));
     }
@@ -86,21 +86,26 @@ export class TeamDetailComponent implements OnInit, OnDestroy {
       console.log('id not null');
 
       this.entite = Object.assign({}, this.form.value);
+      this.subscriptions.push(
       this.service.update(this.entite).subscribe(res => {
-        alert('Team updated!');
+        console.log('Request Successful, Developers Team Has Been Updated!');
+        this.toastOptions.msg = 'Success! Developers Team Has Been Updated';
+        this.toastService.success(this.toastOptions);
         this.router.navigate(['/team']);
       },
-      err => {
-        console.log();
+      error => {
+        console.log('Request Fail, Developers Team Has Not Been Updated!');
+        this.toastOptions.msg = 'Fail! Developers Team Has Not Been Updated';
+        this.toastService.success(this.toastOptions);
       }
-      );
+      ));
       } else {
         this.entite = Object.assign({}, this.form.value);
         this.service.create(this.entite).subscribe(res => {
-        alert('success! Team created!');
-        this.router.navigate(['/team']);
-        console.log('creation Developers Teams Details');
-
+          console.log('Request Successful, Developer has been created!');
+          this.toastOptions.msg = 'Success! A New Developers Team Has Been Created';
+          this.toastService.success(this.toastOptions);
+          this.router.navigate(['/team']);
       });
     }
 }
