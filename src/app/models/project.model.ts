@@ -17,5 +17,6 @@ export class Project extends BaseEntity {
   scrumMaster: ScrumMaster;
   team: Team;
   department: Department;
+  // scrumTeam: ScrumTeam;
 }
 

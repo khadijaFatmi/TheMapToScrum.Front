@@ -11,30 +11,18 @@
     </div>
   </div>
 
-  <!-- <div *ngIf="isLoading" class="spinner-border kSpinner" style="width: 3rem; height: 3rem;" role="status">
-    <span class="sr-only">Loading...</span>
-  </div>
-  <div class="spinner-grow kSpinner" style="width: 3rem; height: 3rem;" role="status">
-    <span class="sr-only">Loading...</span>
-  </div> -->
-
   <div>
     <a class="btn btn-outline-success kNew" (click) = "Add()">
     <i class="fa fa-plus-square kBtnNew"></i>New</a>
   </div>
-<!-- <div>
-projets= variable de type ProjetUserStory[], p: iterateur, libelle= attribut de mon entité projet
-<li *ngFor="let p of projets">{{p.libelle}}</li>
-</div> -->
 
   <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-
     <ng-container matColumnDef="version">
       <th mat-header-cell *matHeaderCellDef >Version</th>
         <mat-cell *matCellDef="let element"> {{element.version}} </mat-cell>
     </ng-container>
 
-   <ng-container matColumnDef="project">
+    <ng-container matColumnDef="project">
       <th mat-header-cell *matHeaderCellDef>Project</th>
         <mat-cell *matCellDef="let element"> {{element.project?.label}} </mat-cell>
     </ng-container>
@@ -43,6 +31,7 @@ projets= variable de type ProjetUserStory[], p: iterateur, libelle= attribut de 
       <th mat-header-cell *matHeaderCellDef>Title</th>
         <mat-cell *matCellDef="let element"> {{element.label}} </mat-cell>
     </ng-container>
+
 
     <ng-container matColumnDef="priority">
       <th mat-header-cell *matHeaderCellDef>Priority</th>
@@ -64,6 +53,10 @@ projets= variable de type ProjetUserStory[], p: iterateur, libelle= attribut de 
         <mat-cell *matCellDef="let element"> {{element.epicStory | Ouinon }} </mat-cell>
     </ng-container>
 
+    <ng-container matColumnDef="tasks">
+      <th mat-header-cell *matHeaderCellDef>Tasks</th>
+        <mat-cell *matCellDef="let element"> {{element.nbTasks}} </mat-cell>
+    </ng-container>
     <ng-container matColumnDef="status">
       <th mat-header-cell *matHeaderCellDef>Status</th>
          <mat-cell *matCellDef="let element"> {{element.strUsStatus}} </mat-cell>

@@ -1,0 +1,97 @@
+.kTitleTask{
+  width: 100% !important;
+  text-align: center;
+  background-color: #424343;
+  margin:auto;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color:  white;
+}
+
+.kLabelTaskNumber{
+  width: 20% !important;
+  text-align: center;
+  background-color: #424343;
+  border-radius: 5px;
+  border-color:   rgb(55, 208, 255);
+  border-width: 5px;
+  margin-bottom: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color:  rgb(55, 208, 255);
+}
+.kTaskProjectLabel{
+  width: 100% !important;
+  text-align: center;
+  background-color:grey;
+  margin:auto;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+}
+
+.mat-dialog-container{
+  background-color: white !important;
+  /* position: fixed !important; */
+}
+
+.kTaskUsLabel{
+  width: 100% !important;
+  text-align: center;
+  background-color: grey;
+  margin:auto;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  color:white;
+}
+
+.kDisplayTask{
+  background-color: white !important;
+}
+
+.taskDetailForm{
+  width: 100%;
+  display: block !important;
+
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+  word-wrap: break-word !important;
+
+  background-color: grey !important;
+  color: white !important;
+  font-size: 16px;
+}
+
+.kLabelTaskDetail {
+  align-self: center !important;
+  color: rgb(55, 208, 255) !important;
+  font-size: 16px !important;
+  font-weight: normal !important;
+
+}
+
+.kBTNCloseTask{
+  background-color: #016986;
+  border-color: #002833 !important;
+  text-align: center !important;
+  color: white !important;
+  font-weight: bold;
+  font-size: 18px !important;
+  margin: auto;
+  width: 196px;
+}
+
+.kBTNCloseTask:hover {
+  background-color: #3688d4;
+}
+.kSaveTask{
+  background-color:#07bcf3;
+  border-color: #17aedb !important;
+  text-align: center !important;
+  color: white !important;
+  font-weight: bold;
+  font-size: 18px !important;
+  margin: auto;
+  width: 196px;
+}
+
+.kSaveTask:hover{
+  background-color: #41d3ff;
+}

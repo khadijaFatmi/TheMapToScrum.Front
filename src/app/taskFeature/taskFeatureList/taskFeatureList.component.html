@@ -1,0 +1,70 @@
+<div class="container-fluid" >
+  <div>
+    <h1 class="titleUSList">Tasks List</h1>
+  </div>
+  <br/>
+
+  <div class="d-flex justify-content-center">
+    <div *ngIf="isLoading" class="spinner-grow kSpinner" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+  <div>
+    <a class="btn btn-outline-success kNew" (click) = "Add()">
+    <i class="fa fa-plus-square kBtnNew"></i>New</a>
+  </div>
+
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="number">
+      <th mat-header-cell *matHeaderCellDef>No</th>
+        <mat-cell *matCellDef="let element"> {{element.number}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="label">
+     <th mat-header-cell *matHeaderCellDef>Label</th>
+        <mat-cell *matCellDef="let element"> {{element.label}} </mat-cell>
+    </ng-container>
+   <ng-container matColumnDef="project">
+      <th mat-header-cell *matHeaderCellDef>Project</th>
+        <mat-cell *matCellDef="let element"> {{element.project?.label}} </mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="userstory">
+      <th mat-header-cell *matHeaderCellDef>User Story</th>
+        <mat-cell *matCellDef="let element"> {{element.userStory?.label}} </mat-cell>
+    </ng-container>
+
+
+
+
+    <ng-container matColumnDef="priority">
+      <th  mat-header-cell *matHeaderCellDef>Priority</th>
+        <mat-cell *matCellDef="let element"> {{element.priority }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="estimatedDuration">
+      <th mat-header-cell *matHeaderCellDef>Duration</th>
+        <mat-cell *matCellDef="let element"> {{element.estimatedDuration}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="taskStatus">
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+         <mat-cell *matCellDef="let element"> {{element.taskStatus}} </mat-cell>
+     </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef>Action</th>
+        <mat-cell *matCellDef="let element">
+          <button class="btn btn-success kEdit" (click)="addOrEdit(element)" style="margin-left: 20px;">Edit</button>
+          <button class="btn btn-success kDelete" (click)="delete(element)" style="margin-left: 20px;">Delete</button>
+        </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+  <br />
+</div>

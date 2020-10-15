@@ -1,4 +1,4 @@
-/*mise en forme de la page User Story List */
+/*mise en forme de la page User Story Tasks */
 .titleUSList {
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -19,152 +19,159 @@
 
 table{
   width: 100%;
-  padding: 40 40 0 40 !important;
+  /* padding: 40 40 0 40 !important; */
 }
 
 /*Angular Material : Surcharge des classes natives, mat-table & ses composants customisés*/
+
+/* tasks tab */
 .mat-table{
   width: 100% !important;
-  box-sizing: border-box !important;
+  /* box-sizing: border-box !important; */
   text-size-adjust: auto !important;
   background-color: grey !important;
-  margin-bottom: 40px;
-
+  margin:auto;
 }
+/* .mat-cell{
+  flex-direction: column;
+  text-align: left;
+  justify-content: flex-start;
 
-.mat-row{
-  text-align: center !important;
-}
+} */
+
+/* .mat-row{ */
+  /* text-align: right !important; */
+  /* align-content: left !important;
+} */
 
 .mat-header-row{
+  /* text-align: left;
+  justify-content: flex-start; */
   background: #424343 !important;
-  height: 40px !important;
-  text-align: left;
+  /* height: 40px !important; */
 }
 
 .mat-header-cell{
-  text-align: left !important;
-  font-size: 12px !important;
+  /* flex-direction: column;
+  text-align: left;
+  justify-content: flex-start;
+
+  font-size: auto !important; */
   color:  #07bcf3 !important;
   font-weight: normal ;
   background: #424343 !important;
 
 }
-.mat-column-version {
+
+/*
+.mat-column{
+  text-align: center !important;
+} */
+
+ /*
+.mat-column-number {
   word-wrap: break-word !important;
   white-space: unset !important;
-  flex: 0 0 6% !important;
-  width: 6% !important;
+  flex: 0 0 5% !important;
+  width: 5% !important;
   overflow-wrap: break-word;
-  font-size: 10px !important;
   word-break: break-word;
+
+  font-size: auto !important;
 }
 
-.mat-column-project {
-  word-wrap: break-word !important;
+.mat-column-label {
+  /* word-wrap: break-word !important;
   white-space: unset !important;
-  flex: 0 0 15% !important;
-  width: 15% !important;
+  flex: 0 0 12% !important;
+  width: 12% !important;
   overflow-wrap: break-word;
-
   word-break: break-word;
 
-  font-size: 12px !important;
+  font-size: auto !important;
 }
 
-.mat-row-project{
+
+/* .mat-row-project{
   text-align: center !important;
 }
+*/
 
-
-.mat-column-title {
-  word-wrap: break-word !important;
+/*.mat-column-project {
+  /* word-wrap: break-word !important;
   white-space: unset !important;
-  flex: 0 0 15% !important;
-  width: 15% !important;
+  flex: 0 0 12% !important;
+  width: 12% !important;
   overflow-wrap: break-word;
 
   word-break: break-word;
-  font-size: 12px !important;
-}
+
+  /* font-size: auto !important; */
+/*}
 
 
-.mat-column-role {
-  word-wrap: break-word !important;
+
+.mat-column-userStory {
+  /* word-wrap: break-word !important;
   white-space: unset !important;
-  flex: 0 0 13% !important;
-  width: 13% !important;
+  flex: 0 0 10% !important;
+  width: 10% !important;
   overflow-wrap: break-word;
-  word-break: break-word;
 
-  font-size: 12px !important;
-}
+  word-break: break-word;
+  /* font-size: auto !important; */
+/*}
+
 
 
 .mat-column-priority {
-  word-wrap: break-word !important;
+  /* word-wrap: break-word !important;
   white-space: unset !important;
-  flex: 0 0 8% !important;
-  width: 8% !important;
-  overflow-wrap: break-word;
-  word-break: break-word;
-
-  font-size: 12px !important;
-}
-
-.mat-column-storyPoints {
-  word-wrap: break-word !important;
-  white-space: normal !important;
-  flex: 0 0 8% !important;
-  width: 8% !important;
+  flex: 0 0 10% !important;
+  width: 10% !important;
   overflow-wrap: break-word;
 
   word-break: break-word;
-  font-size: 11px !important;
-}
+  font-size: auto !important;
+  text-align: right !important; */
+/*}
 
-.mat-column-epicStory {
-  word-wrap: break-word !important;
+/*.mat-column-estimatedDuration {
+  /* word-wrap: break-word !important;
   white-space: unset !important;
-  flex: 0 0 8% !important;
-  width: 8% !important;
+  flex: 0 0 10% !important;
+  width: 10% !important;
   overflow-wrap: break-word;
 
-  font-size: 11px !important;
+  font-size: auto !important;
   word-break: break-word;
-}
+  text-align: right !important; */
+
+/*}
 
 
-.mat-column-tasks {
-  word-wrap: break-word !important;
-  flex: 0 0 7% !important;
-  width: 7% !important;
-  font-size: 12px !important;
-
-}
-
-.mat-column-action {
-  word-wrap: break-word !important;
-  flex: 0 0 12% !important;
-  width: 12% !important;
-  font-size: 12px !important;
-
-}
-
-
-.mat-column-status {
-  word-wrap: break-word !important;
+/* .mat-column-taskStatus { */
+  /* word-wrap: break-word !important;
+  flex: 0 0 10% !important;
+  width: 10% !important;
   white-space: unset !important;
-  flex: 0 0 8% !important;
-  width: 8% !important;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  word-break: break-word;
-  font-size: 12px !important;
-  color: #49d5ff;
+  font-size: auto !important;
+  text-align: right !important;
+  justify-content: start !important; */
+/*
 }
 
-/* Bootstrap Classes: Surcharge Boutons actions */
+.mat-column-action { */
+  /* word-wrap: break-word !important;
+  flex: 0 0 20% !important;
+  width: 20% !important;
+  font-size: auto !important;
+  text-align: right !important;
+
+}*/
+
+
+
 .kEdit {
   background-color: #03aadd !important;
   border-color:#00ffff !important;
@@ -172,8 +179,9 @@ table{
   text-align: center !important;
   font-size: 9px !important;
   width: 55px !important;
-  margin-left: 1px !important;
+
 }
+
 .kEdit:hover {
   background-color: #01c4ff !important;
 }
@@ -184,7 +192,7 @@ table{
   border-color: rgb(30, 45, 73) !important;
   text-align: center !important;
   font-size: 9px !important;
-  width: 52px !important;
+  width: 55px !important;
 }
 
 .kDelete:hover{
@@ -200,11 +208,11 @@ table{
   font-size: 18px !important;
   align-content: unset !important;
   padding: 20 20 20 20 !important;
-  /* margin-left: 60px !important; */
+
   margin-bottom: 20px !important;
   width: 128px !important;
   position: relative !important;
-  /* left: 20px !important; */
+
 }
 
 .kNew:hover {

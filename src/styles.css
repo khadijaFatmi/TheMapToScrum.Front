@@ -1,10 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~ngx-toasta/styles/style-bootstrap.css';
 
-html, body {  font-family: Roboto, "Verdana", sans-serif;}
+html, body {
+  font-family: Roboto, "Verdana", sans-serif;
+  background-color: white !important;
+}
 /*
 body { margin: 10px; font-family: Roboto, "Verdana", sans-serif; }
 */
+
+.cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
+  opacity: 0 !important;
+}
+
+/* ink bar style */
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar{
+  background: white;
+  height: 4px;
+}
+
+.mat-focused .mat-form-field-underline .mat-form-field-ripple{
+  background: #ffffff; }
+
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: white;
+}
+/* .cdk-overlay-pane{
+  background-color: white !important;
+} */
 
 #toasta.toasta-position-top-right {
   top: 20px;

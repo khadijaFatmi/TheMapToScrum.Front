@@ -5,6 +5,8 @@ import { ProjectListComponent } from './project/projectList/projectList.componen
 import { ProjectDetailComponent } from './project/projectDetail/projectDetail.component';
 import { UserStoryListComponent } from './userStory/userStoryListe/userStoryList.component';
 import { UserStoryDetailComponent } from './userStory/userStoryDetail/userStoryDetail.component';
+import { TaskFeatureListComponent } from './taskFeature/taskFeatureList/taskFeatureList.component';
+import { TaskFeatureDetailComponent } from './taskFeature/taskFeatureDetail/taskFeatureDetail.component';
 
 import { ScrumMasterListComponent } from './scrumMaster/scrumMasterList/scrumMasterList.component';
 import { ScrumMasterDetailComponent } from './scrumMaster/scrumMasterDetail/scrumMasterDetail.component';
@@ -43,6 +45,8 @@ const routes: Routes = [
   {path: 'projectdetail', component : ProjectDetailComponent},
   {path: 'userstory', component : UserStoryListComponent },
   {path: 'userstorydetail', component : UserStoryDetailComponent},
+  {path: 'taskfeature', component: TaskFeatureListComponent },
+  {path: 'taskfeaturedetail', component: TaskFeatureDetailComponent},
   {path: 'scrummaster', component : ScrumMasterListComponent},
   {path: 'scrummasterdetail', component : ScrumMasterDetailComponent},
   {path: 'productowner', component : ProductOwnerListComponent},
@@ -53,7 +57,7 @@ const routes: Routes = [
   {path: 'developerdetail', component: DeveloperDetailComponent},
   {path: 'department', component: DepartmentListComponent},
   {path: 'departmentDetail', component: DepartmentDetailComponent},
-  {path: '**', component: HomeComponent, data: { title: 'Page non trouvée' } }
+  {path: '**', component: HomeComponent, data: { title: 'Page Not Found' } }
 ];
 
 @NgModule({

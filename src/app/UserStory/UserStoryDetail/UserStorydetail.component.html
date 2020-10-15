@@ -1,128 +1,247 @@
-<div class="container">
-<div>
-
+<div class="d-flex justify-content-center">
+<div class="col-8">
   <br/>
-    <h1 class="kTitleUSDetail">User Story Detail</h1>
+  <br/>
+    <h1 class="kTitleUSDetail">User Story Details</h1>
   <br/>
 </div>
-
+</div>
 <div class="d-flex justify-content-center">
   <div *ngIf="isLoading" class="spinner-grow kSpinner" role="status">
     <span class="sr-only">Loading...</span>
   </div>
 </div>
-
 <br/>
+<div class="d-flex justify-content-center">
+  <div class="col-8 kStyle">
+    <mat-tab-group>
+    <!--US details-->
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <svg viewBox="0 0 16 16" class="bi bi-binoculars kIcon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M3 2.5A1.5 1.5 0 0 1 4.5 1h1A1.5 1.5 0 0 1 7 2.5V5h2V2.5A1.5 1.5 0 0 1 10.5 1h1A1.5 1.5 0 0 1 13 2.5v2.382a.5.5 0 0 0 .276.447l.895.447A1.5 1.5 0 0 1 15 7.118V14.5a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 14.5v-3a.5.5 0 0 1 .146-.354l.854-.853V9.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v.793l.854.853A.5.5 0 0 1 7 11.5v3A1.5 1.5 0 0 1 5.5 16h-3A1.5 1.5 0 0 1 1 14.5V7.118a1.5 1.5 0 0 1 .83-1.342l.894-.447A.5.5 0 0 0 3 4.882V2.5zM4.5 2a.5.5 0 0 0-.5.5V3h2v-.5a.5.5 0 0 0-.5-.5h-1zM6 4H4v.882a1.5 1.5 0 0 1-.83 1.342l-.894.447A.5.5 0 0 0 2 7.118V13h4v-1.293l-.854-.853A.5.5 0 0 1 5 10.5v-1A1.5 1.5 0 0 1 6.5 8h3A1.5 1.5 0 0 1 11 9.5v1a.5.5 0 0 1-.146.354l-.854.853V13h4V7.118a.5.5 0 0 0-.276-.447l-.895-.447A1.5 1.5 0 0 1 12 4.882V4h-2v1.5a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V4zm4-1h2v-.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5V3zm4 11h-4v.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5V14zm-8 0H2v.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5V14z"/>
+          </svg>
+        Details
+        </ng-template>
+        <form  [formGroup]="form" (ngSubmit)="onSubmit()">
+          <input type="hidden" formControlName="id">
+          <input type="hidden" formControlName="dateCreation">
+          <input type="hidden" formControlName="dateModification">
+          <input type="hidden" formControlName="isDeleted">
+          <mat-form-field class="usDetailForm">
+            <mat-label class="kLabelUSDetail">Title</mat-label>
+              <input matInput formControlName="label">
+          </mat-form-field>
+          <div class="row">
+            <div class="col-md-4">
+          <mat-form-field class="usDetailForm">
+            <mat-label class="kLabelUSDetail">Version</mat-label>
+              <input matInput formControlName="version">
+          </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+          <mat-form-field class="usDetailForm">
+            <mat-label class="kLabelUSDetail">Project</mat-label>
+            <mat-select formControlName="projectId" >
+              <mat-option >
+                Project Choice
+              </mat-option>
+              <mat-option *ngFor="let item of projects" [value]="item.id">
+                {{item.label}}
+                </mat-option>
+            </mat-select>
+          </mat-form-field>
+          </div>
+          </div>
+          <mat-form-field class="usDetailForm">
+            <mat-label class="kLabelUSDetail">As a</mat-label>
+            <input matInput formControlName="role">
+          </mat-form-field>
+          <mat-form-field class="usDetailForm">
+            <mat-label class="kLabelUSDetail">I want to</mat-label>
+            <input matInput formControlName="function1">
+          </mat-form-field>
+          <mat-form-field class="usDetailForm">
+            <mat-label class="kLabelUSDetail">So That</mat-label>
+            <input matInput formControlName="function2">
+          </mat-form-field>
+          <mat-form-field class="usDetailForm">
+            <mat-label class="kLabelUSDetail">Notes</mat-label>
+            <input matInput formControlName="notes">
+          </mat-form-field>
+          <div class="row">
+            <div class="col-md-6">
+              <mat-form-field class="usDetailForm">
+                <mat-label class="kLabelUSDetail">Priority</mat-label>
+                <mat-select formControlName="priority">
+                  <mat-option *ngFor="let item of usPriorities" [value]="item.id">
+                  {{item.libelle}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-md-6">
+              <mat-form-field class="usDetailForm">
+                <mat-label class="kLabelUSDetail">Tasks Count</mat-label>
+                  <!-- <textarea disabled matInput formControlName="nbTasks"></textarea> -->
+                  <input matInput formControlName="nbTasks" [disabled]="true">
+                   <!-- <input type="text" matInput formControlName="disabledFiled" readonly> -->
+                </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <mat-form-field class="usDetailForm">
+                <mat-label class="kLabelUSDetail">Story Points</mat-label>
+                <mat-select formControlName="storyPoints">
+                  <mat-option *ngFor="let item of storyPointsArray" [value]="item">
+                  {{item}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-md-6">
+              <mat-form-field class="usStatus">
+                <mat-label class="kLabelUSDetail">Status</mat-label>
+                <mat-select formControlName="usStatus">
+                  <mat-option >
+                    Status Choice
+                  </mat-option>
+                  <mat-option *ngFor="let item of usStatuses" [value]="item.id">
+                    {{item.libelle}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+        </div>
+        <mat-label class="kEpicLabel">Epic Story</mat-label>
+        <mat-radio-group class="kRadioGroup" name="epicStory" formControlName="epicStory"  >
+          <mat-radio-button [value]="true" [checked]="epicStory === true" >Yes  </mat-radio-button>
+          <mat-radio-button [value]="false" [checked]="epicStory === false">No  </mat-radio-button>
+        </mat-radio-group>
+        <br>
+        <div class="row">
+          <button type="submit" class="btn btn-dark kSaveUS"><i class="fa fa-database"></i> Save </button>
+          <button type="button" class="btn btn-outline-dark ml-1 kBckUSList" routerLink="/userstory" ><i class="fa fa-close"></i> Cancel </button>
+        </div>
+        <br>
+        <br>
+        <br>
+        </form>
+      </mat-tab>
+    <!--Tasks-->
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <svg  viewBox="0 0 16 16" class="bi bi-bricks kIcon" fill="currentColor"  xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M0 .5A.5.5 0 0 1 .5 0h15a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5H14v2h1.5a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5H14v2h1.5a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 .5-.5H2v-2H.5a.5.5 0 0 1-.5-.5v-3A.5.5 0 0 1 .5 6H2V4H.5a.5.5 0 0 1-.5-.5v-3zM3 4v2h4.5V4H3zm5.5 0v2H13V4H8.5zM3 10v2h4.5v-2H3zm5.5 0v2H13v-2H8.5zM1 1v2h3.5V1H1zm4.5 0v2H15V1H5.5zM1 7v2h3.5V7H1zm4.5 0v2h5V7h-5zm6 0v2H15V7h-3.5zM1 13v2h3.5v-2H1zm4.5 0v2h5v-2h-5zm6 0v2H15v-2h-3.5z"/>
+          </svg>
+            User Story Tasks
+        </ng-template>
+        <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+          <ng-container matColumnDef="number">
+            <th mat-header-cell *matHeaderCellDef>No</th>
+              <mat-cell *matCellDef="let element"> {{element.number}} </mat-cell>
+          </ng-container>
 
-<form  [formGroup]="form" (ngSubmit)="onSubmit()">
-  <input type="hidden" formControlName="id">
-  <input type="hidden" formControlName="dateCreation">
-  <input type="hidden" formControlName="dateModification">
-  <input type="hidden" formControlName="isDeleted">
+          <!-- <ng-container matColumnDef="label">
+            <th mat-header-cell *matHeaderCellDef>Label</th>
+                <mat-cell *matCellDef="let element"> {{element.label}} </mat-cell>
+          </ng-container> -->
 
-  <mat-form-field class="usDetailForm">
-    <mat-label class="kLabelUSDetail">Title</mat-label>
-    <input matInput formControlName="label">
-  </mat-form-field>
+          <ng-container matColumnDef="project">
+            <th mat-header-cell *matHeaderCellDef>Project</th>
+              <mat-cell *matCellDef="let element"> {{element.project?.label}} </mat-cell>
+          </ng-container>
 
-  <mat-form-field class="usDetailForm">
-    <mat-label class="kLabelUSDetail">Version</mat-label>
-    <input matInput formControlName="version">
-  </mat-form-field>
+          <ng-container matColumnDef="userstory">
+            <th mat-header-cell *matHeaderCellDef>User Story</th>
+            <mat-cell *matCellDef="let element"> {{element.userStory?.label}} </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="priority">
+            <th  mat-header-cell *matHeaderCellDef>Priority</th>
+              <mat-cell *matCellDef="let element"> {{element.strPriority }} </mat-cell>
+          </ng-container>
 
-  <mat-form-field class="usDetailForm">
-    <mat-label class="kLabelUSDetail">Project</mat-label>
-    <mat-select formControlName="projectId" >
-      <mat-option >
-        Project Choice
-      </mat-option>
+          <ng-container matColumnDef="estimatedDuration">
+            <th mat-header-cell *matHeaderCellDef>Duration</th>
+              <mat-cell *matCellDef="let element"> {{element.estimatedDuration}} </mat-cell>
+          </ng-container>
 
-      <mat-option *ngFor="let item of projects" [value]="item.id">
-        {{item.label}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
+          <ng-container matColumnDef="taskStatus">
+            <th mat-header-cell *matHeaderCellDef>Status</th>
+              <mat-cell *matCellDef="let element"> {{element.strTaskStatus}} </mat-cell>
+          </ng-container>
 
-  <mat-form-field class="usDetailForm">
-    <mat-label class="kLabelUSDetail">As a</mat-label>
-    <input matInput formControlName="role">
-  </mat-form-field>
+          <ng-container matColumnDef="dept">
+            <th mat-header-cell *matHeaderCellDef>Department</th>
+            <mat-cell *matCellDef="let element"> {{element.project?.department?.label}} </mat-cell>
+          </ng-container>
 
-  <mat-form-field class="usDetailForm">
-    <mat-label class="kLabelUSDetail">I want to</mat-label>
-    <input matInput formControlName="function1">
-  </mat-form-field>
+          <ng-container matColumnDef="developer">
+            <th mat-header-cell *matHeaderCellDef>Developer</th>
+            <mat-cell *matCellDef="let element"> {{element.developer?.fullName}} </mat-cell>
+          </ng-container>
 
-  <mat-form-field class="usDetailForm">
-    <mat-label class="kLabelUSDetail">So That</mat-label>
-    <input matInput formControlName="function2">
-  </mat-form-field>
+    <!-- Action Column -->
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef >Actions</th>
+      <td mat-cell *matCellDef="let element">
+        <button class="btn btn-success kEdit" (click) = "addOrEdit(element, element.id)">Edit</button>
+        <button class="btn btn-success kDelete" (click) = "delete(element.id, element)">Delete</button>
+      </td>
+    </ng-container>
+          <!-- <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef>Action</th>
+              <mat-cell *matCellDef="let element">
+                <button class="btn btn-success kEdit" (click)="addOrEdit(element)" style="margin-left: 20px;">Edit</button>
+                <button class="btn btn-success kDelete" (click)="delete(element)" style="margin-left: 20px;">Delete</button>
+              </mat-cell>
+          </ng-container> -->
+                  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
 
+                </mat-table>
+                <div>
+                  <a class="btn btn-outline-success kNew" (click) = "addOrEdit(null,null)">
+                  <i class="fa fa-plus-square kBtnNew"></i>New Task</a>
+                </div>
+          </mat-tab>
 
-  <mat-form-field class="usDetailForm">
-    <mat-label class="kLabelUSDetail">Notes</mat-label>
-    <input matInput formControlName="notes">
-  </mat-form-field>
-
-  <mat-form-field class="usDetailForm">
-    <mat-label class="kLabelUSDetail">Priority</mat-label>
-    <input matInput formControlName="priority">
-  </mat-form-field>
-
-
-  <div class="row">
-    <div class="col-md-6">
-  <mat-form-field class="usDetailForm">
-    <mat-label class="kLabelUSDetail">Story Points</mat-label>
-    <mat-select formControlName="storyPoints">
-      <!-- <mat-option >
-        Points Choice
-      </mat-option> -->
-
-      <mat-option *ngFor="let item of storyPointsArray" [value]="item">
-        {{item}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-</div>
-<div class="col-sm">
-  <mat-form-field class="usStatus">
-    <mat-label class="kLabelUSDetail">Status</mat-label>
-    <mat-select formControlName="usStatus">
-      <mat-option >
-        Status Choice
-      </mat-option>
-
-      <mat-option *ngFor="let item of usStatuses" [value]="item.id">
-        {{item.libelle}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-</div>
-</div>
-<!--
-  <mat-form-field class="usDetailForm">
-    <mat-label class="kLabelUSDetail">Story Points</mat-label>
-    <input type="number" matInput formControlName="storyPoints">
-  </mat-form-field> -->
-
-  <mat-label class="kEpicLabel">Epic Story</mat-label>
-
-  <mat-radio-group class="kRadioGroup" name="epicStory" formControlName="epicStory"  >
-    <mat-radio-button [value]="true" [checked]="epicStory === true" >Yes  </mat-radio-button>
-    <mat-radio-button [value]="false" [checked]="epicStory === false">No  </mat-radio-button>
-  </mat-radio-group>
-
-  <br>
-
-  <div class="row">
-    <button type="submit" class="btn btn-dark kSaveUS"><i class="fa fa-database"></i> Save </button>
-    <button type="button" class="btn btn-outline-dark ml-1 kBckUSList" routerLink="/userstory" ><i class="fa fa-close"></i> Cancel </button>
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <svg viewBox="0 0 16 16" class="bi bi-bookmark-check kIcon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+              <path fill-rule="evenodd" d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+            </svg>
+          Other Informations
+          </ng-template>
+          <div class="row">
+            <div class="col-4 kLeft">
+              <br/>
+                <p>Department: </p>
+                <p>Product Owner: </p>
+                <p>Scrum Master: </p>
+                <p>Developers Team: </p>
+                <p>Number Of Tasks: </p>
+                <p>Project Status: </p>
+            </div>
+            <div class="col-6 kRight">
+              <br/>
+                <p>{{entite?.project?.department?.label}}</p>
+                <p>{{entite?.project?.productOwner?.fullName}}</p>
+                <p>{{entite?.project?.scrumMaster?.fullName}}</p>
+                <p>{{entite?.project?.team?.label}}</p>
+                <p>{{entite?.nbTasks}}</p>
+                <p>{{entite?.project?.strProjectStatus}}</p>
+            </div>
+          </div>
+      </mat-tab>
+    </mat-tab-group>
   </div>
-  <br>
-  <br>
-  <br>
-
- </form>
-
 </div>
+<br>
+<br>
+<br>
+

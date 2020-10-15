@@ -22,6 +22,10 @@ export class UserStoryService {
   getById(id: number): Observable<UserStory> {
     return this.http.get<UserStory>(this.url + '/' + id.toString());
   }
+
+  listeByProjectId(id: number): Observable<UserStory[]> {
+    return this.http.get<UserStory[]>(this.url + '/listeByProjectId/' + id.toString());
+  }
   // add(objet: UserStory): Observable<UserStory> {
   //   return this.http.post(this.url + '/' + form.toString());
   // }

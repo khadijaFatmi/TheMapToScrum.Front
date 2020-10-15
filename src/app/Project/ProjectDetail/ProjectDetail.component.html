@@ -1,8 +1,10 @@
 
-<div>
-  <br/>
-    <h1 class="kProjectDetailTitle">Project Detail</h1>
-  <br/>
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <br/>
+    <h1 class="kProjectDetailTitle">Project Details</h1>
+    <br/>
+  </div>
 </div>
 
 <div class="d-flex justify-content-center">
@@ -11,98 +13,262 @@
   </div>
 </div>
 
-<div>
-
-<form  [formGroup]="form" (ngSubmit)="onSubmit()">
-  <input type="hidden" formControlName="id">
-  <input type="hidden" formControlName="dateCreation">
-  <input type="hidden" formControlName="dateModification">
-  <input type="hidden" formControlName="isDeleted">
-
-  <mat-form-field class="kProjectDetailForm">
-    <mat-label class="kLabelProjectDetail">Label</mat-label>
-    <input matInput formControlName="label">
-  </mat-form-field>
-
-
-
-  <mat-form-field class="kProjectDetailForm">
-    <mat-label class="kLabelProjectDetail">Scrum Master</mat-label>
-    <mat-select formControlName="scrumMasterId" >
-      <mat-option >
-        Choose your Scrum Master
-      </mat-option>
-
-      <mat-option *ngFor="let item of scrumMasters" [value]="item.id">
-        {{item.fullName}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-
-  <mat-form-field class="kProjectDetailForm">
-    <mat-label class="kLabelProjectDetail">Product Owner</mat-label>
-    <mat-select formControlName="productOwnerId" >
-      <mat-option >
-        Choose your Product Owner
-      </mat-option>
-
-      <mat-option *ngFor="let item of productOwners" [value]="item.id">
-        {{item.fullName}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-
-
-  <mat-form-field class="kProjectDetailForm">
-    <mat-label class="kLabelProjectDetail">Team</mat-label>
-    <mat-select formControlName="teamId">
-      <mat-option >
-        Choose your Team
-      </mat-option>
-
-      <mat-option *ngFor="let team of teams" [value]="team.id">
-        {{team.label}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-
-
-  <mat-form-field class="kProjectDetailForm">
-    <mat-label class="kLabelProjectDetail">Department</mat-label>
-    <mat-select formControlName="departmentId">
-      <mat-option >
-        departmentid Choice
-      </mat-option>
-
-      <mat-option *ngFor="let dpt of departments" [value]="dpt.id">
-        {{dpt.label}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-
-
-  <mat-form-field class="kProjectDetailForm">
-    <mat-label class="kLabelProjectDetail">Status</mat-label>
-    <mat-select formControlName="projectStatus">
-      <mat-option >
-        Status Choice
-      </mat-option>
-
-      <mat-option *ngFor="let item of projectStatuses" [value]="item.id">
-        {{item.libelle}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-
-
-
-
-  <div class="row">
-    <button type="submit" class="btn btn-dark kSaveProject"><i class="fa fa-database"></i>Save</button>
-    <button type="button" class="btn btn-outline-dark ml-1 kBckProjectList" routerLink="/project" ><i class="fa fa-close"></i>Cancel</button>
+<div class="d-flex justify-content-center">
+  <div class="col-6">
+    <div class="kProjectReminder">
+      <div class="d-flex justify-content-center">
+        <mat-label class="kLabelProjectDetail2">Project Total User Stories: {{nbUS}}</mat-label>
+      </div>
+      <div class="d-flex justify-content-center">
+        <mat-label class="kLabelProjectDetail2">Project Total Tasks: {{nbTasks}}</mat-label>
+      </div>
+    </div>
   </div>
-</form>
 </div>
+
+
+<div class="d-flex justify-content-center">
+  <div class="col-8 kMatStyle">
+
+    <mat-tab-group>
+      <!--Project details-->
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <svg viewBox="0 0 16 16" class="bi bi-binoculars kIcon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M3 2.5A1.5 1.5 0 0 1 4.5 1h1A1.5 1.5 0 0 1 7 2.5V5h2V2.5A1.5 1.5 0 0 1 10.5 1h1A1.5 1.5 0 0 1 13 2.5v2.382a.5.5 0 0 0 .276.447l.895.447A1.5 1.5 0 0 1 15 7.118V14.5a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 14.5v-3a.5.5 0 0 1 .146-.354l.854-.853V9.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v.793l.854.853A.5.5 0 0 1 7 11.5v3A1.5 1.5 0 0 1 5.5 16h-3A1.5 1.5 0 0 1 1 14.5V7.118a1.5 1.5 0 0 1 .83-1.342l.894-.447A.5.5 0 0 0 3 4.882V2.5zM4.5 2a.5.5 0 0 0-.5.5V3h2v-.5a.5.5 0 0 0-.5-.5h-1zM6 4H4v.882a1.5 1.5 0 0 1-.83 1.342l-.894.447A.5.5 0 0 0 2 7.118V13h4v-1.293l-.854-.853A.5.5 0 0 1 5 10.5v-1A1.5 1.5 0 0 1 6.5 8h3A1.5 1.5 0 0 1 11 9.5v1a.5.5 0 0 1-.146.354l-.854.853V13h4V7.118a.5.5 0 0 0-.276-.447l-.895-.447A1.5 1.5 0 0 1 12 4.882V4h-2v1.5a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V4zm4-1h2v-.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5V3zm4 11h-4v.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5V14zm-8 0H2v.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5V14z"/>
+          </svg>
+          Details
+        </ng-template>
+        <form  [formGroup]="form" (ngSubmit)="onSubmit()">
+          <input type="hidden" formControlName="id">
+          <input type="hidden" formControlName="dateCreation">
+          <input type="hidden" formControlName="dateModification">
+          <input type="hidden" formControlName="isDeleted">
+
+          <mat-form-field class="kProjectDetailForm">
+            <mat-label class="kLabelProjectDetail">Label</mat-label>
+            <input matInput formControlName="label">
+          </mat-form-field>
+
+          <mat-form-field class="kProjectDetailForm">
+            <mat-label class="kLabelProjectDetail">Scrum Master</mat-label>
+            <mat-select formControlName="scrumMasterId" >
+              <mat-option >
+                Choose your Scrum Master
+              </mat-option>
+
+              <mat-option *ngFor="let item of scrumMasters" [value]="item.id">
+                {{item.fullName}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="kProjectDetailForm">
+            <mat-label class="kLabelProjectDetail">Product Owner</mat-label>
+            <mat-select formControlName="productOwnerId" >
+              <mat-option >
+                Choose your Product Owner
+              </mat-option>
+
+              <mat-option *ngFor="let item of productOwners" [value]="item.id">
+                {{item.fullName}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="kProjectDetailForm">
+            <mat-label class="kLabelProjectDetail">Developers Team</mat-label>
+            <mat-select formControlName="teamId">
+              <mat-option >
+                Choose your Team
+              </mat-option>
+              <mat-option *ngFor="let team of teams" [value]="team.id">
+                {{team.label}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="kProjectDetailForm">
+            <mat-label class="kLabelProjectDetail">Department</mat-label>
+            <mat-select formControlName="departmentId">
+              <mat-option >
+                departmentid Choice
+              </mat-option>
+
+              <mat-option *ngFor="let dpt of departments" [value]="dpt.id">
+                {{dpt.label}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="kProjectDetailForm">
+            <mat-label class="kLabelProjectDetail">Status</mat-label>
+            <mat-select formControlName="projectStatus">
+              <mat-option >
+                Status Choice
+              </mat-option>
+
+              <mat-option *ngFor="let item of projectStatuses" [value]="item.id">
+                {{item.libelle}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <!-- <div class="row">
+            <div class="col-md-4">
+           <mat-form-field class="kProjectDetailForm">
+            <mat-label class="kLabelProjectDetail">Total User Stories</mat-label>
+            <input matInput formControlName="nbUS">
+            <mat-label class="kLabelProjectDetail2">Project Total User Stories</mat-label>
+            <th class="kProjectDetailForm" mat-label >{{nbUS}}</th>
+            </div>
+            <div class="col-md-4">
+          </mat-form-field>
+          <mat-form-field class="kProjectDetailForm">
+            <mat-label class="kLabelProjectDetail2">Project Total Tasks</mat-label>
+            <th class="kProjectDetailForm" mat-label >{{nbTasks}}</th>
+          </mat-form-field>
+            </div>
+        </div> -->
+
+          <div class="d-flex justify-content-center">
+            <div class="row">
+              <button type="submit" class="btn btn-dark kSaveProject"><i class="fa fa-database"></i>Save</button>
+              <button type="button" class="btn btn-outline-dark ml-1 kBckProjectList" routerLink="/project" ><i class="fa fa-close"></i>Cancel</button>
+            </div>
+          </div>
+        </form>
+      </mat-tab>
+
+      <mat-tab>
+      <!--US List Linked-->
+      <ng-template mat-tab-label>
+        <svg viewBox="0 0 16 16" class="bi bi-blockquote-left kIcon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M2 3.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm5 3a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm-5 3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+          <path d="M3.734 6.352a6.586 6.586 0 0 0-.445.275 1.94 1.94 0 0 0-.346.299 1.38 1.38 0 0 0-.252.369c-.058.129-.1.295-.123.498h.282c.242 0 .431.06.568.182.14.117.21.29.21.521a.697.697 0 0 1-.187.463c-.12.14-.289.21-.503.21-.336 0-.577-.108-.721-.327C2.072 8.619 2 8.328 2 7.969c0-.254.055-.485.164-.692.11-.21.242-.398.398-.562.16-.168.33-.31.51-.428.18-.117.33-.213.451-.287l.211.352zm2.168 0a6.588 6.588 0 0 0-.445.275 1.94 1.94 0 0 0-.346.299c-.113.12-.199.246-.257.375a1.75 1.75 0 0 0-.118.492h.282c.242 0 .431.06.568.182.14.117.21.29.21.521a.697.697 0 0 1-.187.463c-.12.14-.289.21-.504.21-.335 0-.576-.108-.72-.327-.145-.223-.217-.514-.217-.873 0-.254.055-.485.164-.692.11-.21.242-.398.398-.562.16-.168.33-.31.51-.428.18-.117.33-.213.451-.287l.211.352z"/>
+        </svg>
+          Linked User Stories
+      </ng-template>
+      <mat-table [dataSource]="dataSourceUs" class="mat-elevation-z8">
+        <ng-container matColumnDef="version">
+          <th mat-header-cell *matHeaderCellDef>Version</th>
+            <mat-cell *matCellDef="let element"> {{element.version}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="label">
+          <th mat-header-cell *matHeaderCellDef>Title</th>
+            <mat-cell *matCellDef="let element"> {{element.label}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="role">
+          <th mat-header-cell *matHeaderCellDef>AS A</th>
+            <mat-cell *matCellDef="let element"> {{element.role}} </mat-cell>
+        </ng-container>
+         <ng-container matColumnDef="function1">
+          <th mat-header-cell *matHeaderCellDef>I WANT TO</th>
+            <mat-cell *matCellDef="let element"> {{element.function1}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="function2">
+          <th mat-header-cell *matHeaderCellDef>SO THAT</th>
+            <mat-cell *matCellDef="let element"> {{element.function2}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="notes">
+          <th mat-header-cell *matHeaderCellDef>Notes</th>
+            <mat-cell *matCellDef="let element"> {{element.notes}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="storyPoints">
+          <th mat-header-cell *matHeaderCellDef>Points</th>
+            <mat-cell *matCellDef="let element"> {{element.storyPoints}} </mat-cell>
+        </ng-container>
+       <!-- <ng-container matColumnDef="epic">
+          <th mat-header-cell *matHeaderCellDef>EPIC</th>
+            <mat-cell *matCellDef="let element"> {{element.epic}} </mat-cell>
+        </ng-container> -->
+        <ng-container matColumnDef="strPriority">
+          <th mat-header-cell *matHeaderCellDef>Priority</th>
+            <mat-cell *matCellDef="let element"> {{element.strPriority}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="strUsStatus">
+          <th mat-header-cell *matHeaderCellDef>Status</th>
+            <mat-cell *matCellDef="let element"> {{element.strUsStatus}} </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumnsUs"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumnsUs"></mat-row>
+      </mat-table>
+      </mat-tab>
+
+    <!--Tasks List Linked-->
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <svg  viewBox="0 0 16 16" class="bi bi-bricks kIcon" fill="currentColor"  xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M0 .5A.5.5 0 0 1 .5 0h15a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5H14v2h1.5a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5H14v2h1.5a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 .5-.5H2v-2H.5a.5.5 0 0 1-.5-.5v-3A.5.5 0 0 1 .5 6H2V4H.5a.5.5 0 0 1-.5-.5v-3zM3 4v2h4.5V4H3zm5.5 0v2H13V4H8.5zM3 10v2h4.5v-2H3zm5.5 0v2H13v-2H8.5zM1 1v2h3.5V1H1zm4.5 0v2H15V1H5.5zM1 7v2h3.5V7H1zm4.5 0v2h5V7h-5zm6 0v2H15V7h-3.5zM1 13v2h3.5v-2H1zm4.5 0v2h5v-2h-5zm6 0v2H15v-2h-3.5z"/>
+          </svg>
+            Linked Tasks
+        </ng-template>
+        <mat-table [dataSource]="dataSourceTask" class="mat-elevation-z8">
+          <ng-container matColumnDef="taskLabel">
+            <th mat-header-cell *matHeaderCellDef>Title</th>
+              <mat-cell *matCellDef="let element"> {{element.label}} </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="usLabel">
+            <th mat-header-cell *matHeaderCellDef>US Label</th>
+              <mat-cell *matCellDef="let element"> {{element.usLabel}} </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="taskFeature">
+            <th mat-header-cell *matHeaderCellDef>Feature</th>
+              <mat-cell *matCellDef="let element"> {{element.feature}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="risk">
+            <th mat-header-cell *matHeaderCellDef>Risk</th>
+              <mat-cell *matCellDef="let element"> {{element.risk}} </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="strPriority">
+            <th mat-header-cell *matHeaderCellDef>Priority</th>
+              <mat-cell *matCellDef="let element"> {{element.strPriority}} </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="developer">
+            <th mat-header-cell *matHeaderCellDef>Developer</th>
+              <mat-cell *matCellDef="let element"> {{element.developer?.fullName}} </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="strTaskStatus">
+            <th mat-header-cell *matHeaderCellDef>Status</th>
+              <mat-cell *matCellDef="let element"> {{element.strTaskStatus}} </mat-cell>
+          </ng-container>
+          <!--Action Column-->
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef >Actions</th>
+            <td mat-cell *matCellDef="let element">
+              <button class="btn btn-success kEditTask" (click)="editTask(element.id, element)" >Edit</button>
+              <button class="btn btn-success kDeleteTask" (click)="deleteTask(element)">Delete</button>
+            </td>
+          </ng-container>
+
+
+          <mat-header-row *matHeaderRowDef="displayedColumnsTask"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumnsTask"></mat-row>
+
+        </mat-table>
+
+          <!--Bouton New Task via Project-->
+          <div class="d-flex justify-content-center">
+            <a class="btn btn-outline-success kNewTask" (click) = "addTask()">
+            <i class="fa fa-plus-square"></i>New Task</a>
+          </div>
+        </mat-tab>
+
+        <!--Teams Members-->
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <svg  viewBox="0 0 16 16" class="bi bi-people-fill kIcon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+            </svg>
+              Developpers Teams Members
+          </ng-template>
+        </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
 
 
 

@@ -39,6 +39,10 @@ import { DepartmentService} from './services/department.service' ;
 import { DepartmentListComponent } from './department/departmentList/departmentList.component';
 import { DepartmentDetailComponent } from './department/departmentDetail/departmentDetail.component';
 
+import { TaskFeatureService } from './services/taskFeature.service';
+import { TaskFeatureListComponent } from './taskFeature/taskFeatureList/taskFeatureList.component';
+import { TaskFeatureDetailComponent } from './taskFeature/taskFeatureDetail/taskFeatureDetail.component';
+
 import { OuinonPipe } from './pipes/ouinon.pipe';
 
 import { HomeComponent } from './home/home/home.component';
@@ -58,8 +62,9 @@ import { ProductBacklogComponent } from './productBacklog/productBacklog.compone
 import { SprintPlanningComponent } from './sprintPlanning/sprintPlanning.component';
 
 
-import { TaskFeaturesComponent } from './taskFeatures/taskFeatures.component';
 import { AlertService } from './services/alert.service';
+import { from } from 'rxjs';
+import { MatConfirmDialogComponent } from './controls/mat-confirm-dialog.component';
 
 
 // declaration des composants
@@ -91,7 +96,9 @@ import { AlertService } from './services/alert.service';
     , ScrumdefinitionComponent
     , SprintBacklogComponent
     , ProductBacklogComponent
-    , TaskFeaturesComponent
+    , TaskFeatureListComponent
+    , TaskFeatureDetailComponent
+    , MatConfirmDialogComponent
   ],
   // modules necessaires à l'execution du prg
   imports: [

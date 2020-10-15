@@ -44,6 +44,7 @@ export class ProjectListComponent implements OnInit, OnDestroy {
       subscribe(data => {
         this.projects = data;
         this.dataSource = this.projects;
+        this.isLoading = false;
         console.log('Request Successful! List of all projects Loaded :-)');
         this.toastOptions.msg = 'Success! List Of All Projects Loaded!';
         this.toastService.success(this.toastOptions);

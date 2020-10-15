@@ -1,10 +1,12 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { ToastaService, ToastOptions } from 'ngx-toasta';
 
 import { UserStoryService } from '../../services/userStory.service';
 import { UserStory } from '../../models/userStory.model';
-import { Subscription } from 'rxjs';
+// import { TaskFeatureListComponent } from 'src/app/taskFeature/taskFeatureList/taskFeatureList.component';
+
 
 
 @Component({
@@ -22,7 +24,7 @@ export class UserStoryListComponent implements OnInit, OnDestroy {
   // displayedColumns: string[] = ['version', 'projet', 'name', 'role', 'function1',
   // 'function2', 'notes', 'priority', 'storyPoints', 'epicStory', 'action'];
 
-  displayedColumns: string[] = ['version', 'project', 'title', 'role', 'priority', 'storyPoints', 'epicStory', 'status', 'action'];
+  displayedColumns: string[] = ['version', 'project', 'title', 'role', 'priority', 'storyPoints', 'epicStory', 'status', 'tasks', 'action'];
   public dataSource: any;
 
   toastOptions: ToastOptions = {
@@ -48,15 +50,15 @@ export class UserStoryListComponent implements OnInit, OnDestroy {
         subscribe(data => {
           this.userstory = data;
           this.dataSource = this.userstory;
-          console.log('Request Success! User Stories List Loaded!');
+          // console.log('Request Success! User Stories List Has Been Loaded!');
           this.isLoading = false;
-          this.toastOptions.msg = 'Success! User Stories List Loaded';
+          this.toastOptions.msg = 'Success! User Stories List Has Been Loaded';
           this.toastService.success(this.toastOptions);
         },
         error => {
-          console.log('Request Fail! US list not loaded!');
+          // console.log('Request Fail! US list not loaded!');
           this.isLoading = false;
-          this.toastOptions.msg = 'Failed to Load User Stories List';
+          this.toastOptions.msg = 'Failed to Load User Stories List' + ' ' + error.textStatus;
           this.toastService.error(this.toastOptions);
         }));
 

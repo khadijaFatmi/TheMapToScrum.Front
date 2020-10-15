@@ -1,6 +1,7 @@
 .kProjectDetailTitle {
-  width: 80%;
-  margin-left: 60px;
+  width: 100%;
+  /* margin-left: 60px; */
+  margin-top: 40px;
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color:#7e23f5;
@@ -9,26 +10,96 @@
 
 
 .kProjectDetailForm {
-  width: 80%;
-
+  width: 100%;
   display: block !important;
   background-color: grey !important;
-  margin-left: 60px !important;
-  margin-right: 60px !important;
   color: white !important;
+  font-size: 20px !important;
+}
+
+
+.kProjectReminder {
+  margin-bottom: 20px !important;
+  border-style: solid;
+  border-radius: 2px;
+  border-color:  #7e23f5;
+  border-width: 3px;
 
 }
 
 .kLabelProjectDetail {
+
   align-self: center !important;
   color: #7e23f5 !important;
-  font-size: large !important;
-  font-weight: normal !important;
+  font-size: 26px !important;
+  text-shadow: 1px 1px 0px rgba(254, 254, 255, 0.1);
+}
+
+.kLabelProjectDetail2{
+  background-color: #424343;
+  width: 100%;
+  color: #ffffff !important;
+  font-size: 22px !important;
+  text-shadow: 1px 1px 0px rgba(3, 0, 7, 0.6);
 
 }
 
 
+.mat-table{
+  width: 100% !important;
+  background-color: rgb(121, 118, 118) !important;
+  margin:auto;
+}
 
+
+
+.mat-header-row{
+  width: 100% !important;
+  background-color: rgb(115, 56, 211) !important;
+  display: inline-table !important;
+}
+
+/* en-tetes tableau */
+.mat-header-cell {
+  flex-direction: column;
+  justify-content: left !important;
+  text-align: left !important;
+  background-color: rgb(115, 56, 211) !important;
+  font-size: auto !important;
+  color:white !important;
+}
+
+.mat-cell {
+  text-align: left !important;
+  justify-content: left !important;
+}
+
+.mat-row{
+  justify-content: left !important;
+  text-align: left !important;
+}
+
+.mat-tab-label {
+  background-color: #454346 !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  font-size: 18px !important;
+  opacity: 1 !important;
+
+}
+
+.mat-tab-label-content {
+  /* background-color: #454346 !important; */
+}
+
+
+.mat-tab-label-active {
+  background-color: #892fff !important;
+}
+
+
+
+/* Buttons, icons & others */
 .kSaveProject{
   background-color:  #6706a8;
   border-color:  #450370!important;
@@ -36,9 +107,8 @@
   color: white !important;
   font-weight: bold;
   font-size: 18px !important;
-  margin-left: 280px !important;
-  margin-right: 40px;
   margin-top: 40px;
+  margin-bottom: 20px;
   width: 196px;
 }
 
@@ -53,14 +123,58 @@
    color: white !important;
    font-weight: bold;
    font-size: 18px !important;
-   margin-left: 40px !important;
-   margin-right: 40px;
    margin-top: 40px;
+   margin-bottom: 20px;
    width: 196px;
 }
 
 .kBckProjectList:hover {
   background-color: #58058f;
+}
+
+
+.kNewTask{
+  background-color:  #7e23f5;
+  border-color:  #450370!important;
+  text-align: center !important;
+  color: white !important;
+  font-weight: normal;
+  font-size: 18px !important;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  width: 196px;
+
+}
+.kNewTask:hover{
+  background-color: #ff00bf !important;
+}
+
+.kEditTask {
+  background-color: #8600df !important;
+  border-color:#2d0246 !important;
+
+  text-align: center !important;
+  font-size: 9px !important;
+  width: 55px !important;
+  margin-left: 1px !important;
+}
+.kEditTask:hover {
+  background-color: #fd00b1 !important;
+  border-color:#d80286 !important;
+}
+
+
+.kDeleteTask {
+  background-color: #570288;
+  border-color:#180125 !important;
+  text-align: center !important;
+  font-size: 9px !important;
+  width: 52px !important;
+}
+
+.kDeleteTask:hover{
+  background-color: #ff0404 !important;
+  border-color:#790101 !important;
 }
 
 
@@ -71,9 +185,21 @@
   height: 4rem;
   display: inline-flex;
   justify-content: center;
-  /* margin-left: 400px;
-  margin-bottom: 20px;*/
+}
+
+.kMatStyle{
+  background-color:  grey !important;
+  color: white !important;
 
 }
 
+.kIcon{
+  color: #ffffff;
+  width:40px;
+  height:40px;
+  flex-direction: column;
+  justify-content: left !important;
+  padding-right: 10px !important;
+  text-align: left;
+}
 

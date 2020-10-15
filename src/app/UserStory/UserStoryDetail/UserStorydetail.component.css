@@ -1,32 +1,32 @@
 
-.example-full-width {
-  width: 100%;
-}
 
 .kTitleUSDetail{
-  width: 80% !important;
+  width: 100% !important;
   text-align: center;
   background-color: #424343;
-  margin-left: 90px !important;
-  margin-right: 60px !important;
+
+  margin:auto;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #07bcf3;
 }
 
 .usDetailForm {
-  width: 80%;
-
+  width: 90%;
   display: block !important;
+
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+  word-wrap: break-word !important;
+
   background-color: grey !important;
-  margin-left: 90px !important;
-  margin-right: 60px !important;
   color: white !important;
+  font-size: 20px;
 
 }
 
 .usStatus{
   margin-left: auto;
-  width: 80%;
+  width: 100%;
 
   display: block !important;
   background-color: grey !important;
@@ -35,7 +35,7 @@
 }
 
 .kRadioGroup {
-  width: 80% !important;
+  width: 100% !important;
   align-self: start !important;
   color: white !important;
   font-size: large !important;
@@ -47,17 +47,17 @@
 
 .kLabelUSDetail {
   align-self: center !important;
-  color: rgb(63, 182, 218) !important;
-  font-size: large !important;
+  color: rgb(55, 208, 255) !important;
+  font-size: 30px !important;
   font-weight: normal !important;
-  outline: lawngreen !important;
+
 }
 
 .kEpicLabel {
   width: 100%;
-  margin-left: 90px !important;
-  color: rgb(63, 182, 218) !important;
-  font-size: large !important;
+  margin: auto;
+  color: rgb(55, 208, 255) !important;
+  font-size: 20px !important;
   font-weight: normal !important;
   background-color: grey !important;
 }
@@ -70,8 +70,7 @@
   color: white !important;
   font-weight: bold;
   font-size: 18px !important;
-  margin-left: 280px !important;
-  margin-right: 40px;
+  margin: auto;
   width: 196px;
 }
 
@@ -86,8 +85,7 @@
    color: white !important;
    font-weight: bold;
    font-size: 18px !important;
-   margin-left: 40px !important;
-   margin-right: 40px;
+   margin: auto;
    width: 196px;
 }
 
@@ -103,7 +101,217 @@
   height: 4rem;
   display: inline-flex;
   justify-content: center;
-  /* margin-left: 400px;
-  margin-bottom: 20px;*/
+}
 
+.kStyle{
+  background-color: grey !important;
+  color: #ffffff !important;
+
+}
+
+.kIcon{
+  color: #ffffff;
+  width:30px;
+  height:30px;
+  align-items: left !important;
+  align-content: left !important;
+  text-align: left;
+}
+
+.mat-tab-label-content{
+  display: inline !important;
+  font-size: 20px !important;
+  text-align: right !important;
+  color:#ffffff !important;
+
+}
+
+.mat-tab-label{
+  font-size: 20px !important;
+  color: #ffffff !important;
+}
+.mat-tab-label-active {
+  background-color: #07bcf3 !important;
+}
+
+/* tasks tab */
+.mat-table{
+  width: 100% !important;
+  text-size-adjust: auto !important;
+  background-color: grey !important;
+  margin:auto;
+
+}
+
+ .mat-row{
+  text-align: center !important;
+}
+/*
+.mat-header-row{
+  background: #424343 !important;
+  height: 40px !important;
+  text-align: left;
+}*/
+
+.mat-header-cell{
+  width: 100%;
+  /* text-align: left !important; */
+  font-size: auto !important;
+  color:  #07bcf3 !important;
+  font-weight: normal ;
+  background: #424343 !important;
+
+}
+
+/*
+.mat-column{
+  text-align: center !important;
+}
+
+
+.mat-column-number {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 7% !important;
+  width: 7% !important;
+  overflow-wrap: break-word;
+  word-break: break-word;
+
+  font-size: auto !important;
+}
+
+.mat-column-label {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 12% !important;
+  width: 12% !important;
+  overflow-wrap: break-word;
+  word-break: break-word;
+
+  font-size: auto !important;
+}
+
+
+.mat-row-project{
+  text-align: center !important;
+}
+
+.mat-column-project {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 12% !important;
+  width: 12% !important;
+  overflow-wrap: break-word;
+
+  word-break: break-word;
+
+  font-size: auto !important;
+}
+
+
+
+.mat-column-userStory {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 15% !important;
+  width: 15% !important;
+  overflow-wrap: break-word;
+
+  word-break: break-word;
+  font-size: auto !important;
+}
+
+
+
+.mat-column-priority {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 8% !important;
+  width: 8% !important;
+  overflow-wrap: break-word;
+
+  word-break: break-word;
+  font-size: auto !important;
+}
+
+.mat-column-estimatedDuration {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 8% !important;
+  width: 8% !important;
+  overflow-wrap: break-word;
+
+  font-size: auto !important;
+  word-break: break-word;
+}
+
+
+.mat-column-taskStatus {
+  word-wrap: break-word !important;
+  flex: 0 0 7% !important;
+  width: 7% !important;
+  font-size: auto !important;
+
+}
+
+.mat-column-action {
+  word-wrap: break-word !important;
+  flex: 0 0 20% !important;
+  width: 20% !important;
+  font-size: auto !important;
+
+}
+
+ */
+
+/* Bootstrap Classes: Surcharge Boutons actions */
+.kEdit {
+  background-color: #03aadd !important;
+  border-color:#00ffff !important;
+
+  text-align: center !important;
+  font-size: 9px !important;
+  width: 55px !important;
+  margin-left: 1px !important;
+}
+.kEdit:hover {
+  background-color: #01c4ff !important;
+}
+
+
+.kDelete {
+  background-color: rgb(30, 49, 73);
+  border-color: rgb(30, 45, 73) !important;
+  text-align: center !important;
+  font-size: 9px !important;
+  width: 52px !important;
+}
+
+.kDelete:hover{
+  background-color: #fd4128 !important;
+}
+
+.kNew {
+  background-color: #07bcf3 !important;
+  border-color: #1465b1 !important;
+  text-align: center !important;
+  color: white !important;
+  font-size: 18px !important;
+  align-content: unset !important;
+  padding: 20 20 20 20 !important;
+  margin-bottom: 20px !important;
+  width: 128px !important;
+  position: relative !important;
+  /* left: 20px !important; */
+}
+
+.kLeft{
+  text-align: justify;
+  color: white;
+  font-size: 20px;
+}
+.kRight{
+  color:  rgb(55, 208, 255);
+  font-size: 20px;
+  text-align: left;
 }

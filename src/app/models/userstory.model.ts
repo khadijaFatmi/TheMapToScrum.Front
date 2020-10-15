@@ -17,5 +17,7 @@ export class UserStory extends BaseEntity {
   epicStory: boolean;
   usStatus: number;
   strUsStatus: string;
+  nbTasks: number;
+  taskPriority: number;
 
 }

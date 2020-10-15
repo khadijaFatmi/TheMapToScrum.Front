@@ -3,14 +3,14 @@
   flex-direction: column;
 }
 table{
-  width: 90%;
+  width: 100%;
   padding: 40 40 0 40 !important;
  }
 
 
 /*Angular Material : Surcharge des classes natives, mat-table & ses composants customisés*/
 .mat-table{
-  width: 90% !important;
+  width: 100% !important;
   box-sizing: border-box !important;
   text-size-adjust: auto !important;
   background-color: grey !important;
@@ -145,8 +145,8 @@ table{
 /* Bootstrap Classes: Surcharge Boutons actions */
 
 .kProjectTitles {
-  width: 90%;
-  margin-left: 40px;
+  width: 95%;
+  /* margin-left: 40px;*/
   margin-top: 20px;
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;

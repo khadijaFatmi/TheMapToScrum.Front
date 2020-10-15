@@ -1,0 +1,108 @@
+<div class="d-flex justify-content-center">
+  <h1 class="kTitleTask">Task Creation</h1>
+  <br/>
+</div>
+<div>
+  <h2 class="kTaskProjectLabel"> Project: {{projectLabel}}</h2>
+</div>
+<div>
+  <h2 class="kTaskUsLabel">User Story: {{usLabel}}</h2>
+  <br/>
+</div>
+
+<br/><br/>
+<div class="d-flex justify-content-center">
+  <mat-label class="kLabelTaskNumber">Task Number: {{number}}</mat-label>
+</div>
+
+<div class="d-flex justify-content-center">
+  <div class="col-10">
+ <form  [formGroup]="form" (ngSubmit)="onSubmit()">
+  <input type="hidden" formControlName="id">
+  <input type="hidden" formControlName="dateCreation">
+  <input type="hidden" formControlName="dateModification">
+  <input type="hidden" formControlName="isDeleted">
+  <input type="hidden" formControlName="userStoryId">
+  <input type="hidden" formControlName="projectId">
+
+  <mat-form-field class="taskDetailForm">
+    <mat-label class="kLabelTaskDetail">Title</mat-label>
+      <input matInput formControlName="label">
+  </mat-form-field>
+
+  <mat-form-field class="taskDetailForm">
+    <mat-label class="kLabelTaskDetail">Feature</mat-label>
+      <input matInput formControlName="feature">
+  </mat-form-field>
+
+  <mat-form-field class="taskDetailForm">
+    <mat-label class="kLabelTaskDetail">Assumption</mat-label>
+      <input matInput formControlName="assumption">
+  </mat-form-field>
+
+  <mat-form-field class="taskDetailForm">
+    <mat-label class="kLabelTaskDetail">Acceptance Criteria</mat-label>
+      <input matInput formControlName="acceptanceCriteria">
+  </mat-form-field>
+
+  <mat-form-field class="taskDetailForm">
+    <mat-label class="kLabelTaskDetail">Risk</mat-label>
+      <input matInput formControlName="risk">
+  </mat-form-field>
+
+  <div class="row">
+    <div class="col-6">
+  <mat-form-field class="taskDetailForm">
+    <mat-label class="kLabelTaskDetail">Duration (day)</mat-label>
+    <mat-select formControlName="estimatedDuration">
+      <mat-option *ngFor="let item of estimatedDurations" [value]="item">
+      {{item}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+    </div>
+    <div class="col-6">
+  <mat-form-field class="taskDetailForm">
+    <mat-label class="kLabelTaskDetail">Developper</mat-label>
+    <mat-select formControlName="developerId">
+      <mat-option *ngFor="let item of developers" [value]="item.id">
+      {{item.fullName}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <mat-form-field class="taskDetailForm">
+        <mat-label class="kLabelTaskDetail">Priority</mat-label>
+        <mat-select formControlName="priority">
+          <mat-option *ngFor="let item of taskPriorities" [value]="item.id">
+          {{item.libelle}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-md-6">
+      <mat-form-field class="taskDetailForm">
+        <mat-label class="kLabelTaskDetail">Status</mat-label>
+        <mat-select formControlName="taskStatus">
+          <mat-option *ngFor="let item of taskStatuses" [value]="item.id">
+          {{item.libelle}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+<br/>
+<br/>
+ <div class="form-group">
+  <button type="submit" class="btn btn-dark kSaveTask" (click)="onSubmit()"><i class="fa fa-database"></i> Save </button>
+  <button type="button" class="btn btn-outline-dark ml-1 kBTNCloseTask" (click)="close()"><span class="fa fa-close"></span> Close </button>
+</div>
+
+</form>
+</div>
+</div>
+
