@@ -12,8 +12,8 @@ import { MaterialModule } from './material/material.module';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
 
 import { UserStoryService} from './services/userStory.service';
-import { UserStoryListComponent } from './userStory/userStoryListe/userStoryList.component';
-import { UserStoryDetailComponent } from './userStory/userStoryDetail/userStoryDetail.component';
+import { UserStoryListComponent } from './userStory/userStoryList/userStoryList.component';
+import { UserStoryDetailComponent } from './userStory/userStoryDetail/userStorydetail.component';
 
 import { ProjectService } from './services/project.service';
 import { ProjectListComponent } from './project/projectList/projectList.component';
@@ -95,6 +95,7 @@ import { MatConfirmDialogComponent } from './controls/mat-confirm-dialog.compone
     , UserStoryDetailComponent
     , ScrumdefinitionComponent
     , SprintBacklogComponent
+    , SprintPlanningComponent
     , ProductBacklogComponent
     , TaskFeatureListComponent
     , TaskFeatureDetailComponent
@@ -122,6 +123,8 @@ import { MatConfirmDialogComponent } from './controls/mat-confirm-dialog.compone
     , DepartmentService
     , UserStoryService
     , AlertService
+    , TaskFeatureService
+
   ],
   // demarrage de l'application dans appComponent
   bootstrap: [AppComponent]

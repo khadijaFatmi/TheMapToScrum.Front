@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { ProjectListComponent } from './project/projectList/projectList.component';
 import { ProjectDetailComponent } from './project/projectDetail/projectDetail.component';
-import { UserStoryListComponent } from './userStory/userStoryListe/userStoryList.component';
-import { UserStoryDetailComponent } from './userStory/userStoryDetail/userStoryDetail.component';
+import { UserStoryListComponent } from './userStory/userStoryList/userStoryList.component';
+import { UserStoryDetailComponent } from './userStory/userStoryDetail/userStorydetail.component';
 import { TaskFeatureListComponent } from './taskFeature/taskFeatureList/taskFeatureList.component';
 import { TaskFeatureDetailComponent } from './taskFeature/taskFeatureDetail/taskFeatureDetail.component';
 

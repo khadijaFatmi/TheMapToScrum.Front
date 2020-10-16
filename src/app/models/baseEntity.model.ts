@@ -1,6 +1,6 @@
 export class BaseEntity {
   id?: number;
-  isDeleted: boolean;
-  dateCreation: Date;
-  dateModification: Date;
+  isDeleted?: boolean;
+  dateCreation?: Date;
+  dateModification?: Date;
 }

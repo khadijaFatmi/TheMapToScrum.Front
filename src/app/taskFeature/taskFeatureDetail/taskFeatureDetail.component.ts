@@ -224,7 +224,7 @@ export class TaskFeatureDetailComponent implements OnInit, OnDestroy {
   onSubmit() {
     this.submitted = true;
     this.developerFullName = this.getDeveloperName(this.form.get('developerId').value);
-    const developer: Developer = { fullName: this.developerFullName };
+    let developer: Developer = { fullName: this.developerFullName };
     const strPriority = this.getTaskPriority(this.form.get('priority').value);
     const strTaskStatus = this.getTaskStatuses(this.form.get('taskStatus').value);
 
